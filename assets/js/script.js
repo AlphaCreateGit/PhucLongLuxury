@@ -100,52 +100,55 @@ function scrollHeader() {
 }
 function animateTitleSection(sectionClass, triggerClass, endPointSVG) {
   gsap.registerPlugin(ScrollTrigger);
+  if ($(".title-keyframe").length) {
+    const textSplit = new SplitType(`${sectionClass} h2`, { types: "chars" });
+    const h2Width = document.querySelector(`${sectionClass} h2`).offsetWidth;
+    const svgWidth = document.querySelector(
+      `${sectionClass} .icon-wheel`
+    ).offsetWidth;
 
-  const textSplit = new SplitType(`${sectionClass} h2`, { types: "chars" });
-  const h2Width = document.querySelector(`${sectionClass} h2`).offsetWidth;
-  const svgWidth = document.querySelector(
-    `${sectionClass} .icon-wheel`
-  ).offsetWidth;
+    gsap.set(`${sectionClass} .icon-wheel`, {
+      x: -svgWidth / 2,
+      visibility: "visible",
+    });
+    gsap.set(`${sectionClass} .char`, { opacity: 0 });
 
-  gsap.set(`${sectionClass} .icon-wheel`, {
-    x: -svgWidth / 2,
-    visibility: "visible",
-  });
-  gsap.set(`${sectionClass} .char`, { opacity: 0 });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerClass,
+        start: "top 55%",
+        end: "bottom 55%",
+        // markers: true,
+      },
+      onUpdate: function () {
+        const progress = gsap.getProperty(`${sectionClass} .icon-wheel`, "x");
+        document
+          .querySelectorAll(`${sectionClass} h2 .char`)
+          .forEach((char) => {
+            if (progress >= char.offsetLeft) {
+              gsap.to(char, { opacity: 1, duration: 0.1 });
+            }
+          });
+      },
+    });
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: triggerClass,
-      start: "top 55%",
-      end: "bottom 55%",
-      // markers: true,
-    },
-    onUpdate: function () {
-      const progress = gsap.getProperty(`${sectionClass} .icon-wheel`, "x");
-      document.querySelectorAll(`${sectionClass} h2 .char`).forEach((char) => {
-        if (progress >= char.offsetLeft) {
-          gsap.to(char, { opacity: 1, duration: 0.1 });
-        }
-      });
-    },
-  });
-
-  tl.to(`${sectionClass} .icon-wheel`, {
-    x: h2Width + svgWidth * `${endPointSVG}`,
-    rotation: 360,
-    duration: 1,
-    ease: "power2.inOut",
-    onComplete: function () {
-      gsap.to(`${sectionClass} .icon-wheel`, {
-        opacity: 0,
-        scale: 0.5,
-        ease: "power1.inOut",
-        onComplete: function () {
-          gsap.set(`${sectionClass} .icon-wheel`, { visibility: "hidden" });
-        },
-      });
-    },
-  });
+    tl.to(`${sectionClass} .icon-wheel`, {
+      x: h2Width + svgWidth * `${endPointSVG}`,
+      rotation: 360,
+      duration: 1,
+      ease: "power2.inOut",
+      onComplete: function () {
+        gsap.to(`${sectionClass} .icon-wheel`, {
+          opacity: 0,
+          scale: 0.5,
+          ease: "power1.inOut",
+          onComplete: function () {
+            gsap.set(`${sectionClass} .icon-wheel`, { visibility: "hidden" });
+          },
+        });
+      },
+    });
+  }
 }
 function animationLineVerticalFull(
   sectionClass,
