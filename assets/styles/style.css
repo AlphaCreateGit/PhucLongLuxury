@@ -1486,3 +1486,41 @@ input[type="number"] {
 }
 
 /* css page experience */
+
+/* css page detail */
+.page-detail .title-sec .title-sec__content h1 {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.page-detail .title-sec .title-sec__content .desc {
+  text-align: center;
+  max-width: 670px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+.page-detail .title-sec .title-sec__content .button-list {
+  gap: 16px;
+  margin-bottom: 60px;
+}
+.page-detail .title-sec .title-sec__content .btn-default a {
+  text-decoration: none;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  color: var(--color-secondary);
+  width: 152px;
+  height: 44px;
+  border: 1px solid var(--color-secondary);
+  transition: var(--trans);
+}
+.page-detail .title-sec .title-sec__content .btn-default a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 1px solid var(--color-primary);
+}
