@@ -102,14 +102,17 @@ function scrollHeader() {
 }
 function animateTitleSection(sectionClass, triggerClass, endPointSVG) {
   gsap.registerPlugin(ScrollTrigger);
-  if ($(".title-keyframe").length) {
-    const textSplit = new SplitType(`${sectionClass} h2`, { types: "chars" });
-    const h2Width = document.querySelector(`${sectionClass} h2`).offsetWidth;
-    const svgWidth = document.querySelector(
-      `${sectionClass} .icon-wheel`
-    ).offsetWidth;
 
-    gsap.set(`${sectionClass} .icon-wheel`, {
+  // Ensure the required elements exist
+  const h2Element = document.querySelector(`${sectionClass} h2`);
+  const svgElement = document.querySelector(`${sectionClass} .icon-wheel`);
+
+  if ($(".title-keyframe").length && h2Element && svgElement) {
+    const textSplit = new SplitType(`${sectionClass} h2`, { types: "chars" });
+    const h2Width = h2Element.offsetWidth;
+    const svgWidth = svgElement.offsetWidth;
+
+    gsap.set(svgElement, {
       x: -svgWidth / 2,
       visibility: "visible",
     });
@@ -123,7 +126,7 @@ function animateTitleSection(sectionClass, triggerClass, endPointSVG) {
         // markers: true,
       },
       onUpdate: function () {
-        const progress = gsap.getProperty(`${sectionClass} .icon-wheel`, "x");
+        const progress = gsap.getProperty(svgElement, "x");
         document
           .querySelectorAll(`${sectionClass} h2 .char`)
           .forEach((char) => {
@@ -134,24 +137,25 @@ function animateTitleSection(sectionClass, triggerClass, endPointSVG) {
       },
     });
 
-    tl.to(`${sectionClass} .icon-wheel`, {
-      x: h2Width + svgWidth * `${endPointSVG}`,
+    tl.to(svgElement, {
+      x: h2Width + svgWidth * endPointSVG, // endPointSVG used directly
       rotation: 360,
       duration: 1,
       ease: "power2.inOut",
       onComplete: function () {
-        gsap.to(`${sectionClass} .icon-wheel`, {
+        gsap.to(svgElement, {
           opacity: 0,
           scale: 0.5,
           ease: "power1.inOut",
           onComplete: function () {
-            gsap.set(`${sectionClass} .icon-wheel`, { visibility: "hidden" });
+            gsap.set(svgElement, { visibility: "hidden" });
           },
         });
       },
     });
   }
 }
+
 function animationLineVerticalFull(
   sectionClass,
   triggerClass,
