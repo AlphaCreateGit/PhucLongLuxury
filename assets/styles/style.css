@@ -8,6 +8,7 @@
 
   --header-height: 80px;
   --header-up: calc(var(--header-height) * -1);
+  --header-height-scroll: 60px;
 
   --trans: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -241,6 +242,10 @@ input[type="number"] {
   position: relative;
   background-color: var(--color-white);
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.header__container.scrolled-down {
+  height: var(--header-height-scroll);
 }
 .header__logo {
   position: absolute;
@@ -280,7 +285,7 @@ input[type="number"] {
 }
 .header__scroll {
   position: relative;
-  height: var(--header-height);
+  height: var(--header-height-scroll);
   background-color: var(--color-white);
   padding: 0 40px;
 }
@@ -776,6 +781,11 @@ input[type="number"] {
 .swiper-restaurant .swiper-img {
   width: 100%;
   height: 375px;
+}
+.swiper-restaurant .swiper-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .restaurant__container .restaurant__image {
   position: relative;
@@ -1386,7 +1396,7 @@ input[type="number"] {
   width: 114px;
   height: 85px;
   position: absolute;
-  top: -80px;
+  top: -75px;
   right: 25%;
 }
 .footer__container .box-title {
@@ -1439,9 +1449,10 @@ input[type="number"] {
 }
 .footer__container--bottom {
   background-image: url("../images/bg_footer.png");
+  background-repeat: no-repeat;
   padding-block: 30px;
-  animation: run 30s infinite linear;
-  -webkit-animation: run 30s infinite linear;
+  animation: run 70s infinite linear;
+  -webkit-animation: run 70s infinite linear;
 }
 
 .footer__container--bottom .box {

@@ -88,8 +88,10 @@ function scrollHeader() {
         // self.refresh();
         if (self.direction === -1) {
           $(".header__default").removeClass("scrolled-down");
+          $(".header__container").removeClass("scrolled-down");
         } else {
           $(".header__default").addClass("scrolled-down");
+          $(".header__container").addClass("scrolled-down");
         }
       },
     });
