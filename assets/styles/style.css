@@ -992,7 +992,12 @@ input[type="number"] {
   color: var(--color-secondary);
   margin-bottom: 12px;
 }
-
+.testimonial__content .box .author a {
+  text-decoration: none;
+}
+.testimonial__content .box .author a:hover {
+  color: var(--color-primary);
+}
 .testimonila__item {
   transition: all 1s ease-in-out;
   width: 25%;
