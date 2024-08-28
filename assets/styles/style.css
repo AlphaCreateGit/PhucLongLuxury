@@ -599,7 +599,7 @@ input[type="number"] {
   position: absolute;
   inset: 0;
   z-index: -1;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   visibility: hidden;
 }
@@ -881,6 +881,7 @@ input[type="number"] {
   left: 0;
   background-color: var(--color-sub);
   mask-image: url("../images/stroke_line_ho_full.svg");
+  top: -4px;
 }
 .restaurant__title {
   margin-bottom: 130px;
@@ -889,8 +890,7 @@ input[type="number"] {
   position: absolute;
   left: 40px;
   /* padding: 0 113px; */
-  padding-right: 113px;
-  padding-left: 83px;
+  padding-inline: 83px;
   background-color: var(--color-third);
 }
 .restaurant__title h2 {
@@ -1126,6 +1126,7 @@ input[type="number"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .offer__body {
   position: relative;
@@ -1134,7 +1135,7 @@ input[type="number"] {
   position: absolute;
   inset: 0;
   z-index: -1;
-  transition: var(--trans);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   visibility: hidden;
 }
@@ -1303,7 +1304,7 @@ input[type="number"] {
   background-color: var(--color-secondary);
   mask-image: url("../images/stroke_line_full.svg");
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  /* transition-delay: 0.5s; */
+  transition-delay: 0.5s;
 }
 .newsletter__sec.active .lines__vertical--left {
   height: calc(100% + 1px);
@@ -1317,12 +1318,12 @@ input[type="number"] {
   background-color: var(--color-secondary);
   mask-image: url("../images/stroke_line_ho_full.svg");
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  /* transition-delay: 0.75s; */
+  transition-delay: 0.75s;
 }
 .newsletter__sec.active .lines__horizontal--top {
   width: calc(100% - 80px);
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  /* transition-delay: 0.75s; */
+  transition-delay: 0.75s;
 }
 .newsletter__sec .lines__horizontal--bottom {
   position: absolute;
@@ -1333,7 +1334,7 @@ input[type="number"] {
   background-color: var(--color-secondary);
   mask-image: url("../images/stroke_line_ho_full.svg");
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  /* transition-delay: 0.25s; */
+  transition-delay: 0.25s;
 }
 .newsletter__sec.active .lines__horizontal--bottom {
   width: calc(100% - 80px);
