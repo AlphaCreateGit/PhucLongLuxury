@@ -970,7 +970,7 @@ input[type="number"] {
   transform: translateX(-25px);
 }
 .testimonial__body {
-  padding-top: 64px;
+  padding-top: 112px;
 }
 .testimonial__content {
   display: flex;
@@ -1001,7 +1001,7 @@ input[type="number"] {
   font-family: var(--font-primary);
 }
 .testimonila__item {
-  transition: all 2s ease-in-out;
+  transition: all 1s ease-in-out;
   width: 25%;
 }
 .testimonila__item .box-gif {
@@ -1737,3 +1737,16 @@ input[type="number"] {
 .facilities__title h2 {
   transform: translateX(-25px);
 }
+.wheel-left {
+  animation: spin 5s infinite linear;
+  width: 48px;
+  height: 48px;
+}
+/* @keyframes spin {
+  from {
+    transform: ;
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
