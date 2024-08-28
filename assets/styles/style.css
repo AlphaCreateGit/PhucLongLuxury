@@ -303,6 +303,9 @@ input[type="number"] {
   text-align: left;
   text-decoration: none;
 }
+.header__menu ul li a:hover {
+  color: var(--color-secondary);
+}
 /* end css header */
 .spacing {
   height: 50vh;
@@ -1366,6 +1369,9 @@ input[type="number"] {
   border-radius: 50%;
   gap: 4px;
   transition: all 0.5s ease-in-out;
+}
+.footer__container .on-top .icon svg {
+  transform: translateY(-2px);
 }
 .footer__container .on-top .icon:hover {
   border: 1px solid var(--color-sub);
