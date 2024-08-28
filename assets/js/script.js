@@ -5,10 +5,12 @@ $(document).ready(function () {
   animateTitleSection(".offer-sec__title", ".offer-sec__title", 1.9);
   animateTitleSection(".cruise__title", ".cruise__title", 1.1);
   animateTitleSection(".testimonial__title", ".testimonial__title", 1.1);
+  animateTitleSection(".facilities__container", ".facilities__title", 1.1);
   animateTitleSection(".restaurant__title", ".restaurant__title", 1.5);
   animationLineVertical(".line-cap-hotel", ".line-hotels", "100%", 0.1, 75);
 
   swiperHotels();
+  swiperHotelsDetail();
   swiperRestaurant();
   swiperOffer();
   cruise();
@@ -252,6 +254,49 @@ function swiperHotels() {
     }
   }
 }
+function swiperHotelsDetail() {
+  if ($(".hotels__slider .swiper-tab-detail").length) {
+    if ($(".swiper-tab-detail").length && $(".nav-link.active").length) {
+      const swiper = new Swiper(".swiper-tab-detail", {
+        // Optional parameters
+        direction: "horizontal",
+        grabCursor: true,
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+        centeredSlides: false,
+        loop: true,
+        spaceBetween: 40,
+        mousewheel: {
+          forceToAxis: true,
+        },
+        pagination: {
+          el: ".restaurant__image .swiper-pagination",
+          type: "progressbar",
+        },
+        navigation: {
+          nextEl: ".hotels__slider  .swiper-button-next",
+          prevEl: ".hotels__slider  .swiper-button-prev",
+        },
+        speed: 700,
+        slideActiveClass: "is-active",
+        slideDuplicateActiveClass: "is-active",
+      });
+
+      function updateSlideCount() {
+        const activeSlideCount = $(
+          ".tab-pane.show .swiper-tab-detail .swiper-slide"
+        ).length;
+        $(".hotels-sec .swiper-arrows").toggleClass(
+          "d-none",
+          activeSlideCount <= 2
+        );
+      }
+
+      updateSlideCount();
+      $('button[data-bs-toggle="tab"]').on("shown.bs.tab", updateSlideCount);
+    }
+  }
+}
 
 function swiperRestaurant() {
   // swiper facility img
@@ -266,6 +311,10 @@ function swiperRestaurant() {
       simulateTouch: false,
       mousewheelControl: false,
       keyboardControl: false,
+      pagination: {
+        el: ".restaurant__image .swiper-pagination",
+        type: "progressbar",
+      },
       on: {
         progress: function (swiper) {
           swiper.slides.forEach(function (slide) {
@@ -305,6 +354,7 @@ function swiperRestaurant() {
       simulateTouch: false,
       mousewheelControl: false,
       keyboardControl: false,
+      loop: true,
       navigation: {
         nextEl: ".swiper-res-content .swiper-button-next",
         prevEl: ".swiper-res-content .swiper-button-prev",
