@@ -117,7 +117,7 @@ ul li {
 }
 .h3-italic {
   font-family: var(--font-primary);
-  font-weight: 24px;
+  font-size: 24px;
   line-height: 40px;
   font-weight: 400;
   font-style: italic;
@@ -1214,6 +1214,7 @@ input[type="number"] {
   left: 50%;
   transform: translateX(-50%);
   bottom: -60px;
+  background-color: rgba(93, 39, 13, 0.2);
 }
 .offer-sec .swiper-pagination-progressbar-fill {
   background-color: var(--color-secondary);
@@ -1238,6 +1239,9 @@ input[type="number"] {
   color: var(--color-secondary);
   max-width: 260px;
 }
+.newsletter__body .form {
+  padding-left: 50px;
+}
 .newsletter__body .form .content,
 .newsletter__body .form p {
   font-size: 24px;
@@ -1249,6 +1253,9 @@ input[type="number"] {
 .newsletter__body .form .content input {
   border: 0;
 }
+.newsletter__body .form .content input[type="number"] {
+  width: 165px;
+}
 .newsletter__body .form .content input::placeholder {
   font-size: 24px;
   font-weight: 400;
@@ -1259,7 +1266,7 @@ input[type="number"] {
   font-style: italic;
 }
 .newsletter__body .form .content .name {
-  width: 120px;
+  width: 175px;
 }
 .btn__submit button {
   display: flex;
@@ -1420,6 +1427,9 @@ input[type="number"] {
 }
 .footer__container .box-office .gmail {
   margin-bottom: 12px;
+}
+.footer__container .box-about {
+  padding-left: 50px;
 }
 .footer__container .box-about .about-list ul {
   display: grid;
