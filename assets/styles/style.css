@@ -746,7 +746,7 @@ input[type="number"] {
   background-color: var(--color-third);
   position: relative;
   padding-top: 65px;
-  padding-bottom: 65px;
+  padding-bottom: 90px;
 }
 .restaurant__container .swiper-button-prev,
 .restaurant__container .swiper-button-next {
@@ -897,7 +897,7 @@ input[type="number"] {
   transform: translateX(-50px);
 }
 .restaurant__body {
-  margin-top: 194px;
+  margin-top: 142px;
 }
 /* end css restaurant */
 /* css testimonial */
@@ -1127,6 +1127,7 @@ input[type="number"] {
   height: 100%;
   object-fit: cover;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  object-position: center;
 }
 .offer__body {
   position: relative;
@@ -1149,7 +1150,7 @@ input[type="number"] {
   color: var(--color-primary);
 }
 .offer-sec .box:hover .img-hover {
-  z-index: 0;
+  z-index: 2;
   opacity: 1;
   visibility: visible;
 }
