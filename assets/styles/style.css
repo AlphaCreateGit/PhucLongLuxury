@@ -222,6 +222,11 @@ input[type="number"] {
   right: 0;
   z-index: 999;
 }
+.header__bg {
+  position: absolute;
+  top: 70px;
+  pointer-events: none;
+}
 .header__hamburger .button-burger {
   width: 40px;
   height: 12px;
@@ -333,26 +338,30 @@ input[type="number"] {
   display: flex;
   justify-content: center;
   gap: 24px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.2s ease;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: all 0.5s ease;
 }
 .header__menu ul li.menu-item-has-children > a {
   position: relative;
 }
 .header__menu ul li.menu-item-has-children:hover > .sub-menu {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.header__menu ul li.menu-item-has-children:hover > a::before {
   opacity: 1;
   visibility: visible;
 }
 .header__menu ul li.menu-item-has-children > a::before {
   content: "";
   position: absolute;
-  bottom: -80px;
-  left: 0;
-  background-color: red;
-  height: 80px;
-  width: 120%;
+  bottom: -40px;
+  left: -50%;
+  height: 40px;
+  width: 200%;
   z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
 }
 
 .header__center {

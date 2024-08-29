@@ -18,7 +18,34 @@ $(document).ready(function () {
   scrollVerticalFull();
   scrollHorizontal();
   animationLine();
+  animtionFadeIn();
 });
+
+function animtionFadeIn() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".data-fade-in").forEach((element, i) => {
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 95%",
+          end: "bottom 95%",
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "sine.out",
+        stagger: 0.1,
+      }
+    );
+  });
+}
 function scrollVerticalFull() {
   gsap.registerPlugin(ScrollTrigger);
   var lineVertical = $(".lines-vertical");
@@ -280,7 +307,7 @@ function swiperHotelsDetail() {
           forceToAxis: true,
         },
         pagination: {
-          el: ".restaurant__image .swiper-pagination",
+          el: ".accommodation .swiper-pagination",
           type: "progressbar",
         },
         navigation: {

@@ -24,46 +24,62 @@
   <body>
     <!-- start header -->
     <header class="header">
-      <div class="header__bg">
-        <img src="./assets/images/img_bg_capcap_white.png" alt="" />
-      </div>
       <div class="container-fluid p-0">
         <div class="header__container">
           <div
             class="header__default d-flex align-items-center justify-content-between h-100"
           >
-            <div class="header__hamburger">
-              <div class="button-burger">
-                <div class="button-burger__line"></div>
-                <div class="button-burger__line"></div>
-                <div class="button-burger__line"></div>
-              </div>
-            </div>
-            <div class="header__logo">
-              <a href="">
-                <img src="./assets/images/logo_default.svg" alt="logo" />
-              </a>
-            </div>
             <div class="header__right d-flex align-items-center">
               <div class="header__lang d-flex align-items-center">
                 <div class="value-select b1 color-secondary">English</div>
                 <img src="./assets/images/ic_arrow_down.svg" alt="" />
               </div>
             </div>
-          </div>
-          <div class="header__active">
-            <div class="header__scroll d-flex align-items-center">
-              <div class="header__scroll-logo">
-                <a href="/">
-                  <img src="./assets/images/logo_default.svg" alt="" />
-                </a>
-              </div>
-              <div class="header__menu d-flex justify-content-center">
+            <div
+              class="header__center d-flex align-items-center justify-content-center"
+            >
+              <div class="header__menu left d-flex justify-content-center">
                 <ul class="d-flex align-items-center">
-                  <li>
+                  <li class="menu-item-has-children">
                     <a href="./hotels.html" class="b1 color-secondary"
-                      >Hotels</a
-                    >
+                      >Hotels
+                      <div class="icon">
+                        <img
+                          src="./assets/images/ic_dropdown_small.svg"
+                          alt=""
+                        />
+                      </div>
+                    </a>
+                    <ul class="sub-menu">
+                      <li>
+                        <a
+                          href=""
+                          class="b1 color-secondary a-line-hover-secondary"
+                          >Grand Gold Hotel Danang</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          class="b1 color-secondary a-line-hover-secondary"
+                          >Grand Gold Hotel Danang</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          class="b1 color-secondary a-line-hover-secondary"
+                          >Le Hoang Beach Hotel</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          class="b1 color-secondary a-line-hover-secondary"
+                          >Villas Bao Loc</a
+                        >
+                      </li>
+                    </ul>
                   </li>
                   <li>
                     <a href="" class="b1 color-secondary">Star Cruise</a>
@@ -71,11 +87,34 @@
                   <li>
                     <a href="" class="b1 color-secondary">Experience</a>
                   </li>
-                  <li>
-                    <a href="" class="b1 color-secondary">Offers</a>
+                </ul>
+              </div>
+              <div class="header__scroll-logo">
+                <a href="/">
+                  <img src="./assets/images/logo_default.svg" alt="" />
+                </a>
+              </div>
+              <div class="header__menu right d-flex justify-content-center">
+                <ul class="d-flex align-items-center">
+                  <li class="menu-item-has-children">
+                    <a href="" class="b1 color-secondary"
+                      >Offers
+                      <div class="icon">
+                        <img
+                          src="./assets/images/ic_dropdown_small.svg"
+                          alt=""
+                        /></div
+                    ></a>
                   </li>
-                  <li>
-                    <a href="" class="b1 color-secondary">Gallery</a>
+                  <li class="menu-item-has-children">
+                    <a href="" class="b1 color-secondary"
+                      >Gallery
+                      <div class="icon">
+                        <img
+                          src="./assets/images/ic_dropdown_small.svg"
+                          alt=""
+                        /></div
+                    ></a>
                   </li>
                   <li>
                     <a href="" class="b1 color-secondary">Membership</a>
@@ -83,7 +122,13 @@
                 </ul>
               </div>
             </div>
+            <div class="btn-book">
+              <a href="">Book Now</a>
+            </div>
           </div>
+        </div>
+        <div class="header__bg">
+          <img src="./assets/images/img_bg_capcap_white.png" alt="" />
         </div>
       </div>
     </header>
