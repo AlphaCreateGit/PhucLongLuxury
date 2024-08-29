@@ -2032,6 +2032,10 @@ input[type="number"] {
 .page-detail .testimonial-sec {
   padding-top: 0;
 }
+.hotel-detail .offer-sec__title {
+  right: unset;
+  left: 44px;
+}
 
 /* page star cruise */
 .page-template .activities-sec__title {
@@ -2120,4 +2124,124 @@ input[type="number"] {
 .page-star-cruise .offer-sec .lines__vertical {
   right: unset;
   left: 40px;
+}
+
+.gallery-sec__container {
+  position: relative;
+  padding-bottom: 180px;
+}
+.gallery-sec__container .lines__horizontal {
+  position: absolute;
+  right: 40px;
+  top: 0;
+  height: 4px;
+  width: calc(100% - 80px);
+}
+.gallery-sec__container .lines__horizontal .lines-horizontal {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  mask-image: url(../images/stroke_line_ho_full.svg);
+  position: absolute;
+  right: 0;
+}
+.gallery-sec__container .gallery-sec__title {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../images/bg_title.png");
+  padding: 0 113px 0 73px;
+}
+.gallery-sec__container .lines__vertical {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-secondary);
+  mask-image: url(../images/stroke_line_full.svg);
+}
+.gallery-sec__container .gallery-tab .gallery-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px 80px;
+}
+.gallery-sec__container
+  .gallery-tab
+  .gallery-list
+  .gallery-item:nth-child(2n + 2) {
+  margin-top: 50px;
+}
+.gallery-sec__container .gallery-tab .gallery-list .gallery-item {
+  height: 305px;
+  width: 100%;
+}
+.gallery-sec__container .gallery-tab .gallery-list .gallery-item .box {
+  position: relative;
+  height: 100%;
+}
+.gallery-sec__container .gallery-tab .gallery-list .gallery-item .box .img {
+  width: 100%;
+  height: 100%;
+}
+.gallery-sec__container .gallery-tab .gallery-list .gallery-item .box .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-sec__container .gallery-tab .gallery-list .gallery-item .box .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bgc);
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 24px;
+}
+.gallery-sec__container
+  .gallery-tab
+  .gallery-list
+  .gallery-item
+  .box:hover
+  .overlay {
+  transform: rotate(-3deg) translate(-30px, 50px);
+}
+
+/* page gallery */
+.page-gallery .gallery-sec__container .gallery-sec__title {
+  position: absolute;
+  right: 44px;
+  top: 0;
+  transform: translate(0, -50%);
+  text-align: center;
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  padding-right: 109px;
+  padding-left: 63px;
+  z-index: 4;
+  background-image: url(../images/bg_title.png);
+  left: unset;
+}
+.page-gallery .gallery-sec__container .lines__vertical {
+  left: unset;
+  right: 40px;
+}
+.page-gallery .gallery-sec__container .lines__horizontal .lines-horizontal {
+  left: 0;
+}
+.gallery-sec__container .lines__horizontal {
+  position: absolute;
+  height: 4px;
+  width: calc(50% - 44px);
+  left: 50%;
+  top: 0;
+  transform: translateY(-100%);
 }

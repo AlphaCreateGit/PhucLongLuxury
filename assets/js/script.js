@@ -8,6 +8,7 @@ $(document).ready(function () {
   animateTitleSection(".cruise__title", ".cruise__title");
   animateTitleSection(".testimonial__title", ".testimonial__title");
   animateTitleSection(".facilities__container", ".facilities__title");
+  animateTitleSection(".gallery-sec__title", ".gallery-sec__title");
   animateTitleSection(".restaurant__title", ".restaurant__title", 50);
   animationLineVertical(".line-cap-hotel", ".line-hotels", "100%", 0.1, 75);
 
@@ -485,7 +486,7 @@ function swiperOffer() {
       slidesPerView: 3,
       spaceBetween: 40,
       pagination: {
-        el: ".offer__container .swiper-pagination",
+        el: ".offer-sec .swiper-pagination",
         type: "progressbar",
       },
       navigation: {
