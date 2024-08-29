@@ -3,10 +3,11 @@ $(document).ready(function () {
   // scrollHeader();
   animateTitleSection(".title-animation", ".hotels-sec__title");
   animateTitleSection(".offer-sec__title", ".offer-sec__title");
+  animateTitleSection(".activities-sec__title", ".activities-sec__title");
   animateTitleSection(".cruise__title", ".cruise__title");
   animateTitleSection(".testimonial__title", ".testimonial__title");
   animateTitleSection(".facilities__container", ".facilities__title");
-  animateTitleSection(".restaurant__title", ".restaurant__title", 100);
+  animateTitleSection(".restaurant__title", ".restaurant__title", 50);
   animationLineVertical(".line-cap-hotel", ".line-hotels", "100%", 0.1, 75);
 
   swiperHotels();
@@ -19,6 +20,7 @@ $(document).ready(function () {
   scrollHorizontal();
   animationLine();
   animtionFadeIn();
+  swiperActivites();
 });
 
 function animtionFadeIn() {
@@ -398,6 +400,76 @@ function swiperRestaurant() {
       },
       thumbs: {
         swiper: swiperResImg,
+      },
+      fadeEffect: {
+        crossFade: true,
+      },
+    });
+  }
+}
+function swiperActivites() {
+  // swiper facility img
+  var interleaveOffsetAct = 0.9;
+  if ($(".act-img").length) {
+    var swiperActImg = new Swiper(".act-img", {
+      loop: true,
+      speed: 1200,
+      grabCursor: false,
+      watchSlidesProgress: true,
+      watchSlidesProgress: true,
+      simulateTouch: false,
+      mousewheelControl: false,
+      keyboardControl: false,
+      pagination: {
+        el: ".activities-sec .swiper-pagination",
+        type: "progressbar",
+      },
+      on: {
+        progress: function (swiper) {
+          swiper.slides.forEach(function (slide) {
+            var slideProgress = slide.progress || 0;
+            var innerOffset = swiper.width * interleaveOffsetAct;
+            var innerTranslate = slideProgress * innerOffset;
+            // Kiểm tra nếu innerTranslate không phải là NaN
+            if (!isNaN(innerTranslate)) {
+              var slideInner = slide.querySelector(".swiper-img-act");
+              if (slideInner) {
+                slideInner.style.transform =
+                  "translate3d(" + innerTranslate + "px, 0, 0)";
+              }
+            }
+          });
+        },
+        touchStart: function (swiper) {
+          swiper.slides.forEach(function (slide) {
+            slide.style.transition = "";
+          });
+        },
+        setTransition: function (swiper, speed) {
+          var easing = "cubic-bezier(0.25, 0.1, 0.25, 1)";
+          swiper.slides.forEach(function (slide) {
+            slide.style.transition = speed + "ms " + easing;
+            var slideInner = slide.querySelector(".swiper-img-act");
+            if (slideInner) {
+              slideInner.style.transition = speed + "ms " + easing;
+            }
+          });
+        },
+      },
+    });
+
+    var swiperActContent = new Swiper(".act-content", {
+      effect: "fade",
+      simulateTouch: false,
+      mousewheelControl: false,
+      keyboardControl: false,
+      loop: true,
+      navigation: {
+        nextEl: ".activities-sec .swiper-button-next",
+        prevEl: ".activities-sec .swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiperActImg,
       },
       fadeEffect: {
         crossFade: true,
