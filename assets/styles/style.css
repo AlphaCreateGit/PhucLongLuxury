@@ -187,6 +187,9 @@ input[type="number"] {
   position: relative;
   display: inline-block;
 }
+.a-line-hover-secondary.current-menu-item::before {
+  width: 100%;
+}
 .a-line-hover-secondary::before {
   content: "";
   position: absolute;
@@ -241,9 +244,9 @@ input[type="number"] {
   width: 100%;
   position: relative;
   background-color: var(--color-white);
-  overflow: hidden;
   transition: all 0.5s ease-in-out;
 }
+
 .header__container.scrolled-down {
   height: var(--header-height-scroll);
 }
@@ -252,12 +255,6 @@ input[type="number"] {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-.header__bg {
-  position: absolute;
-  bottom: -30px;
-  left: 0;
-  right: 0;
 }
 
 .header__right {
@@ -270,6 +267,34 @@ input[type="number"] {
 .header__default {
   transform: translateY(0);
   transition: all 0.5s ease-in-out;
+  position: relative;
+}
+.header__default .btn-book a {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  position: relative;
+  transition: var(--trans);
+  text-decoration: none;
+  color: var(--color-primary);
+}
+.header__default .btn-book a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-sub);
+  transition: var(--trans);
+}
+.header__default .btn-book a:hover::before {
+  width: 100%;
+}
+.header__default .btn-book a:hover {
+  color: var(--color-sub);
 }
 .header__default.scrolled-down {
   transform: translateY(var(--header-up));
@@ -288,16 +313,54 @@ input[type="number"] {
   height: var(--header-height-scroll);
   background-color: var(--color-white);
   padding: 0 40px;
+  gap: 32px;
 }
-.header__menu {
+.header__menu ul li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header__menu ul li .sub-menu {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: -40px;
+  width: calc(100% + 80px);
+  background-color: #f8f4e9;
+  top: 80px;
+  z-index: 99;
+  padding: 32px;
+}
+.header__menu ul li.menu-item-has-children .sub-menu {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+.header__menu ul li.menu-item-has-children > a {
+  position: relative;
+}
+.header__menu ul li.menu-item-has-children:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+.header__menu ul li.menu-item-has-children > a::before {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  background-color: red;
+  height: 80px;
+  width: 120%;
+  z-index: 999;
+}
+
+.header__center {
+  gap: 32px;
 }
 .header__menu ul {
   list-style-type: none;
-  gap: 32px;
+  gap: 24px;
 }
 .header__menu ul li a {
   text-align: left;
@@ -345,11 +408,12 @@ input[type="number"] {
   background-image: url("../images/booking_bg.png");
   background-size: cover;
   width: 946px;
-  height: 100px;
+  height: 92px;
   z-index: 99;
 }
 .banner-hero__booking form {
   gap: 24px;
+  transform: translateY(4px);
 }
 .banner-hero__booking form .date {
   gap: 24px;
@@ -782,7 +846,7 @@ input[type="number"] {
   overflow: hidden;
 }
 .swiper-restaurant .swiper-img {
-  width: 100%;
+  width: 670px;
   height: 375px;
 }
 .swiper-restaurant .swiper-img img {
@@ -792,6 +856,7 @@ input[type="number"] {
 }
 .restaurant__container .restaurant__image {
   position: relative;
+  width: 670px;
 }
 .swiper-res-content .swiper-box {
   max-width: 270px;

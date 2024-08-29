@@ -1,6 +1,6 @@
 $(document).ready(function () {
   console.log("ready!");
-  scrollHeader();
+  // scrollHeader();
   animateTitleSection(".title-animation", ".hotels-sec__title");
   animateTitleSection(".offer-sec__title", ".offer-sec__title");
   animateTitleSection(".cruise__title", ".cruise__title");
