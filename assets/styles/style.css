@@ -2088,3 +2088,36 @@ input[type="number"] {
   left: unset;
   right: 40px;
 } */
+.page-star-cruise .cruise__container .floor-plane__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateY(-50%);
+  position: absolute;
+  right: 44px;
+
+  padding-left: 73px;
+  padding-right: 113px;
+  background-image: url("../images/bg_body.png");
+  z-index: 4;
+}
+
+.page-star-cruise .activities-sec .lines__horizontal {
+  left: unset;
+  right: 40px;
+}
+.page-star-cruise .activities-sec .lines__horizontal .lines-horizontal {
+  right: 0;
+  left: unset;
+}
+
+.page-star-cruise .offer-sec__title {
+  right: unset;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.page-star-cruise .offer-sec .lines__vertical {
+  right: unset;
+  left: 40px;
+}

@@ -4,6 +4,7 @@ $(document).ready(function () {
   animateTitleSection(".title-animation", ".hotels-sec__title");
   animateTitleSection(".offer-sec__title", ".offer-sec__title");
   animateTitleSection(".activities-sec__title", ".activities-sec__title");
+  animateTitleSection(".floor-plane__title", ".floor-plane__title");
   animateTitleSection(".cruise__title", ".cruise__title");
   animateTitleSection(".testimonial__title", ".testimonial__title");
   animateTitleSection(".facilities__container", ".facilities__title");
