@@ -2129,12 +2129,13 @@ input[type="number"] {
   position: relative;
   padding-bottom: 180px;
 }
-.gallery-sec__container .lines__horizontal {
+.hotel-detail .gallery-sec__container .lines__horizontal {
   position: absolute;
   right: 40px;
   top: 0;
   height: 4px;
   width: calc(100% - 80px);
+  left: unset;
 }
 .gallery-sec__container .lines__horizontal .lines-horizontal {
   width: 100%;
@@ -2243,4 +2244,39 @@ input[type="number"] {
   left: 50%;
   top: 0;
   transform: translateY(-100%);
+}
+/* experience-detail */
+.experience-detail .spacing-70 {
+  margin-top: 0;
+}
+.experience-detail .hotels-sec__container {
+  padding-bottom: 112px;
+}
+.experience-content .content .tag {
+  margin-bottom: 12px;
+}
+.experience-content .content .title {
+  margin-bottom: 40px;
+}
+.experience-content .content .the-excerpt {
+  margin-bottom: 24px;
+}
+.experience-content .content .detail-content p {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 40px;
+  color: var(--color-secondary);
+}
+.experience-content .content .detail-content h5 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-style: italic;
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 12px;
+  color: var(--color-secondary);
 }
