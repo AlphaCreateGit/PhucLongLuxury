@@ -447,7 +447,7 @@ input[type="number"] {
 }
 .banner-hero__booking form {
   gap: 24px;
-  transform: translateY(4px);
+  transform: translateY(7px);
 }
 .banner-hero__booking form .date {
   gap: 24px;
@@ -481,6 +481,7 @@ input[type="number"] {
   border: 1px solid var(--color-secondary);
   color: var(--color-secondary);
   transition: var(--trans);
+  transform: translateY(-3px);
 }
 .banner-hero__booking form button:hover {
   color: var(--color-white);
@@ -2206,8 +2207,8 @@ input[type="number"] {
   margin-top: 50px;
 }
 .gallery-sec__container .gallery-tab .gallery-list .gallery-item {
-  height: 305px;
   width: 100%;
+  height: 317px;
 }
 .gallery-sec__container .gallery-tab .gallery-list .gallery-item .box {
   position: relative;
@@ -2228,13 +2229,23 @@ input[type="number"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--bgc);
+  background-color: var(--color-secondary);
   transition: all 0.5s ease-in-out;
   z-index: -1;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
   padding: 24px;
+  mask-image: url("../images/bg_gallery_cap.svg");
+}
+.gallery-sec__container
+  .gallery-tab
+  .gallery-list
+  .gallery-item
+  .box
+  .overlay
+  p {
+  transform: rotate(3deg);
 }
 .gallery-sec__container
   .gallery-tab
@@ -2326,4 +2337,81 @@ input[type="number"] {
 }
 .experience-detail .offer-sec__title {
   right: 44px;
+}
+
+/* offer detail */
+.swiper-offer-detail .swiper-slide {
+  overflow: hidden;
+}
+
+.offer-detail__image {
+  position: relative;
+}
+.offer-detail__image .swiper-pagination {
+  width: 350px;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -40px;
+  top: unset;
+  background-color: #5d270d33;
+}
+.offer-detail__image .swiper-pagination .swiper-pagination-progressbar-fill {
+  background-color: var(--color-secondary);
+}
+
+.offer-detail .offer-content .hotels-sec__container {
+  padding-top: 80px;
+  padding-bottom: 152px;
+}
+.offer-detail .offer-detail__content .box {
+  padding-left: 64px;
+}
+.offer-detail .offer-detail__content .box .tag {
+  margin-bottom: 12px;
+}
+.offer-detail .offer-detail__content .box .title {
+  margin-bottom: 40px;
+}
+.offer-detail .offer-detail__content .box ul li p {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-secondary);
+}
+.offer-detail .offer-detail__content .box .list {
+  margin-bottom: 40px;
+}
+.offer-detail .offer-detail__content .box .button-list {
+  gap: 16px;
+}
+.offer-detail .offer-detail__content .box .button-list .button a {
+  width: 134px;
+  height: 44px;
+  border: 1px solid var(--color-secondary);
+  text-decoration: none;
+  transition: var(--trans);
+}
+.offer-detail .offer-detail__content .box .button-list .button a:hover {
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.offer-detail .offer-sec .lines__vertical {
+  left: 40px;
+  right: unset;
+}
+.offer-detail .offer-sec__title {
+  right: 44px;
+}
+.offer-detail .offer-sec .lines__horizontal {
+  left: unset;
+  right: 40px;
+}
+.offer-detail .offer-sec .lines__horizontal .lines-horizontal {
+  right: 0;
+  left: unset;
 }

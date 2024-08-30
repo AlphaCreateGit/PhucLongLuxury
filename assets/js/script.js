@@ -23,6 +23,7 @@ $(document).ready(function () {
   animationLine();
   animtionFadeIn();
   swiperActivites();
+  swiperOfferDetail();
 });
 
 function animtionFadeIn() {
@@ -452,6 +453,76 @@ function swiperActivites() {
           swiper.slides.forEach(function (slide) {
             slide.style.transition = speed + "ms " + easing;
             var slideInner = slide.querySelector(".swiper-img-act");
+            if (slideInner) {
+              slideInner.style.transition = speed + "ms " + easing;
+            }
+          });
+        },
+      },
+    });
+
+    var swiperActContent = new Swiper(".act-content", {
+      effect: "fade",
+      simulateTouch: false,
+      mousewheelControl: false,
+      keyboardControl: false,
+      loop: true,
+      navigation: {
+        nextEl: ".activities-sec .swiper-button-next",
+        prevEl: ".activities-sec .swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiperActImg,
+      },
+      fadeEffect: {
+        crossFade: true,
+      },
+    });
+  }
+}
+
+function swiperOfferDetail() {
+  // swiper facility img
+  var interOffset = 0.9;
+  if ($(".swiper-offer-detail").length) {
+    var swiperActImg = new Swiper(".swiper-offer-detail", {
+      loop: true,
+      speed: 1200,
+      watchSlidesProgress: true,
+      watchSlidesProgress: true,
+      // simulateTouch: false,
+      mousewheelControl: false,
+      keyboardControl: false,
+      pagination: {
+        el: ".offer-content .swiper-pagination",
+        type: "progressbar",
+      },
+      on: {
+        progress: function (swiper) {
+          swiper.slides.forEach(function (slide) {
+            var slideProgress = slide.progress || 0;
+            var innerOffset = swiper.width * interOffset;
+            var innerTranslate = slideProgress * innerOffset;
+            // Kiểm tra nếu innerTranslate không phải là NaN
+            if (!isNaN(innerTranslate)) {
+              var slideInner = slide.querySelector(".swiper-img-offer");
+              if (slideInner) {
+                slideInner.style.transform =
+                  "translate3d(" + innerTranslate + "px, 0, 0)";
+              }
+            }
+          });
+        },
+        touchStart: function (swiper) {
+          swiper.slides.forEach(function (slide) {
+            slide.style.transition = "";
+          });
+        },
+        setTransition: function (swiper, speed) {
+          var easing = "cubic-bezier(0.25, 0.1, 0.25, 1)";
+          swiper.slides.forEach(function (slide) {
+            slide.style.transition = speed + "ms " + easing;
+            var slideInner = slide.querySelector(".swiper-img-offer");
             if (slideInner) {
               slideInner.style.transition = speed + "ms " + easing;
             }
