@@ -2280,3 +2280,19 @@ input[type="number"] {
   margin-top: 12px;
   color: var(--color-secondary);
 }
+
+.experience-detail .offer-sec .lines__horizontal {
+  right: 0px;
+  left: unset;
+}
+.experience-detail .offer-sec .lines__horizontal .lines-horizontal {
+  left: unset;
+  right: 40px;
+}
+.experience-detail .offer-sec .lines__vertical {
+  right: unset;
+  left: 40px;
+}
+.experience-detail .offer-sec__title {
+  right: 44px;
+}
