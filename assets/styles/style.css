@@ -281,7 +281,6 @@ input[type="number"] {
   line-height: 24px;
   text-align: center;
   position: relative;
-  transition: var(--trans);
   text-decoration: none;
   color: var(--color-primary);
 }
@@ -519,7 +518,7 @@ input[type="number"] {
   background-color: var(--color-secondary);
   width: 100%;
   height: 100%;
-  mask-image: url("../images/stroke_line_horizontal.svg");
+  mask-image: url("../images/stroke_line_ho_full.svg");
 }
 .hotels-sec__title {
   position: absolute;
@@ -1387,7 +1386,7 @@ input[type="number"] {
   transition-delay: 0.5s;
 }
 .newsletter__sec.active .lines__vertical--left {
-  height: calc(100% + 1px);
+  height: 100%;
 }
 .newsletter__sec .lines__horizontal--top {
   position: absolute;
