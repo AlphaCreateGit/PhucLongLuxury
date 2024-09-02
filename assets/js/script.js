@@ -10,7 +10,7 @@ $(document).ready(function () {
   animateTitleSection(".facilities__container", ".facilities__title");
   animateTitleSection(".gallery-sec__title", ".gallery-sec__title");
   animateTitleSection(".restaurant__title", ".restaurant__title", 50);
-  animationLineVertical(".line-cap-hotel", ".line-hotels", "100%", 0.1, 75);
+  animationLineVertical(".line-cap-hotel", ".line-hotels", "100%", 0.1, 72);
 
   swiperHotels();
   swiperHotelsDetail();
@@ -66,7 +66,7 @@ function scrollVerticalFull() {
           trigger: element,
           start: "top 60%",
           end: `+=${elementHeight - 100}`,
-          scrub: 2,
+          scrub: true,
           onComplete: () => {
             scrollHorizontal(); // Trigger horizontal scroll after vertical is complete
           },
@@ -604,10 +604,10 @@ function animationLine() {
     gsap.utils.toArray(".animation-line").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 70%",
-        end: "bottom 70%",
+        start: "top 75%",
+        end: "bottom 75%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
-        // onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
+        onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
       });
     });
   }

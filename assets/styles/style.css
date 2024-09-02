@@ -1024,7 +1024,7 @@ input[type="number"] {
   background-color: var(--color-secondary);
   mask-image: url("../images/stroke_line_ver_full.svg");
   transform-origin: bottom top;
-  transition: all 0.5s;
+  transition: all 0.1s;
   z-index: 3;
 }
 .testimonial__container.active .line__vertical--top-right {
