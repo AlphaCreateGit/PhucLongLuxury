@@ -39,8 +39,8 @@ function animtionFadeIn() {
       {
         scrollTrigger: {
           trigger: element,
-          start: "top 95%",
-          end: "bottom 95%",
+          start: "top 70%",
+          end: "bottom 70%",
         },
         opacity: 1,
         y: 0,
@@ -64,7 +64,7 @@ function scrollVerticalFull() {
         height: "100%",
         scrollTrigger: {
           trigger: element,
-          start: "top 50%",
+          start: "top 60%",
           end: `+=${elementHeight - 100}`,
           scrub: 2,
           onComplete: () => {
@@ -87,7 +87,7 @@ function scrollHorizontal() {
         width: "100%",
         scrollTrigger: {
           trigger: element,
-          start: "top 60%", // Adjusted start position
+          start: "top 70%", // Adjusted start position
           end: "+=64",
           scrub: true, // Enable scrub for a smooth animation
           // markers: true,
