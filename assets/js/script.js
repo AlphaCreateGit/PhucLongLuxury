@@ -65,10 +65,10 @@ function scrollVerticalFull() {
         scrollTrigger: {
           trigger: element,
           start: "top 60%",
-          end: `+=${elementHeight - 100}`,
+          end: `+=${elementHeight - 64}`,
           scrub: true,
           onComplete: () => {
-            scrollHorizontal(); // Trigger horizontal scroll after vertical is complete
+            scrollHorizontal();
           },
         },
       }
@@ -87,10 +87,9 @@ function scrollHorizontal() {
         width: "100%",
         scrollTrigger: {
           trigger: element,
-          start: "top 70%", // Adjusted start position
+          start: "top 70%",
           end: "+=64",
-          scrub: true, // Enable scrub for a smooth animation
-          // markers: true,
+          scrub: true,
         },
       }
     );
