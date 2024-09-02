@@ -988,7 +988,7 @@ input[type="number"] {
   left: 40px;
   /* padding: 0 113px; */
   padding-left: 83px;
-  padding-right: 25px;
+  padding-right: 45px;
   background-color: var(--color-third);
 }
 .restaurant__title h2 {
@@ -2169,10 +2169,22 @@ input[type="number"] {
   left: unset;
 }
 
-.page-star-cruise .offer-sec__title {
-  right: unset;
+.page-star-cruise .cruise-iti__title {
+  position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  background-image: url("../images/bg_title.png");
+  padding-right: 113px;
+  padding-left: 83px;
+}
+
+.cruise-iti__title .title {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 64px;
+  color: var(--color-secondary);
 }
 .page-star-cruise .offer-sec .lines__vertical {
   right: unset;

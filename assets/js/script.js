@@ -1,15 +1,17 @@
 $(document).ready(function () {
   console.log("ready!");
   // scrollHeader();
-  animateTitleSection(".title-animation", ".hotels-sec__title");
-  animateTitleSection(".offer-sec__title", ".offer-sec__title");
-  animateTitleSection(".activities-sec__title", ".activities-sec__title");
+  animateTitleSection(".title-animation", ".hotels-sec__title", 136);
+  animateTitleSection(".gallery-sec__title", ".gallery-sec__title", 136);
+  animateTitleSection(".offer-sec__title", ".offer-sec__title", 133);
+  animateTitleSectionRightLeft(".activities-sec", ".activities-sec__title");
+  animateTitleSectionRightLeft(" .cruise-iti", ".cruise-iti__title");
   animateTitleSection(".floor-plane__title", ".floor-plane__title");
-  animateTitleSection(".cruise__title", ".cruise__title");
-  animateTitleSection(".testimonial__title", ".testimonial__title");
+  animateTitleSectionRightLeft(".cruise__title", ".cruise__title", 90);
+  animateTitleSectionRightLeft(".testimonial__title", ".testimonial__title");
   animateTitleSection(".facilities__container", ".facilities__title");
-  animateTitleSection(".gallery-sec__title", ".gallery-sec__title");
-  animateTitleSection(".restaurant__title", ".restaurant__title", 50);
+
+  animateTitleSection(".restaurant__title", ".restaurant__title", 70);
   animationLineVertical(".line-cap-hotel", ".line-hotels", "100%", 0.1, 72);
 
   swiperHotels();
@@ -147,7 +149,7 @@ function animateTitleSection(sectionClass, triggerClass, endPointSVG = 113) {
 
     // Set the initial position and hide the SVG
     gsap.set(svgElement, {
-      x: -(svgWidth + 25),
+      x: -(svgWidth + 50),
       visibility: "hidden",
     });
     gsap.set(`${sectionClass} .char`, { opacity: 0 });
@@ -155,8 +157,8 @@ function animateTitleSection(sectionClass, triggerClass, endPointSVG = 113) {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: triggerClass,
-        start: "top 55%",
-        end: "bottom 55%",
+        start: "top 67%",
+        end: "bottom 67%",
         // markers: true,
         onEnter: function () {
           gsap.set(svgElement, { visibility: "visible" });
@@ -178,6 +180,70 @@ function animateTitleSection(sectionClass, triggerClass, endPointSVG = 113) {
       x: h2Width + endPointSVG, // endPointSVG used directly
       rotation: 360,
       duration: 1,
+      ease: "power2.inOut",
+      onComplete: function () {
+        gsap.to(svgElement, {
+          opacity: 0,
+          scale: 0.5,
+          ease: "power1.inOut",
+          onComplete: function () {
+            gsap.set(svgElement, { visibility: "hidden" });
+          },
+        });
+      },
+    });
+  }
+}
+function animateTitleSectionRightLeft(
+  sectionClass,
+  triggerClass,
+  endPointSVG = 113
+) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Ensure the required elements exist
+  const h2Element = document.querySelector(`${sectionClass} h2`);
+  const svgElement = document.querySelector(`${sectionClass} .icon-wheel`);
+
+  if ($(".title-keyframe").length && h2Element && svgElement) {
+    const textSplit = new SplitType(`${sectionClass} h2`, { types: "chars" });
+    const h2Width = h2Element.offsetWidth;
+    const svgWidth = svgElement.offsetWidth;
+
+    // Set the initial position and hide the SVG (start from the right side)
+    gsap.set(svgElement, {
+      x: h2Width + endPointSVG,
+      visibility: "hidden",
+    });
+    gsap.set(`${sectionClass} .char`, { opacity: 0 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerClass,
+        start: "top 60%",
+        end: "bottom 60%",
+        markers: true,
+        scrub: true,
+        onEnter: function () {
+          gsap.set(svgElement, { visibility: "visible" });
+        },
+      },
+      onUpdate: function () {
+        const progress = gsap.getProperty(svgElement, "x");
+        document
+          .querySelectorAll(`${sectionClass} h2 .char`)
+          .forEach((char) => {
+            if (progress <= char.offsetLeft) {
+              gsap.to(char, { opacity: 1, duration: 0.1 });
+            }
+          });
+      },
+    });
+
+    tl.to(svgElement, {
+      x: -(svgWidth + 50), // Move from right to left
+      rotation: -360, // Adjust rotation direction
+      duration: 8,
       ease: "power2.inOut",
       onComplete: function () {
         gsap.to(svgElement, {
