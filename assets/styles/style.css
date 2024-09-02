@@ -1396,6 +1396,10 @@ input[type="number"] {
   mask-image: url("../images/stroke_line_full.svg");
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+.news-reverse .newsletter__sec .lines__vertical--right {
+  top: unset;
+  bottom: 0;
+}
 .newsletter__sec.active .lines__vertical--right {
   height: 100%;
 }
@@ -1430,6 +1434,10 @@ input[type="number"] {
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-delay: 0.75s;
 }
+.news-reverse .newsletter__sec .lines__horizontal--top {
+  left: unset;
+  right: 40px;
+}
 .newsletter__sec .lines__horizontal--bottom {
   position: absolute;
   bottom: 0;
@@ -1443,6 +1451,16 @@ input[type="number"] {
 }
 .newsletter__sec.active .lines__horizontal--bottom {
   width: calc(100% - 80px);
+}
+.news-reverse .newsletter__sec.active .lines__vertical--left {
+  transition-delay: 0s;
+  bottom: unset;
+  top: 0;
+}
+.news-reverse .newsletter__sec .lines__horizontal--bottom {
+  right: unset;
+  left: 40px;
+  transition-delay: 0.25s;
 }
 /* end newsletter */
 
@@ -2076,6 +2094,10 @@ input[type="number"] {
 }
 .page-star-cruise .activities-sec {
   padding-top: 182px;
+}
+.page-star-cruise .offer-sec .lines__horizontal .lines-horizontal {
+  left: unset;
+  right: 0;
 }
 .page-star-cruise .activities-sec .lines__vertical {
   right: unset;
