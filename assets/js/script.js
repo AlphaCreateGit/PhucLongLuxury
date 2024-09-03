@@ -222,7 +222,7 @@ function animateTitleSectionRightLeft(
         trigger: triggerClass,
         start: "top 60%",
         end: "bottom 60%",
-        markers: true,
+        // markers: true,
         scrub: true,
         onEnter: function () {
           gsap.set(svgElement, { visibility: "visible" });

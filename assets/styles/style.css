@@ -7,6 +7,7 @@
   --color-white: #ffffff;
 
   --header-height: 80px;
+  --header-height-mobile: 56px;
   --header-up: calc(var(--header-height) * -1);
   --header-height-scroll: 60px;
 
@@ -2448,4 +2449,34 @@ input[type="number"] {
 .offer-detail .offer-sec .lines__horizontal .lines-horizontal {
   right: 0;
   left: unset;
+}
+
+@media (max-width: 767.98px) {
+  .header__default {
+    justify-content: unset !important;
+  }
+  .header__container {
+    padding: 0 32px;
+    height: var(--header-height-mobile);
+  }
+  .header__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .header__scroll-logo img {
+    width: 168px;
+    height: 28px;
+  }
+  .header__bg {
+    top: 54px;
+  }
+  .banner-hero__booking {
+    width: calc(100% - 32px);
+    height: 240px;
+  }
+  .banner-hero__booking form {
+    flex-wrap: wrap;
+  }
 }
