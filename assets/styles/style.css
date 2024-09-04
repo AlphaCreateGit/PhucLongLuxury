@@ -2531,8 +2531,9 @@ input[type="number"] {
   }
   .hotels-sec__top .nav {
     flex-wrap: nowrap;
-    width: auto;
+    width: calc(100vw - 50px);
     overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
   }
   .hotels-sec__top .nav li {
