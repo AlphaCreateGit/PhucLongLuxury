@@ -2531,6 +2531,9 @@ input[type="number"] {
   }
   .hotels-sec__top .nav {
     flex-wrap: nowrap;
+    width: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
   }
   .hotels-sec__top .nav li {
     display: inline-block;
@@ -2665,7 +2668,7 @@ input[type="number"] {
   }
   .hotels-sec__top {
     margin-bottom: 40px;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   .footer__container .on-top {
     top: 490px;
