@@ -2838,6 +2838,9 @@ input[type="number"] {
   .swiper-restaurant .swiper-img {
     height: 176px;
   }
+  .restaurant__image {
+    pointer-events: none;
+  }
   .restaurant__title {
     padding: 0 32px;
     left: 50%;

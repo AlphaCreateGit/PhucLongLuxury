@@ -460,6 +460,8 @@ function swiperRestaurant() {
       simulateTouch: false,
       mousewheelControl: false,
       keyboardControl: false,
+      mousewheel: false,
+      keyboard: false,
       pagination: {
         el: ".restaurant__image .swiper-pagination",
         type: "progressbar",
