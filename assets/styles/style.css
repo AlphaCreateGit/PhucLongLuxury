@@ -9,7 +9,7 @@
   --header-height: 80px;
   --header-height-mobile: 56px;
   --header-up: calc(var(--header-height) * -1);
-  --header-height-scroll: 60px;
+  /* --header-height-scroll: 60px; */
 
   --trans: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -307,9 +307,6 @@ input[type="number"] {
   width: 100%;
 }
 
-.header__default.scrolled-down {
-  transform: translateY(var(--header-up));
-}
 .header__search {
   gap: 8px;
 }
@@ -319,13 +316,7 @@ input[type="number"] {
   left: 0;
   right: 0;
 }
-.header__scroll {
-  position: relative;
-  height: var(--header-height-scroll);
-  background-color: var(--color-white);
-  padding: 0 40px;
-  gap: 32px;
-}
+
 .header__menu ul li a {
   display: flex;
   align-items: center;
@@ -2459,8 +2450,8 @@ input[type="number"] {
 
 @media (max-width: 767.98px) {
   .h3 {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 18px !important;
+    line-height: 28px !important;
   }
   .header__default {
     justify-content: unset !important;
@@ -2575,8 +2566,8 @@ input[type="number"] {
     gap: 48px 24px;
   }
   .page-template .hotels-sec .hotels__img {
-    /* height: 190px; */
-    aspect-ratio: 151 / 190;
+    height: 190px;
+    aspect-ratio: unset;
   }
   .title-sec .line-cap-hotel {
     width: 2px;
@@ -2816,7 +2807,7 @@ input[type="number"] {
     width: 2px;
   }
   .cruise__container .cruise__title {
-    padding: 0 40px;
+    padding: 0 32px;
   }
   .cruise__container .cruise__title h2 {
     transform: translateX(-16px);
@@ -2848,7 +2839,7 @@ input[type="number"] {
     height: 176px;
   }
   .restaurant__title {
-    padding: 0 40px;
+    padding: 0 32px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -2873,6 +2864,7 @@ input[type="number"] {
     width: 2px;
     right: 16px;
     top: 67px;
+    height: calc(100% - 43px);
   }
   .restaurant__title h2 {
     transform: translateX(-16px);
@@ -2919,5 +2911,34 @@ input[type="number"] {
   .restaurant__container .swiper-button-prev:hover svg path,
   .restaurant__container .swiper-button-next:hover svg path {
     stroke: var(--color-sub);
+  }
+  .testimonial__container .line__vertical--top-right {
+    right: 16px;
+    width: 2px;
+  }
+  .testimonial__container .line__horizontal {
+    right: 16px;
+    width: calc(100% - 32px);
+    height: 2px;
+  }
+  .testimonial__container .line__vertical--left {
+    width: 2px;
+    left: 16px;
+  }
+  .testimonial__title {
+    padding: 0 32px;
+  }
+  .testimonial__title h2 {
+    transform: translateX(-16px);
+  }
+  .testimonial__container.active .line__vertical--top-right {
+    height: 80px;
+    top: -79px;
+  }
+  .testimonial-sec {
+    padding-top: 103px;
+  }
+  .testimonial__body {
+    padding-top: 68px;
   }
 }

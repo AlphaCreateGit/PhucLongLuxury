@@ -87,7 +87,7 @@ function scrollHorizontal() {
         scrollTrigger: {
           trigger: element,
           start: "top 65%",
-          end: "+=100",
+          end: "+=110",
           scrub: true,
           onComplete: () => {
             scrollVerticalFull();
