@@ -223,7 +223,7 @@ function animateTitleSectionRightLeft(
         start: "top 60%",
         end: "bottom 60%",
         // markers: true,
-        scrub: true,
+        // scrub: true,
         onEnter: function () {
           gsap.set(svgElement, { visibility: "visible" });
         },
@@ -243,7 +243,7 @@ function animateTitleSectionRightLeft(
     tl.to(svgElement, {
       x: -(svgWidth + 50), // Move from right to left
       rotation: -360, // Adjust rotation direction
-      duration: 8,
+      duration: 1,
       ease: "power2.inOut",
       onComplete: function () {
         gsap.to(svgElement, {
