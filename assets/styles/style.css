@@ -2517,7 +2517,10 @@ input[type="number"] {
     margin-bottom: 24px;
   }
   .hotels-sec__container {
-    padding: 0 32px;
+    padding: 0 16px 0 32px;
+  }
+  .page-template .hotels-sec__container .hotel-list {
+    padding-right: 16px;
   }
   .page-template .hotels-sec__container .lines__horizontal,
   .hotels-sec__container .lines__horizontal {
@@ -2662,6 +2665,7 @@ input[type="number"] {
   }
   .hotels-sec__top {
     margin-bottom: 40px;
+    overflow: hidden;
   }
   .footer__container .on-top {
     top: 490px;
