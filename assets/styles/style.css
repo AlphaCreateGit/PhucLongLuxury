@@ -2533,11 +2533,12 @@ input[type="number"] {
     flex-wrap: nowrap;
     width: calc(100vw - 50px);
     overflow-x: scroll;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     white-space: nowrap;
     gap: 24px;
     position: relative;
-    height: 18px;
+    height: 22px;
+    align-items: flex-start !important;
   }
   .hotels-sec__top .nav::before {
     content: "";
@@ -2733,7 +2734,7 @@ input[type="number"] {
   .hotels-sec .hotels__img {
     height: 350px;
   }
-  .hotels__body {
+  .hotels__slider .swiper-slide .hotels__body {
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s ease;
@@ -2752,12 +2753,14 @@ input[type="number"] {
     height: 60px;
   }
   .hotels-sec .swiper-arrows .swiper-button-next {
-    right: 0;
+    right: 50%;
     top: 66px;
+    transform: translateX(130px);
   }
   .hotels-sec .swiper-arrows .swiper-button-prev {
-    left: 0;
+    left: 50%;
     top: 66px;
+    transform: translateX(-130px);
   }
   .hotels-sec .swiper-arrows .swiper-pagination {
     width: 150px;
@@ -2783,5 +2786,9 @@ input[type="number"] {
   .hotels-sec .swiper-button-prev:hover,
   .hotels-sec .swiper-button-next:hover {
     background-color: transparent;
+  }
+  .hotels-sec .swiper-button-prev:hover svg path,
+  .hotels-sec .swiper-button-next:hover svg path {
+    stroke: var(--color-secondary);
   }
 }

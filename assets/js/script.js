@@ -336,49 +336,74 @@ function animationLineHorizontal(
 
 function swiperHotels() {
   if ($(".hotels-sec .swiper-tab").length) {
-    if ($(".swiper-tab").length && $(".nav-link.active").length) {
-      const swiperTab = new Swiper(".swiper-tab", {
-        slidesPerView: 1.5,
-        spaceBetween: 24,
-        centeredSlides: true,
-        loop: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: ".hotels-sec .swiper-arrows .swiper-pagination",
-          type: "progressbar",
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-            centeredSlides: false,
-            loop: false,
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
+    const initializeSwiper = function () {
+      $(".tab-pane.show .swiper-tab").each(function () {
+        const swiperContainer = $(this);
+
+        // Find the pagination element specifically for this swiper instance
+        const paginationEl = swiperContainer
+          .closest(".tab-pane")
+          .find(".swiper-pagination");
+
+        const swiperInstance = new Swiper(swiperContainer[0], {
+          slidesPerView: 1.5,
+          spaceBetween: 24,
+          centeredSlides: true,
+          loop: true,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+            el: paginationEl[0], // Use the pagination element specific to this swiper
+            type: "progressbar",
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+              centeredSlides: false,
+              loop: false,
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
             },
           },
-        },
+        });
+
+        function updateSlideCount() {
+          // Only execute the logic for screens 768px and above
+          if (window.innerWidth >= 768) {
+            const activeSlideCount =
+              swiperContainer.find(".swiper-slide").length;
+            swiperContainer
+              .closest(".tab-pane")
+              .find(".swiper-arrows")
+              .toggleClass("d-none", activeSlideCount <= 4);
+          } else {
+            // Ensure arrows are visible on smaller screens
+            const activeSlideCount =
+              swiperContainer.find(".swiper-slide").length;
+            swiperContainer
+              .closest(".tab-pane")
+              .find(".swiper-arrows")
+              .toggleClass("d-none", activeSlideCount <= 1);
+          }
+        }
+
+        updateSlideCount();
       });
+    };
 
-      function updateSlideCount() {
-        const activeSlideCount = $(
-          ".tab-pane.show .swiper-tab .swiper-slide"
-        ).length;
-        $(".hotels-sec .swiper-arrows").toggleClass(
-          "d-none",
-          activeSlideCount <= 4
-        );
-      }
+    // Initialize Swiper on page load for the active tab
+    initializeSwiper();
 
-      updateSlideCount();
-      $('button[data-bs-toggle="tab"]').on("shown.bs.tab", updateSlideCount);
-    }
+    // Reinitialize Swiper when a new tab is shown
+    $('button[data-bs-toggle="tab"]').on("shown.bs.tab", initializeSwiper);
   }
 }
+
 function swiperHotelsDetail() {
   if ($(".hotels__slider .swiper-tab-detail").length) {
     if ($(".swiper-tab-detail").length && $(".nav-link.active").length) {
