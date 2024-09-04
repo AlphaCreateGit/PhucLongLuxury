@@ -735,7 +735,7 @@
       </section>
       <!-- end section hotel -->
       <!-- start section start cruise -->
-      <!-- <section class="cruise section">
+      <section class="cruise section">
         <div class="container-fluid p-0">
           <div class="cruise__container">
             <div class="section__lines">
@@ -785,17 +785,36 @@
             </div>
           </div>
         </div>
-      </section> -->
+      </section>
       <!-- end section start cruise -->
       <!-- start section restaurant -->
-      <!-- <section class="restaurant">
+      <section class="restaurant">
         <div class="container-fluid p-0">
           <div class="restaurant__container animation-line">
             <div class="res-bg-top">
-              <img src="./assets/images/res_bg_top.png" alt="img" />
+              <img
+                src="./assets/images/res_bg_top.png"
+                alt="img"
+                class="d-none d-md-block"
+              />
+
+              <img
+                src="./assets/images/res_bg_top_mobile.png"
+                alt="img"
+                class="d-block d-md-none"
+              />
             </div>
             <div class="res-bg-bottom">
-              <img src="./assets/images/res_bg_bottom.png" alt="img" />
+              <img
+                src="./assets/images/res_bg_bottom.png"
+                alt="img"
+                class="d-none d-md-block"
+              />
+              <img
+                src="./assets/images/res_bg_bottom_mobile.png"
+                alt="img"
+                class="d-block d-md-none"
+              />
             </div>
             <div class="section-lines">
               <div class="lines__vertical--left-top"></div>
@@ -908,7 +927,7 @@
             </div>
           </div>
         </div>
-      </section> -->
+      </section>
       <!-- end section restaurant -->
       <!-- section testimonial -->
       <!-- <section class="testimonial-sec">
@@ -1561,7 +1580,7 @@
                 </div>
                 <div class="col-md-4">
                   <div
-                    class="bct d-flex justify-content-end h-100 align-items-center"
+                    class="bct d-flex justify-content-start justify-content-md-end h-100 align-items-center"
                   >
                     <a href="">
                       <img src="./assets/images/bct.svg" alt="image" />
@@ -1606,7 +1625,9 @@
                 </div>
               </div>
               <div class="col-md-3">
-                <div class="author d-flex justify-content-end">
+                <div
+                  class="author d-flex justify-content-start justify-content-md-end"
+                >
                   <a href="" class="a-line-hover-secondary b2 color-secondary"
                     >Website by Alpha Creative</a
                   >

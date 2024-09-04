@@ -712,8 +712,8 @@ function animationLine() {
     gsap.utils.toArray(".animation-line").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 75%",
-        end: "bottom 75%",
+        start: "top 74%",
+        end: "bottom 70%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
         onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
       });

@@ -2715,6 +2715,7 @@ input[type="number"] {
   .title-keyframe h2 {
     font-size: 24px;
     line-height: 32px;
+    white-space: nowrap;
   }
   .hotels-sec__title {
     padding-right: 40px;
@@ -2790,5 +2791,45 @@ input[type="number"] {
   .hotels-sec .swiper-button-prev:hover svg path,
   .hotels-sec .swiper-button-next:hover svg path {
     stroke: var(--color-secondary);
+  }
+  .page-template .hotels-sec__top {
+    padding-left: 0;
+  }
+  .cruise__container {
+    padding: 0 32px 70px;
+  }
+  .cruise__container .lines__horizontal {
+    height: 2px;
+    width: calc(100% - 32px);
+    right: 16px;
+  }
+  .cruise__container .lines__vertical {
+    left: 16px;
+    width: 2px;
+  }
+  .cruise__container .cruise__title {
+    padding: 0 40px;
+  }
+  .cruise__container .cruise__title h2 {
+    transform: translateX(-16px);
+  }
+  .crusie__body {
+    padding-top: 62px;
+  }
+  .cruise__container .crusie__image {
+    height: 176px;
+    margin-bottom: 24px;
+  }
+  .cruise__container .cruise-stroke {
+    display: none;
+  }
+  .cruise__container .crusie__name {
+    margin-bottom: 12px;
+  }
+  .restaurant__container .res-bg-top {
+    top: -25px;
+  }
+  .restaurant__container .res-bg-bottom {
+    bottom: -25px;
   }
 }
