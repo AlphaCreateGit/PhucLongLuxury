@@ -338,11 +338,29 @@ function swiperHotels() {
   if ($(".hotels-sec .swiper-tab").length) {
     if ($(".swiper-tab").length && $(".nav-link.active").length) {
       const swiperTab = new Swiper(".swiper-tab", {
-        slidesPerView: 4,
-        spaceBetween: 40,
+        slidesPerView: 1.5,
+        spaceBetween: 24,
+        centeredSlides: true,
+        loop: true,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".hotels-sec .swiper-arrows .swiper-pagination",
+          type: "progressbar",
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+            centeredSlides: false,
+            loop: false,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          },
         },
       });
 
