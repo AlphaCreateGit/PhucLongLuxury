@@ -66,12 +66,9 @@ function scrollVerticalFull() {
         height: "100%",
         scrollTrigger: {
           trigger: element,
-          start: "top 60%",
-          end: `+=${elementHeight - 64}`,
+          start: "top 50%",
+          end: `+=${elementHeight - 120}`,
           scrub: true,
-          onComplete: () => {
-            scrollHorizontal();
-          },
         },
       }
     );
@@ -89,9 +86,12 @@ function scrollHorizontal() {
         width: "100%",
         scrollTrigger: {
           trigger: element,
-          start: "top 70%",
-          end: "+=64",
+          start: "top 65%",
+          end: "+=100",
           scrub: true,
+          onComplete: () => {
+            scrollVerticalFull();
+          },
         },
       }
     );
@@ -351,8 +351,8 @@ function swiperHotels() {
           centeredSlides: true,
           loop: true,
           navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".hotels-sec .swiper-button-next",
+            prevEl: ".hotels-sec .swiper-button-prev",
           },
           pagination: {
             el: paginationEl[0], // Use the pagination element specific to this swiper
@@ -365,8 +365,8 @@ function swiperHotels() {
               centeredSlides: false,
               loop: false,
               navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: ".hotels-sec .swiper-button-next",
+                prevEl: ".hotels-sec .swiper-button-prev",
               },
             },
           },
@@ -457,7 +457,6 @@ function swiperRestaurant() {
       speed: 1200,
       grabCursor: false,
       watchSlidesProgress: true,
-      watchSlidesProgress: true,
       simulateTouch: false,
       mousewheelControl: false,
       keyboardControl: false,
@@ -499,16 +498,30 @@ function swiperRestaurant() {
       },
     });
 
-    var swiperResCotent = new Swiper(".swiper-res-content", {
+    var swiperResContent = new Swiper(".swiper-res-content", {
       effect: "fade",
       simulateTouch: false,
       mousewheelControl: false,
       keyboardControl: false,
       loop: true,
       navigation: {
-        nextEl: ".swiper-res-content .swiper-button-next",
-        prevEl: ".swiper-res-content .swiper-button-prev",
+        nextEl: ".restaurant__content .swiper-button-next",
+        prevEl: ".restaurant__content .swiper-button-prev",
       },
+      breakpoints: {
+        768: {
+          effect: "fade",
+          simulateTouch: false,
+          mousewheelControl: false,
+          keyboardControl: false,
+          loop: true,
+        },
+        navigation: {
+          nextEl: ".restaurant__content .swiper-button-next",
+          prevEl: ".restaurant__content .swiper-button-prev",
+        },
+      },
+
       thumbs: {
         swiper: swiperResImg,
       },
