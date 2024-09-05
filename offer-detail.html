@@ -137,6 +137,66 @@
       </div>
     </header>
     <!-- end header -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="modalbooking"
+      tabindex="-1"
+      aria-labelledby="modalbookingLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <form action="">
+            <div class="form">
+              <div class="date d-flex align-items-center gap-24">
+                <div class="check-in">
+                  <input type="text" placeholder="Check-in-date" />
+                  <div class="icon">
+                    <img src="./assets/images/ic_calender.svg" alt="" />
+                  </div>
+                </div>
+                <div class="check-out">
+                  <input type="text" placeholder="Check-out-date" />
+                  <div class="icon">
+                    <img src="./assets/images/ic_calender.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="guest d-flex align-items-center gap-24">
+                <div class="adult">
+                  <input type="number" placeholder="Adult*" />
+                </div>
+                <div class="child">
+                  <input type="number" placeholder="Children (6 yrs)" />
+                </div>
+              </div>
+              <div class="question">
+                <input type="text" placeholder="0ther questions" />
+              </div>
+              <div class="name">
+                <input type="text" placeholder="Name*" />
+              </div>
+              <div class="cellphone">
+                <input type="number" placeholder="Cellphone*" />
+              </div>
+              <div class="email">
+                <input
+                  type="email"
+                  placeholder="Email*"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                />
+              </div>
+              <button>Send</button>
+              <div class="noti b1 color-secondary">
+                Your booking request is confirmed! We’ll reach out shortly with
+                the next steps.
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <main class="offer-detail page-detail news-reverse">
       <!-- start section hero -->
       <section class="banner-hero">
@@ -299,7 +359,9 @@
                     >
                       <div class="button btn-default frist">
                         <a
-                          href=""
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalbooking"
+                          href="javascript:void(0);"
                           class="d-flex align-items-center justify-content-center font-btn color-secondary"
                           >Book now</a
                         >
