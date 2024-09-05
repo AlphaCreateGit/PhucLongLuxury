@@ -2711,9 +2711,9 @@ input[type="number"] {
   }
 
   .title-keyframe h2 {
-    font-size: 24px;
-    line-height: 32px;
-    white-space: nowrap;
+    font-size: 24px !important;
+    line-height: 32px !important;
+    white-space: nowrap !important;
   }
   .hotels-sec__title {
     padding-right: 40px;
@@ -2801,10 +2801,12 @@ input[type="number"] {
     height: 2px;
     width: calc(100% - 32px);
     right: 16px;
+    top: -1px;
   }
   .cruise__container .lines__vertical {
     left: 16px;
     width: 2px;
+    top: -1px;
   }
   .cruise__container .cruise__title {
     padding: 0 32px;
@@ -2935,14 +2937,14 @@ input[type="number"] {
     transform: translateX(-16px);
   }
   .testimonial__container.active .line__vertical--top-right {
-    height: 80px;
-    top: -79px;
+    height: 59px;
+    top: -58px;
   }
   .testimonial-sec {
-    padding-top: 103px;
+    padding-top: 80px;
   }
   .testimonial__body {
-    padding-block: 68px;
+    padding-block: 64px;
   }
   .testimonial__container {
     padding: 0;
@@ -2995,5 +2997,67 @@ input[type="number"] {
   }
   .testimonial__animation.active .box-gif-mobile {
     left: calc(100% - 80px);
+  }
+  .offer__container {
+    padding: 0;
+    padding-bottom: 84px;
+  }
+  .offer-sec .box .box-img {
+    height: 350px;
+  }
+  .offer-sec .box .box-body {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .offer-sec .swiper-slide.swiper-slide-active .box .box-body {
+    opacity: 1;
+    visibility: visible;
+  }
+  .offer-sec .swiper-pagination {
+    width: 150px;
+  }
+
+  .offer-sec__title,
+  .activities-sec__title {
+    padding: 0 32px;
+    right: unset;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .offer-sec__title h2,
+  .activities-sec__title h2 {
+    transform: translateX(-16px);
+  }
+  .offer-sec .lines__horizontal {
+    height: 2px;
+    width: calc(100% - 32px);
+    left: 16px;
+    top: -1px;
+  }
+  .offer-sec .lines__vertical {
+    right: 16px;
+    width: 2px;
+    top: -1px;
+  }
+  .offer__container .swiper-button-prev,
+  .offer__container .swiper-button-next {
+    top: unset;
+    bottom: -61px;
+    border: none;
+  }
+  .offer__container .swiper-button-prev {
+    left: 50%;
+    transform: translateX(-135px);
+  }
+  .offer__container .swiper-button-next {
+    right: 50%;
+    transform: translateX(135px);
+  }
+  .offer-sec .swiper-pagination {
+    bottom: -32px;
+  }
+  .offer-sec .section__lines {
+    height: 64px;
   }
 }

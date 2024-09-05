@@ -677,11 +677,19 @@ function swiperOfferDetail() {
 function swiperOffer() {
   if ($(".offer-sec").length) {
     const swiperOffer = new Swiper(".swiper-offer", {
-      slidesPerView: 3,
-      spaceBetween: 40,
+      slidesPerView: 1.5,
+      spaceBetween: 24,
+      centeredSlides: true,
+      loop: true,
       pagination: {
         el: ".offer-sec .swiper-pagination",
         type: "progressbar",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
       },
       navigation: {
         nextEl: ".offer-sec .swiper-button-next",
