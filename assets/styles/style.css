@@ -3369,12 +3369,34 @@ input[type="number"] {
   }
   .activities-sec .swiper-pagination {
     width: 150px;
-    bottom: -200px;
+    bottom: -226px;
   }
   .activities-sec .swiper-button-next {
     transform: translateX(180px);
   }
   .hotel-detail .offer__container {
     padding-bottom: 120px;
+  }
+  .hotel-detail .offer-sec__title {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hotel-detail .hotels-sec__top {
+    padding-left: 0;
+  }
+  .hotel-detail .gallery-sec__container .lines__horizontal {
+    right: 16px;
+    height: 2px;
+    width: calc(100% - 32px);
+  }
+  .gallery-sec__container .gallery-sec__title {
+    padding: 0 32px;
+  }
+  .gallery-sec__container .gallery-sec__title h2 {
+    transform: translateX(-16px);
+  }
+  .gallery-sec__container .lines__vertical {
+    left: 16px;
+    width: 2px;
   }
 }

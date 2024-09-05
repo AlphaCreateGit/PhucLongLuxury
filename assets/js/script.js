@@ -14,12 +14,12 @@ $(document).ready(function () {
     ".offer-sec__title",
     133
   );
-  animateTitleSectionRightLeft(".activities-sec", ".activities-sec__title");
+  animateTitleSection(".activities-sec", ".activities-sec__title");
   animateTitleSectionRightLeft(" .cruise-iti", ".cruise-iti__title");
   animateTitleSection(".floor-plane__title", ".floor-plane__title");
   animateTitleSectionRightLeft(".cruise__title", ".cruise__title", 90);
   animateTitleSectionRightLeft(".testimonial__title", ".testimonial__title");
-  animateTitleSection(".facilities__container", ".facilities__title");
+  animateTitleSectionRightLeft(".facilities__container", ".facilities__title");
 
   animateTitleSection(".restaurant__title", ".restaurant__title", 70);
   animationLineVertical(".line-cap-hotel", ".line-hotels", "100%", 0.1, 72);
