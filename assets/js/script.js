@@ -1,27 +1,25 @@
 $(document).ready(function () {
   console.log("ready!");
   // scrollHeader();
-  animateTitleSection(".title-animation", ".hotels-sec__title", 136);
-  animateTitleSection(".gallery-sec__title", ".gallery-sec__title", 136);
-  animateTitleSection(".offer-sec__title", ".offer-sec__title", 133);
-  animateTitleSectionRightLeft(
-    ".offer-detail .offer-sec__title",
-    ".offer-sec__title",
-    133
-  );
-  animateTitleSectionRightLeft(
-    ".experience-detail .offer-sec__title",
-    ".offer-sec__title",
-    133
-  );
-  animateTitleSection(".activities-sec", ".activities-sec__title");
-  animateTitleSectionRightLeft(" .cruise-iti", ".cruise-iti__title");
-  animateTitleSection(".floor-plane__title", ".floor-plane__title");
-  animateTitleSectionRightLeft(".cruise__title", ".cruise__title", 90);
-  animateTitleSectionRightLeft(".testimonial__title", ".testimonial__title");
-  animateTitleSectionRightLeft(".facilities__container", ".facilities__title");
+  animateTitleSection();
+  animateTitleSectionRightLeft();
+  // animateTitleSection(".title-animation", ".hotels-sec__title");
+  // animateTitleSection(".gallery-sec__title", ".gallery-sec__title");
+  // animateTitleSection(".offer-sec__title", ".offer-sec__title");
+  // animateTitleSectionRightLeft(".title-keyframe", ".title-keyframe");
+  // animateTitleSectionRightLeft(
+  //   ".experience-detail .offer-sec__title",
+  //   ".offer-sec__title",
+  //   133
+  // );
+  // animateTitleSectionRightLeft(".activities-sec", ".activities-sec__title");
+  // animateTitleSectionRightLeft(" .cruise-iti", ".cruise-iti__title");
+  // animateTitleSection(".floor-plane__title", ".floor-plane__title");
+  // animateTitleSectionRightLeft(".cruise__title", ".cruise__title");
+  // animateTitleSectionRightLeft(".testimonial__title", ".testimonial__title");
+  // animateTitleSectionRightLeft(".facilities__container", ".facilities__title");
 
-  animateTitleSection(".restaurant__title", ".restaurant__title", 70);
+  // animateTitleSection(".restaurant__title", ".restaurant__title", 70);
   animationLineVertical(".line-cap-hotel", ".line-hotels", "100%", 0.1, 72);
 
   swiperHotels();
@@ -97,7 +95,7 @@ function scrollHorizontal() {
         scrollTrigger: {
           trigger: element,
           start: "top 65%",
-          end: "+=110",
+          end: "+=89",
           scrub: true,
           onComplete: () => {
             scrollVerticalFull();
@@ -145,154 +143,194 @@ function scrollHeader() {
   // Re-initialize ScrollTrigger when page is refreshed
   $(window).on("load", initializeScrollTrigger);
 }
-function animateTitleSection(sectionClass, triggerClass, endPointSVG = 113) {
+function animateTitleSection() {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Ensure the required elements exist
-  const h2Element = document.querySelector(`${sectionClass} h2`);
-  const svgElement = document.querySelector(`${sectionClass} .icon-wheel`);
+  // Tìm tất cả các phần tử .title-keyframe
+  const sections = document.querySelectorAll(".title-keyframe");
 
-  if ($(".title-keyframe").length && h2Element && svgElement) {
-    const textSplit = new SplitType(`${sectionClass} h2`, { types: "chars" });
-    const h2Width = h2Element.offsetWidth;
-    const svgWidth = svgElement.offsetWidth;
+  // Lặp qua từng phần tử .title-keyframe
+  sections.forEach((section) => {
+    const h2Element = section.querySelector("h2");
+    const svgElement = section.querySelector(".icon-wheel");
 
-    // Set the initial position and hide the SVG
-    gsap.set(svgElement, {
-      x: -(svgWidth + 50),
-      visibility: "hidden",
-    });
-    gsap.set(`${sectionClass} .char`, { opacity: 0 });
+    // Kiểm tra sự tồn tại của các phần tử cần thiết
+    if (h2Element && svgElement) {
+      const textSplit = new SplitType(h2Element, { types: "chars" });
+      const h2Width = h2Element.offsetWidth;
+      const svgWidth = svgElement.offsetWidth;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: triggerClass,
-        start: "top 67%",
-        end: "bottom 67%",
-        // markers: true,
-        onEnter: function () {
-          gsap.set(svgElement, { visibility: "visible" });
+      // Đặt vị trí ban đầu và ẩn SVG
+      gsap.set(svgElement, {
+        x: -(svgWidth + 50),
+        visibility: "hidden",
+      });
+      gsap.set(section.querySelectorAll(".char"), { opacity: 0 });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section, // Đặt trigger cho từng phần tử section riêng lẻ
+          start: "top 65%",
+          end: "bottom 65%",
+          // markers: true,
+          onEnter: function () {
+            gsap.set(svgElement, { visibility: "visible" });
+          },
         },
-      },
-      onUpdate: function () {
-        const progress = gsap.getProperty(svgElement, "x");
-        document
-          .querySelectorAll(`${sectionClass} h2 .char`)
-          .forEach((char) => {
+        onUpdate: function () {
+          const progress = gsap.getProperty(svgElement, "x");
+          section.querySelectorAll("h2 .char").forEach((char) => {
             if (progress >= char.offsetLeft) {
               gsap.to(char, { opacity: 1, duration: 0.1 });
             }
           });
-      },
-    });
+        },
+      });
 
-    tl.to(svgElement, {
-      x: h2Width + endPointSVG, // endPointSVG used directly
-      rotation: 360,
-      duration: 1,
-      ease: "power2.inOut",
-      onComplete: function () {
-        gsap.to(svgElement, {
-          opacity: 0,
-          scale: 0.5,
-          ease: "power1.inOut",
-          onComplete: function () {
-            gsap.set(svgElement, { visibility: "hidden" });
-          },
-        });
-      },
-    });
-  }
+      tl.to(svgElement, {
+        x: h2Width + 113, // Sử dụng endPointSVG
+        rotation: 360,
+        duration: 1,
+        ease: "power2.inOut",
+        onComplete: function () {
+          gsap.to(svgElement, {
+            opacity: 0,
+            scale: 0.5,
+            ease: "power1.inOut",
+            onComplete: function () {
+              gsap.set(svgElement, { visibility: "hidden" });
+            },
+          });
+        },
+      });
+    }
+  });
 }
-function animateTitleSectionRightLeft(
-  sectionClass,
-  triggerClass,
-  endPointSVG = 113
-) {
+function animateTitleSectionRightLeft(endPointSVG = 113) {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Ensure the required elements exist
-  const h2Element = document.querySelector(`${sectionClass} h2`);
-  const svgElement = document.querySelector(`${sectionClass} .icon-wheel`);
+  // Find all elements with .title-keyframe.reverse
+  const sections = document.querySelectorAll(".title-reverse");
 
-  if ($(".title-keyframe").length && h2Element && svgElement) {
-    const textSplit = new SplitType(`${sectionClass} h2`, { types: "chars" });
-    const h2Width = h2Element.offsetWidth;
-    const svgWidth = svgElement.offsetWidth;
+  sections.forEach((section) => {
+    const h2Element = section.querySelector("h2");
+    const svgElement = section.querySelector(".icon-wheel");
 
-    // Set the initial position and hide the SVG (start from the right side)
-    gsap.set(svgElement, {
-      x: h2Width + endPointSVG,
-      visibility: "hidden",
-    });
-    gsap.set(`${sectionClass} .char`, { opacity: 0 });
+    // Check if the necessary elements exist
+    if (h2Element && svgElement) {
+      const textSplit = new SplitType(h2Element, { types: "chars" });
+      const h2Width = h2Element.offsetWidth;
+      const svgWidth = svgElement.offsetWidth;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: triggerClass,
-        start: "top 60%",
-        end: "bottom 60%",
-        // markers: true,
-        // scrub: true,
-        onEnter: function () {
-          gsap.set(svgElement, { visibility: "visible" });
+      // Set initial position and hide the SVG
+      gsap.set(svgElement, {
+        x: h2Width + endPointSVG,
+        visibility: "hidden",
+      });
+      gsap.set(section.querySelectorAll(".char"), { opacity: 0 });
+
+      // Create a timeline for each section
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top 60%",
+          end: "bottom 60%",
+          onEnter: () => gsap.set(svgElement, { visibility: "visible" }),
         },
-      },
-      onUpdate: function () {
-        const progress = gsap.getProperty(svgElement, "x");
-        document
-          .querySelectorAll(`${sectionClass} h2 .char`)
-          .forEach((char) => {
-            if (progress <= char.offsetLeft) {
+        onUpdate: () => {
+          const progress = gsap.getProperty(svgElement, "x");
+          section.querySelectorAll(".char").forEach((char) => {
+            if (progress <= char.offsetLeft + char.offsetWidth) {
               gsap.to(char, { opacity: 1, duration: 0.1 });
             }
           });
-      },
-    });
+        },
+      });
 
-    tl.to(svgElement, {
-      x: -(svgWidth + 50), // Move from right to left
-      rotation: -360, // Adjust rotation direction
-      duration: 1,
-      ease: "power2.inOut",
-      onComplete: function () {
-        gsap.to(svgElement, {
-          opacity: 0,
-          scale: 0.5,
-          ease: "power1.inOut",
-          onComplete: function () {
-            gsap.set(svgElement, { visibility: "hidden" });
-          },
-        });
-      },
-    });
-  }
-}
-
-function animationLineVerticalFull(
-  sectionClass,
-  triggerClass,
-  height,
-  duration = 1,
-  vh = 70
-) {
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.fromTo(
-    `${sectionClass}`,
-    { height: "0%" },
-    {
-      height: `${height}`,
-      duration: duration,
-      scrollTrigger: {
-        trigger: `${triggerClass}`,
-        start: `top ${vh}%`,
-        end: `bottom ${vh}%`,
-        scrub: true,
-      },
+      // Define the SVG animation
+      tl.to(svgElement, {
+        x: -(svgWidth + 50),
+        rotation: -360,
+        duration: 1,
+        ease: "power2.inOut",
+        onComplete: () => {
+          gsap.to(svgElement, {
+            opacity: 0,
+            scale: 0.5,
+            ease: "power1.inOut",
+            onComplete: () => gsap.set(svgElement, { visibility: "hidden" }),
+          });
+        },
+      });
     }
-  );
+  });
 }
+
+// function animateTitleSectionRightLeft(
+//   sectionClass,
+//   triggerClass,
+//   endPointSVG = 113
+// ) {
+//   gsap.registerPlugin(ScrollTrigger);
+
+//   // Ensure the required elements exist
+//   const h2Element = document.querySelector(`${sectionClass} h2`);
+//   const svgElement = document.querySelector(`${sectionClass} .icon-wheel`);
+
+//   if ($(".title-keyframe").length && h2Element && svgElement) {
+//     const textSplit = new SplitType(`${sectionClass} h2`, { types: "chars" });
+//     const h2Width = h2Element.offsetWidth;
+//     const svgWidth = svgElement.offsetWidth;
+
+//     // Set the initial position and hide the SVG (start from the right side)
+//     gsap.set(svgElement, {
+//       x: h2Width + endPointSVG,
+//       visibility: "hidden",
+//     });
+//     gsap.set(`${sectionClass} .char`, { opacity: 0 });
+
+//     const tl = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: triggerClass,
+//         start: "top 60%",
+//         end: "bottom 60%",
+//         // markers: true,
+//         // scrub: true,
+//         onEnter: function () {
+//           gsap.set(svgElement, { visibility: "visible" });
+//         },
+//       },
+//       onUpdate: function () {
+//         const progress = gsap.getProperty(svgElement, "x");
+//         document
+//           .querySelectorAll(`${sectionClass} h2 .char`)
+//           .forEach((char) => {
+//             if (progress <= char.offsetLeft) {
+//               gsap.to(char, { opacity: 1, duration: 0.1 });
+//             }
+//           });
+//       },
+//     });
+
+//     tl.to(svgElement, {
+//       x: -(svgWidth + 50), // Move from right to left
+//       rotation: -360, // Adjust rotation direction
+//       duration: 1,
+//       ease: "power2.inOut",
+//       onComplete: function () {
+//         gsap.to(svgElement, {
+//           opacity: 0,
+//           scale: 0.5,
+//           ease: "power1.inOut",
+//           onComplete: function () {
+//             gsap.set(svgElement, { visibility: "hidden" });
+//           },
+//         });
+//       },
+//     });
+//   }
+// }
+
 function animationLineVertical(
   sectionClass,
   triggerClass,
@@ -313,32 +351,6 @@ function animationLineVertical(
         start: `top ${vh}%`,
         end: `top ${vh}%+=500`,
         scrub: 0.5,
-      },
-    }
-  );
-}
-function animationLineHorizontal(
-  sectionClass,
-  triggerClass,
-  width,
-  duration = 0.1,
-  vh = 86
-) {
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.fromTo(
-    `${sectionClass}`,
-    { width: "0%" },
-    {
-      width: `${width}`,
-      duration: duration,
-      delay: 1.5,
-      scrollTrigger: {
-        trigger: `${triggerClass}`,
-        start: `top ${vh}%`,
-        end: `top ${vh}%+=150`,
-        scrub: 2,
-        // markers: true,
       },
     }
   );
@@ -751,8 +763,8 @@ function testimonial() {
     gsap.utils.toArray(".testimonial__list").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 50%",
-        end: "bottom 50%",
+        start: "top 70%",
+        end: "bottom 70%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
         // onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
       });
