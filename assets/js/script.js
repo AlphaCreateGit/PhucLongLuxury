@@ -715,7 +715,17 @@ function testimonial() {
         start: "top 50%",
         end: "bottom 50%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
-        onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
+        // onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
+      });
+    });
+  }
+  if ($(".testimonial__animation").length) {
+    gsap.utils.toArray(".testimonial__animation").forEach((el) => {
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 75%",
+        end: "bottom 75%",
+        onEnter: () => el.classList.add("active"), // Add class when entering the viewport
       });
     });
   }
