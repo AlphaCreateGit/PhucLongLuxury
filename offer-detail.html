@@ -27,9 +27,16 @@
       <div class="container-fluid p-0">
         <div class="header__container">
           <div
-            class="header__default d-flex align-items-center justify-content-between h-100"
+            class="header__default d-flex align-items-center justify-content-between h-100 w-100"
           >
-            <div class="header__right d-flex align-items-center">
+            <div class="header__hamburger d-block d-md-none">
+              <div class="button-burger">
+                <div class="button-burger__line"></div>
+                <div class="button-burger__line"></div>
+                <div class="button-burger__line"></div>
+              </div>
+            </div>
+            <div class="header__right d-md-flex align-items-center d-none">
               <div class="header__lang d-flex align-items-center">
                 <div class="value-select b1 color-secondary">English</div>
                 <img src="./assets/images/ic_arrow_down.svg" alt="" />
@@ -38,7 +45,9 @@
             <div
               class="header__center d-flex align-items-center justify-content-center"
             >
-              <div class="header__menu left d-flex justify-content-center">
+              <div
+                class="header__menu left d-md-flex align-items-center d-none"
+              >
                 <ul class="d-flex align-items-center">
                   <li class="menu-item-has-children">
                     <a href="./hotels.html" class="b1 color-secondary"
@@ -98,7 +107,9 @@
                   <img src="./assets/images/logo_default.svg" alt="" />
                 </a>
               </div>
-              <div class="header__menu right d-flex justify-content-center">
+              <div
+                class="header__menu right d-md-flex align-items-center d-none"
+              >
                 <ul class="d-flex align-items-center">
                   <li class="menu-item-has-children">
                     <a href="./offer.html" class="b1 color-secondary"
@@ -126,13 +137,22 @@
                 </ul>
               </div>
             </div>
-            <div class="btn-book">
+            <div class="btn-book d-none d-md-block">
               <a href="">Book Now</a>
             </div>
           </div>
         </div>
         <div class="header__bg">
-          <img src="./assets/images/img_bg_capcap_white.png" alt="" />
+          <img
+            src="./assets/images/img_bg_capcap_white.png"
+            alt=""
+            class="d-none d-md-block"
+          />
+          <img
+            src="./assets/images/img_bg_cap_mobile.png"
+            alt=""
+            class="d-block d-md-none"
+          />
         </div>
       </div>
     </header>
@@ -148,6 +168,12 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <form action="">
+            <a
+              class="icon-close d-flex justify-content-end"
+              data-bs-dismiss="modal"
+            >
+              <img src="./assets/images/ic_close_modal.svg" alt="" />
+            </a>
             <div class="form">
               <div class="date d-flex align-items-center gap-24">
                 <div class="check-in">
@@ -297,6 +323,39 @@
                     </div>
                   </div>
                   <div class="swiper-pagination"></div>
+                  <div class="swiper-arrows d-block d-md-none">
+                    <div class="swiper-button-next">
+                      <svg
+                        width="12"
+                        height="18"
+                        viewBox="0 0 12 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1 1C1 1 2.31081 6.45838 9.49539 9.00159C9.49539 9.00159 3.56759 10.5084 1.00212 17"
+                          stroke="#5D270D"
+                          stroke-miterlimit="10"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="swiper-button-prev">
+                      <svg
+                        width="12"
+                        height="18"
+                        viewBox="0 0 12 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1 1C1 1 2.31081 6.45838 9.49539 9.00159C9.49539 9.00159 3.56759 10.5084 1.00212 17"
+                          stroke="#5D270D"
+                          stroke-miterlimit="10"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
@@ -647,7 +706,7 @@
                 </div>
                 <div class="col-md-2">
                   <div
-                    class="btn__submit d-flex justify-content-end align-items-center h-100"
+                    class="btn__submit d-flex justify-content-start justify-content-md-end align-items-center h-100"
                   >
                     <button class="color-secondary font-btn">Submit</button>
                   </div>
@@ -884,7 +943,7 @@
                 </div>
                 <div class="col-md-4">
                   <div
-                    class="bct d-flex justify-content-end h-100 align-items-center"
+                    class="bct d-flex justify-content-start justify-content-md-end h-100 align-items-center"
                   >
                     <a href="">
                       <img src="./assets/images/bct.svg" alt="image" />
@@ -929,7 +988,9 @@
                 </div>
               </div>
               <div class="col-md-3">
-                <div class="author d-flex justify-content-end">
+                <div
+                  class="author d-flex justify-content-start justify-content-md-end"
+                >
                   <a href="" class="a-line-hover-secondary b2 color-secondary"
                     >Website by Alpha Creative</a
                   >

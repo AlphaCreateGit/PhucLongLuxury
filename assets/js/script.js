@@ -4,6 +4,16 @@ $(document).ready(function () {
   animateTitleSection(".title-animation", ".hotels-sec__title", 136);
   animateTitleSection(".gallery-sec__title", ".gallery-sec__title", 136);
   animateTitleSection(".offer-sec__title", ".offer-sec__title", 133);
+  animateTitleSectionRightLeft(
+    ".offer-detail .offer-sec__title",
+    ".offer-sec__title",
+    133
+  );
+  animateTitleSectionRightLeft(
+    ".experience-detail .offer-sec__title",
+    ".offer-sec__title",
+    133
+  );
   animateTitleSectionRightLeft(".activities-sec", ".activities-sec__title");
   animateTitleSectionRightLeft(" .cruise-iti", ".cruise-iti__title");
   animateTitleSection(".floor-plane__title", ".floor-plane__title");
@@ -619,6 +629,10 @@ function swiperOfferDetail() {
       pagination: {
         el: ".offer-content .swiper-pagination",
         type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".offer-detail__image .swiper-button-next",
+        prevEl: ".offer-detail__image .swiper-button-prev",
       },
       on: {
         progress: function (swiper) {

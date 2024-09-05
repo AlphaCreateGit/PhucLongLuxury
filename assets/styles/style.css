@@ -2452,11 +2452,12 @@ input[type="number"] {
   width: 438px;
   height: 572px;
   background-color: transparent;
+  transform: translateY(-24px);
 }
-.modal-dialog {
-  width: 438px;
-  height: 570px;
+.modal-content .icon-close {
+  padding-bottom: 24px;
 }
+
 .modal-content .form {
   padding: 40px 32px;
   display: flex;
@@ -2517,6 +2518,9 @@ input[type="number"] {
   border-bottom: 1px solid rgba(93, 39, 13, 0.2);
 }
 @media (max-width: 767.98px) {
+  body {
+    overflow-x: hidden;
+  }
   .h3 {
     font-size: 18px !important;
     line-height: 28px !important;
@@ -3177,5 +3181,87 @@ input[type="number"] {
   .gallery-sec__container .lines__horizontal {
     height: 2px;
     width: calc(50% - 16px);
+  }
+  .modal-dialog {
+    width: calc(100% - 32px);
+    margin-inline: auto;
+  }
+  .modal-content .form {
+    padding: 30px 16px;
+  }
+  .page-detail .title-sec.spacing-70 {
+    margin-top: 60px;
+  }
+  .page-detail .title-sec .line-hotels {
+    height: 60px;
+  }
+  .offer-detail .offer-detail__content .box {
+    padding-left: 0;
+  }
+  .offer-detail__content {
+    padding-inline: 32px;
+    margin-bottom: 40px;
+  }
+  .offer-content .row {
+    flex-direction: column-reverse;
+  }
+  .offer-detail__image {
+    width: calc(100% - 64px);
+    margin-inline: auto;
+  }
+  .offer-detail .offer-content .hotels-sec__container {
+    padding-top: 40px;
+    padding-bottom: 95px;
+  }
+  .h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .offer-detail__image .swiper-pagination {
+    width: 150px;
+  }
+  .offer-detail .hotels-sec .swiper-arrows .swiper-button-next,
+  .offer-detail .hotels-sec .swiper-arrows .swiper-button-prev {
+    top: 68px;
+  }
+  .offer-detail .offer-sec .lines__horizontal {
+    right: 16px;
+  }
+  .offer-detail .offer-sec .lines__vertical {
+    left: 16px;
+  }
+  .news-reverse .newsletter__sec .lines__horizontal--top {
+    right: 16px;
+  }
+  .news-reverse .newsletter__sec .lines__horizontal--bottom {
+    left: 16px;
+  }
+  .offer__container .swiper-button-prev:hover,
+  .offer__container .swiper-button-next:hover {
+    background-color: transparent;
+  }
+  .offer__container .swiper-button-prev:hover svg path,
+  .offer__container .swiper-button-next:hover svg path {
+    stroke: var(--color-secondary);
+  }
+  .experience-content .content {
+    padding: 0 32px;
+  }
+  .experience-detail .offer-sec .lines__horizontal .lines-horizontal {
+    right: 16px;
+  }
+  .experience-detail .offer-sec .lines__vertical {
+    left: 16px;
+  }
+  .experience-detail .offer-sec__title,
+  .offer-detail .offer-sec__title {
+    right: unset;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 32px;
+  }
+  .experience-detail .offer-sec__title h2,
+  .offer-detail .offer-sec__title h2 {
+    transform: translateX(-16px);
   }
 }
