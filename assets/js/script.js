@@ -417,39 +417,56 @@ function swiperHotels() {
 function swiperHotelsDetail() {
   if ($(".hotels__slider .swiper-tab-detail").length) {
     if ($(".swiper-tab-detail").length && $(".nav-link.active").length) {
-      const swiper = new Swiper(".swiper-tab-detail", {
-        // Optional parameters
-        direction: "horizontal",
-        grabCursor: true,
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-        centeredSlides: false,
-        loop: true,
-        spaceBetween: 40,
-        mousewheel: {
-          forceToAxis: true,
-        },
-        pagination: {
-          el: ".accommodation .swiper-pagination",
-          type: "progressbar",
-        },
-        navigation: {
-          nextEl: ".hotels__slider  .swiper-button-next",
-          prevEl: ".hotels__slider  .swiper-button-prev",
-        },
-        speed: 700,
-        slideActiveClass: "is-active",
-        slideDuplicateActiveClass: "is-active",
+      $(".swiper-tab-detail").each(function (index, element) {
+        const swiper = new Swiper(element, {
+          // Optional parameters
+          direction: "horizontal",
+          grabCursor: true,
+          slidesPerView: 1.2,
+          slidesPerGroup: 1,
+          centeredSlides: false,
+          loop: true,
+          spaceBetween: 24,
+          mousewheel: {
+            forceToAxis: true,
+          },
+          pagination: {
+            el: $(element).closest(".tab-pane").find(".swiper-pagination")[0],
+            type: "progressbar",
+          },
+          navigation: {
+            nextEl: $(element)
+              .closest(".hotels__slider")
+              .find(".swiper-button-next")[0],
+            prevEl: $(element)
+              .closest(".hotels__slider")
+              .find(".swiper-button-prev")[0],
+          },
+          speed: 700,
+          slideActiveClass: "is-active",
+          slideDuplicateActiveClass: "is-active",
+          breakpoints: {
+            768: {
+              direction: "horizontal",
+              grabCursor: true,
+              slidesPerView: 2,
+              slidesPerGroup: 1,
+              centeredSlides: false,
+              loop: true,
+              spaceBetween: 40,
+            },
+          },
+        });
       });
 
       function updateSlideCount() {
-        const activeSlideCount = $(
-          ".tab-pane.show .swiper-tab-detail .swiper-slide"
-        ).length;
-        $(".hotels-sec .swiper-arrows").toggleClass(
-          "d-none",
-          activeSlideCount <= 2
-        );
+        $(".tab-pane.show .swiper-tab-detail").each(function () {
+          const activeSlideCount = $(this).find(".swiper-slide").length;
+          $(this)
+            .closest(".hotels-sec")
+            .find(".swiper-arrows")
+            .toggleClass("d-none", activeSlideCount <= 2);
+        });
       }
 
       updateSlideCount();

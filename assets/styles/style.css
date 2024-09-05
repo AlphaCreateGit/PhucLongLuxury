@@ -2517,6 +2517,9 @@ input[type="number"] {
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(93, 39, 13, 0.2);
 }
+.act-text {
+  position: relative;
+}
 @media (max-width: 767.98px) {
   body {
     overflow-x: hidden;
@@ -3053,6 +3056,9 @@ input[type="number"] {
   .testimonial__list.active .testimonila__item:nth-child(4) {
     display: none;
   }
+  .testimonila__item:nth-child(4) {
+    display: none;
+  }
   .testimonial__animation {
     width: calc(100% - 114px);
     margin-inline: auto;
@@ -3263,5 +3269,112 @@ input[type="number"] {
   .experience-detail .offer-sec__title h2,
   .offer-detail .offer-sec__title h2 {
     transform: translateX(-16px);
+  }
+  .hotel-detail .title-sec.spacing-70 {
+    margin-top: 100px;
+  }
+  .page-detail .title-sec .title-sec__content .desc {
+    margin-bottom: 40px;
+  }
+  .page-detail .title-sec .title-sec__content .button-list {
+    margin-bottom: 24px;
+  }
+  .page-detail .swiper-tab-detail .swiper-slide .hotel__card {
+    height: 170px;
+  }
+
+  .page-detail .swiper-tab-detail .hotel__box .hotel__content {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .page-detail .swiper-tab-detail .swiper-slide.is-active .hotel__content {
+    opacity: 1;
+    visibility: visible;
+  }
+  .page-detail .swiper-tab-detail {
+    padding-left: 32px;
+  }
+  .page-detail .hotels__slider .swiper-pagination {
+    width: 150px;
+    bottom: -37px;
+  }
+  .page-detail .hotels-sec__container {
+    padding-bottom: 120px;
+  }
+  .hotel-detail .cruise__container .crusie__desc {
+    margin-bottom: 0;
+  }
+  .facilities-sec .facilities__list {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 10px;
+  }
+  .facilities-sec {
+    padding-top: 90px;
+  }
+  .facilities__container .line__vertical--top-right {
+    right: 16px;
+    width: 2px;
+    top: -67px;
+  }
+  .facilities__container.active .line__vertical--top-right {
+    height: 69px;
+  }
+  .facilities__title {
+    padding: 0 32px;
+  }
+  .facilities__title h2 {
+    transform: translateX(-16px);
+  }
+  .facilities__container .line__horizontal {
+    right: 16px;
+    width: calc(100% - 32px);
+    height: 2px;
+  }
+  .facilities__container .line__vertical--left {
+    width: 2px;
+    left: 16px;
+  }
+  .facilities-sec .testimonial__body {
+    padding-bottom: 80px;
+  }
+  .activities-sec .lines__horizontal {
+    left: 16px;
+    width: calc(100% - 32px);
+    height: 2px;
+    top: -2px;
+  }
+  .activities-sec .lines__vertical {
+    right: 16px;
+    width: 2px;
+  }
+  .activities-sec .section__lines {
+    height: 64px;
+  }
+  .activities__body {
+    padding: 0 32px;
+  }
+  .activities-sec .act-img {
+    width: 100%;
+  }
+  .act-content .swiper-box {
+    max-width: 100%;
+    text-align: center;
+  }
+  .activities__body .row {
+    flex-direction: column-reverse;
+  }
+  .activities__body .act-img {
+    margin-bottom: 24px;
+  }
+  .activities-sec .swiper-pagination {
+    width: 150px;
+    bottom: -200px;
+  }
+  .activities-sec .swiper-button-next {
+    transform: translateX(180px);
+  }
+  .hotel-detail .offer__container {
+    padding-bottom: 120px;
   }
 }
