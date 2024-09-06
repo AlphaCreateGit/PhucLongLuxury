@@ -1295,7 +1295,7 @@ input[type="number"] {
   display: flex;
   align-items: center;
   background-image: url("../images/bg_title.png");
-  padding-right: 109px;
+  padding-right: 113px;
   padding-left: 63px;
 }
 .offer-sec__title .title {
@@ -2216,7 +2216,10 @@ input[type="number"] {
   left: 50%;
   transform: translate(-50%, -50%);
   background-image: url("../images/bg_title.png");
-  padding: 0 113px 0 73px;
+  padding: 0 113px;
+}
+.gallery-sec__container .gallery-sec__title h2 {
+  transform: translateX(-25px);
 }
 .gallery-sec__container .lines__vertical {
   position: absolute;
@@ -3398,5 +3401,8 @@ input[type="number"] {
   .gallery-sec__container .lines__vertical {
     left: 16px;
     width: 2px;
+  }
+  .gallery-sec__container .gallery-sec__title h2 {
+    transform: translateX(-16px);
   }
 }

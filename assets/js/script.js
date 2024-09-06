@@ -3,23 +3,6 @@ $(document).ready(function () {
   // scrollHeader();
   animateTitleSection();
   animateTitleSectionRightLeft();
-  // animateTitleSection(".title-animation", ".hotels-sec__title");
-  // animateTitleSection(".gallery-sec__title", ".gallery-sec__title");
-  // animateTitleSection(".offer-sec__title", ".offer-sec__title");
-  // animateTitleSectionRightLeft(".title-keyframe", ".title-keyframe");
-  // animateTitleSectionRightLeft(
-  //   ".experience-detail .offer-sec__title",
-  //   ".offer-sec__title",
-  //   133
-  // );
-  // animateTitleSectionRightLeft(".activities-sec", ".activities-sec__title");
-  // animateTitleSectionRightLeft(" .cruise-iti", ".cruise-iti__title");
-  // animateTitleSection(".floor-plane__title", ".floor-plane__title");
-  // animateTitleSectionRightLeft(".cruise__title", ".cruise__title");
-  // animateTitleSectionRightLeft(".testimonial__title", ".testimonial__title");
-  // animateTitleSectionRightLeft(".facilities__container", ".facilities__title");
-
-  // animateTitleSection(".restaurant__title", ".restaurant__title", 70);
   animationLineVertical(".line-cap-hotel", ".line-hotels", "100%", 0.1, 72);
 
   swiperHotels();
@@ -147,7 +130,7 @@ function animateTitleSection() {
   gsap.registerPlugin(ScrollTrigger);
 
   // Tìm tất cả các phần tử .title-keyframe
-  const sections = document.querySelectorAll(".title-keyframe");
+  const sections = document.querySelectorAll(".title-key-left");
 
   // Lặp qua từng phần tử .title-keyframe
   sections.forEach((section) => {
@@ -209,8 +192,8 @@ function animateTitleSection() {
 function animateTitleSectionRightLeft(endPointSVG = 113) {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Find all elements with .title-keyframe.reverse
-  const sections = document.querySelectorAll(".title-reverse");
+  // Find all elements with .title-reverse
+  const sections = document.querySelectorAll(".title-key-right");
 
   sections.forEach((section) => {
     const h2Element = section.querySelector("h2");
@@ -233,15 +216,17 @@ function animateTitleSectionRightLeft(endPointSVG = 113) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start: "top 60%",
-          end: "bottom 60%",
+          start: "top 64%",
+          end: "bottom 64%",
           onEnter: () => gsap.set(svgElement, { visibility: "visible" }),
         },
         onUpdate: () => {
           const progress = gsap.getProperty(svgElement, "x");
           section.querySelectorAll(".char").forEach((char) => {
-            if (progress <= char.offsetLeft + char.offsetWidth) {
-              gsap.to(char, { opacity: 1, duration: 0.1 });
+            console.log(char.offsetLeft + char.offsetWidth);
+            // Check if the SVG has moved past the character’s starting position
+            if (progress <= char.offsetLeft) {
+              gsap.to(char, { opacity: 1, duration: 0.1, overwrite: "auto" });
             }
           });
         },
