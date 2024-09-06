@@ -2646,7 +2646,6 @@ input[type="number"] {
     width: calc(100% - 32px);
     height: 240px;
     bottom: -65px;
-    background-image: none;
     mask-image: url("../images/booking_bg_mobile.svg");
     background: linear-gradient(to bottom, #fff 98.5%, transparent 1%);
   }
