@@ -223,6 +223,77 @@ input[type="number"] {
   width: auto;
   height: auto;
 }
+/* css lighpick */
+.lightpick > * {
+  font-family: var(--font-secondary);
+}
+.lightpick__day.is-today {
+  color: var(--color-primary);
+  font-weight: 600;
+  background-image: none;
+}
+.lightpick__days .lightpick__day.is-in-range {
+  background-color: var(--color-sub);
+}
+
+.lightpick__day.is-in-range:hover {
+  background-image: none;
+  background-color: var(--color-primary);
+}
+
+.lightpick__day:not(.is-disabled):hover,
+.lightpick__day.is-start-date.is-end-date {
+  background-image: none;
+}
+
+.lightpick__day.is-in-range {
+  background-color: rgba(194, 32, 51, 0.8);
+  color: #fff;
+}
+
+.lightpick__day.is-end-date.is-in-range.is-flipped,
+.lightpick__day.is-start-date.is-in-range,
+.lightpick__day.is-end-date.is-in-range,
+.lightpick__day.is-start-date.is-in-range.is-flipped {
+  background-color: var(--color-primary);
+  font-weight: 500;
+}
+
+.lightpick__month-title > .lightpick__select-months,
+.lightpick__day-of-the-week {
+  font-weight: 400;
+}
+.lightpick__month-title {
+  padding: 0;
+  margin-left: 8px;
+}
+.lightpick__month-title > .lightpick__select-months,
+.lightpick__day-of-the-week {
+  text-align: left;
+}
+.lightpick__toolbar {
+  display: flex;
+  gap: 5px;
+}
+.lightpick__next-action,
+.lightpick__previous-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+  background-image: url("../images/ic_dropdown_white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--color-primary);
+  margin: 0;
+}
+.lightpick__previous-action {
+  transform: rotate(90deg);
+}
+.lightpick__next-action {
+  transform: rotate(-90deg);
+}
+/* css lighpick */
 /* css header */
 .header {
   position: fixed;
