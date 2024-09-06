@@ -79,6 +79,7 @@ ul li {
 .h6 {
   margin: 0;
 }
+
 /* set font */
 .b1 {
   font-family: var(--font-secondary);
@@ -240,10 +241,17 @@ input[type="number"] {
   background-image: none;
   background-color: var(--color-primary);
 }
-
+.lightpick__day.is-start-date {
+  background-image: url("../images/ic_cricle_calender.png");
+  background-size: contain;
+}
 .lightpick__day:not(.is-disabled):hover,
 .lightpick__day.is-start-date.is-end-date {
-  background-image: none;
+  background-image: url("../images/ic_cricle_calender.png");
+}
+.lightpick__day:not(.is-disabled):hover {
+  background-image: url("../images/ic_cricle_calender.png");
+  color: #fff;
 }
 
 .lightpick__day.is-in-range {
@@ -293,7 +301,14 @@ input[type="number"] {
 .lightpick__next-action {
   transform: rotate(-90deg);
 }
-/* css lighpick */
+/* end css lighpick */
+/* css intro */
+.intro {
+  background-color: #e1d7c0;
+  z-index: 9999;
+  inset: 0;
+}
+/* end css intro */
 /* css header */
 .header {
   position: fixed;
@@ -2990,7 +3005,7 @@ input[type="number"] {
     bottom: -25px;
   }
   .restaurant__container .restaurant__image {
-    width: calc(100% - 64px);
+    width: 100%;
     margin-inline: auto;
   }
   .swiper-restaurant .swiper-img {
@@ -3034,7 +3049,7 @@ input[type="number"] {
     margin-top: 84px;
   }
   .restaurant__content {
-    width: calc(100% - 64px);
+    width: 100%;
     margin-inline: auto;
     position: relative;
   }

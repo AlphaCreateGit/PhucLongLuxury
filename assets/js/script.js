@@ -18,7 +18,34 @@ $(document).ready(function () {
   swiperActivites();
   swiperOfferDetail();
   bookingForm();
+  intro();
 });
+
+function intro() {
+  const $intro = $(".intro");
+  const tl = gsap.timeline();
+
+  tl.to($intro.find(".intro-inner"), {
+    autoAlpha: 0,
+    duration: 2.5, // Increased from 1.3s to 2.5s
+    ease: "expo.inOut",
+  })
+    .to(
+      $intro,
+      {
+        duration: 4, // Increased from 1.5s to 3.2s
+        // scaleY: 0,
+        opacity: 0,
+        transformOrigin: "center top",
+        ease: "expo.inOut",
+      },
+      0.8 // Adjusted this delay from 0.4s to 0.8s to make it more balanced
+    )
+    .to($intro, {
+      autoAlpha: 0,
+      duration: 0,
+    });
+}
 
 function bookingForm() {
   var picker = new Lightpick({
