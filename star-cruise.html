@@ -27,9 +27,16 @@
       <div class="container-fluid p-0">
         <div class="header__container">
           <div
-            class="header__default d-flex align-items-center justify-content-between h-100"
+            class="header__default d-flex align-items-center justify-content-between h-100 w-100"
           >
-            <div class="header__right d-flex align-items-center">
+            <div class="header__hamburger d-block d-md-none">
+              <div class="button-burger">
+                <div class="button-burger__line"></div>
+                <div class="button-burger__line"></div>
+                <div class="button-burger__line"></div>
+              </div>
+            </div>
+            <div class="header__right d-md-flex align-items-center d-none">
               <div class="header__lang d-flex align-items-center">
                 <div class="value-select b1 color-secondary">English</div>
                 <img src="./assets/images/ic_arrow_down.svg" alt="" />
@@ -38,7 +45,9 @@
             <div
               class="header__center d-flex align-items-center justify-content-center"
             >
-              <div class="header__menu left d-flex justify-content-center">
+              <div
+                class="header__menu left d-md-flex align-items-center d-none"
+              >
                 <ul class="d-flex align-items-center">
                   <li class="menu-item-has-children">
                     <a href="./hotels.html" class="b1 color-secondary"
@@ -98,7 +107,9 @@
                   <img src="./assets/images/logo_default.svg" alt="" />
                 </a>
               </div>
-              <div class="header__menu right d-flex justify-content-center">
+              <div
+                class="header__menu right d-md-flex align-items-center d-none"
+              >
                 <ul class="d-flex align-items-center">
                   <li class="menu-item-has-children">
                     <a href="./offer.html" class="b1 color-secondary"
@@ -126,13 +137,22 @@
                 </ul>
               </div>
             </div>
-            <div class="btn-book">
+            <div class="btn-book d-none d-md-block">
               <a href="">Book Now</a>
             </div>
           </div>
         </div>
         <div class="header__bg">
-          <img src="./assets/images/img_bg_capcap_white.png" alt="" />
+          <img
+            src="./assets/images/img_bg_capcap_white.png"
+            alt=""
+            class="d-none d-md-block"
+          />
+          <img
+            src="./assets/images/img_bg_cap_mobile.png"
+            alt=""
+            class="d-block d-md-none"
+          />
         </div>
       </div>
     </header>
@@ -615,10 +635,29 @@
         <div class="container-fluid p-0">
           <div class="restaurant__container animation-line">
             <div class="res-bg-top">
-              <img src="./assets/images/res_bg_top.png" alt="img" />
+              <img
+                src="./assets/images/res_bg_top.png"
+                alt="img"
+                class="d-none d-md-block"
+              />
+
+              <img
+                src="./assets/images/res_bg_top_mobile.png"
+                alt="img"
+                class="d-block d-md-none"
+              />
             </div>
             <div class="res-bg-bottom">
-              <img src="./assets/images/res_bg_bottom.png" alt="img" />
+              <img
+                src="./assets/images/res_bg_bottom.png"
+                alt="img"
+                class="d-none d-md-block"
+              />
+              <img
+                src="./assets/images/res_bg_bottom_mobile.png"
+                alt="img"
+                class="d-block d-md-none"
+              />
             </div>
             <div class="section-lines">
               <div class="lines__vertical--left-top"></div>
@@ -639,10 +678,10 @@
                 </div>
               </div>
             </div>
-            <div class="restaurant__body">
+            <div class="restaurant__body data-fade-in">
               <div class="row g-0">
                 <div class="col-md-6 offset-md-1">
-                  <div class="restaurant__image data-fade-in">
+                  <div class="restaurant__image">
                     <div class="swiper swiper-restaurant">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -660,12 +699,15 @@
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination d-none d-md-block"></div>
                   </div>
                 </div>
                 <div class="col-md-4 offset-md-1">
-                  <div class="restaurant__content h-100 data-fade-in">
-                    <div class="swiper swiper-res-content h-100">
+                  <div class="restaurant__content h-100">
+                    <div
+                      class="swiper swiper-res-content h-100"
+                      thumbsSlider=""
+                    >
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <div class="swiper-box">
@@ -692,37 +734,38 @@
                           </div>
                         </div>
                       </div>
-                      <div class="swiper-arrows">
-                        <div class="swiper-button-next">
-                          <svg
-                            width="12"
-                            height="18"
-                            viewBox="0 0 12 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M1 1C1 1 2.31081 6.45838 9.49539 9.00159C9.49539 9.00159 3.56759 10.5084 1.00212 17"
-                              stroke="#E3C17B"
-                              stroke-miterlimit="10"
-                            />
-                          </svg>
-                        </div>
-                        <div class="swiper-button-prev">
-                          <svg
-                            width="12"
-                            height="18"
-                            viewBox="0 0 12 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M1 1C1 1 2.31081 6.45838 9.49539 9.00159C9.49539 9.00159 3.56759 10.5084 1.00212 17"
-                              stroke="#E3C17B"
-                              stroke-miterlimit="10"
-                            />
-                          </svg>
-                        </div>
+                    </div>
+                    <div class="swiper-pagination d-block d-md-none"></div>
+                    <div class="swiper-arrows">
+                      <div class="swiper-button-next">
+                        <svg
+                          width="12"
+                          height="18"
+                          viewBox="0 0 12 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 1C1 1 2.31081 6.45838 9.49539 9.00159C9.49539 9.00159 3.56759 10.5084 1.00212 17"
+                            stroke="#E3C17B"
+                            stroke-miterlimit="10"
+                          />
+                        </svg>
+                      </div>
+                      <div class="swiper-button-prev">
+                        <svg
+                          width="12"
+                          height="18"
+                          viewBox="0 0 12 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 1C1 1 2.31081 6.45838 9.49539 9.00159C9.49539 9.00159 3.56759 10.5084 1.00212 17"
+                            stroke="#E3C17B"
+                            stroke-miterlimit="10"
+                          />
+                        </svg>
                       </div>
                     </div>
                   </div>
@@ -742,7 +785,7 @@
               <div class="lines__horizontal">
                 <div class="lines-horizontal"></div>
               </div>
-              <div class="activities-sec__title title-keyframe title-key-right">
+              <div class="activities-sec__title title-keyframe title-key-left">
                 <div class="icon-wheel">
                   <img src="./assets/images/ic_wheel.svg" alt="" />
                 </div>
@@ -753,7 +796,7 @@
             <div class="activities__body">
               <div class="row g-0">
                 <div class="col-md-4 offset-md-1">
-                  <div class="h-100">
+                  <div class="h-100 act-text">
                     <div class="swiper act-content h-100 data-fade-in">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -785,37 +828,38 @@
                           </div>
                         </div>
                       </div>
-                      <div class="swiper-arrows">
-                        <div class="swiper-button-next">
-                          <svg
-                            width="12"
-                            height="18"
-                            viewBox="0 0 12 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M1 1C1 1 2.31081 6.45838 9.49539 9.00159C9.49539 9.00159 3.56759 10.5084 1.00212 17"
-                              stroke="#5D270D"
-                              stroke-miterlimit="10"
-                            />
-                          </svg>
-                        </div>
-                        <div class="swiper-button-prev">
-                          <svg
-                            width="12"
-                            height="18"
-                            viewBox="0 0 12 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M1 1C1 1 2.31081 6.45838 9.49539 9.00159C9.49539 9.00159 3.56759 10.5084 1.00212 17"
-                              stroke="#5D270D"
-                              stroke-miterlimit="10"
-                            />
-                          </svg>
-                        </div>
+                    </div>
+                    <div class="swiper-pagination d-block d-md-none"></div>
+                    <div class="swiper-arrows">
+                      <div class="swiper-button-next">
+                        <svg
+                          width="12"
+                          height="18"
+                          viewBox="0 0 12 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 1C1 1 2.31081 6.45838 9.49539 9.00159C9.49539 9.00159 3.56759 10.5084 1.00212 17"
+                            stroke="#5D270D"
+                            stroke-miterlimit="10"
+                          />
+                        </svg>
+                      </div>
+                      <div class="swiper-button-prev">
+                        <svg
+                          width="12"
+                          height="18"
+                          viewBox="0 0 12 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 1C1 1 2.31081 6.45838 9.49539 9.00159C9.49539 9.00159 3.56759 10.5084 1.00212 17"
+                            stroke="#5D270D"
+                            stroke-miterlimit="10"
+                          />
+                        </svg>
                       </div>
                     </div>
                   </div>
@@ -839,7 +883,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination d-none d-md-block"></div>
                   </div>
                 </div>
               </div>

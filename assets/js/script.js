@@ -534,6 +534,10 @@ function swiperRestaurant() {
         nextEl: ".restaurant__content .swiper-button-next",
         prevEl: ".restaurant__content .swiper-button-prev",
       },
+      pagination: {
+        el: ".restaurant__content .swiper-pagination",
+        type: "progressbar",
+      },
       breakpoints: {
         768: {
           effect: "fade",
@@ -617,6 +621,10 @@ function swiperActivites() {
       navigation: {
         nextEl: ".activities-sec .swiper-button-next",
         prevEl: ".activities-sec .swiper-button-prev",
+      },
+      pagination: {
+        el: ".act-text .swiper-pagination",
+        type: "progressbar",
       },
       thumbs: {
         swiper: swiperActImg,

@@ -2523,6 +2523,7 @@ input[type="number"] {
 .act-text {
   position: relative;
 }
+
 @media (max-width: 767.98px) {
   body {
     overflow-x: hidden;
@@ -2804,6 +2805,8 @@ input[type="number"] {
   .icon-wheel {
     width: 32px;
     height: 32px;
+    opacity: 0;
+    visibility: hidden;
   }
   .hotels-sec__container {
     padding-inline: 0;
@@ -3372,10 +3375,10 @@ input[type="number"] {
   }
   .activities-sec .swiper-pagination {
     width: 150px;
-    bottom: -226px;
+    bottom: -32px;
   }
   .activities-sec .swiper-button-next {
-    transform: translateX(180px);
+    transform: translateX(155px);
   }
   .hotel-detail .offer__container {
     padding-bottom: 120px;
@@ -3385,8 +3388,9 @@ input[type="number"] {
     transform: translate(-50%, -50%);
   }
   .hotel-detail .hotels-sec__top {
-    padding-left: 0;
+    padding-left: 32px;
   }
+
   .hotel-detail .gallery-sec__container .lines__horizontal {
     right: 16px;
     height: 2px;
@@ -3404,5 +3408,67 @@ input[type="number"] {
   }
   .gallery-sec__container .gallery-sec__title h2 {
     transform: translateX(-16px);
+  }
+  .page-star-cruise .title-sec.spacing-70 {
+    margin-top: 100px;
+  }
+  .page-star-cruise .hotels-sec__container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .page-star-cruise .hotels-sec__top {
+    padding-left: 32px;
+  }
+  .page-detail .title-sec .title-sec__content h1 {
+    margin-bottom: 24px;
+  }
+  .page-star-cruise .activities-sec {
+    padding-top: 90px;
+  }
+  .page-star-cruise .activities-sec.active .line__vertical--top-right {
+    height: 69px;
+  }
+  .page-star-cruise .activities-sec .line__vertical--top-right {
+    right: 16px;
+    width: 2px;
+    top: -67px;
+  }
+  .page-star-cruise .activities-sec .lines__horizontal {
+    right: 16px;
+    top: 0;
+  }
+  .page-star-cruise .activities-sec .lines__vertical {
+    left: 16px;
+  }
+  .page-star-cruise .cruise__container .floor-plane__title,
+  .page-star-cruise .cruise-iti__title {
+    padding: 0 32px;
+    right: unset;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .page-star-cruise .cruise__container .floor-plane__title h2,
+  .page-star-cruise .cruise-iti__title h2 {
+    transform: translateX(-16px);
+  }
+  .page-star-cruise .floor-plane .cruise__container .lines__vertical {
+    right: 16px;
+  }
+  .page-star-cruise .offer-sec .lines__vertical {
+    left: 16px;
+  }
+  .restaurant__content .swiper-pagination {
+    width: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: unset;
+    bottom: -15px;
+    height: 2px;
+    overflow: hidden;
+    border-radius: 13px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .restaurant__content .swiper-pagination .swiper-pagination-progressbar-fill {
+    background-color: var(--color-sub);
   }
 }
