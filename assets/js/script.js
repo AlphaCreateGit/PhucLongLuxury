@@ -280,94 +280,31 @@ function animateTitleSectionRightLeft(endPointSVG = 113) {
   });
 }
 
-// function animateTitleSectionRightLeft(
-//   sectionClass,
-//   triggerClass,
-//   endPointSVG = 113
-// ) {
-//   gsap.registerPlugin(ScrollTrigger);
-
-//   // Ensure the required elements exist
-//   const h2Element = document.querySelector(`${sectionClass} h2`);
-//   const svgElement = document.querySelector(`${sectionClass} .icon-wheel`);
-
-//   if ($(".title-keyframe").length && h2Element && svgElement) {
-//     const textSplit = new SplitType(`${sectionClass} h2`, { types: "chars" });
-//     const h2Width = h2Element.offsetWidth;
-//     const svgWidth = svgElement.offsetWidth;
-
-//     // Set the initial position and hide the SVG (start from the right side)
-//     gsap.set(svgElement, {
-//       x: h2Width + endPointSVG,
-//       visibility: "hidden",
-//     });
-//     gsap.set(`${sectionClass} .char`, { opacity: 0 });
-
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: triggerClass,
-//         start: "top 60%",
-//         end: "bottom 60%",
-//         // markers: true,
-//         // scrub: true,
-//         onEnter: function () {
-//           gsap.set(svgElement, { visibility: "visible" });
-//         },
-//       },
-//       onUpdate: function () {
-//         const progress = gsap.getProperty(svgElement, "x");
-//         document
-//           .querySelectorAll(`${sectionClass} h2 .char`)
-//           .forEach((char) => {
-//             if (progress <= char.offsetLeft) {
-//               gsap.to(char, { opacity: 1, duration: 0.1 });
-//             }
-//           });
-//       },
-//     });
-
-//     tl.to(svgElement, {
-//       x: -(svgWidth + 50), // Move from right to left
-//       rotation: -360, // Adjust rotation direction
-//       duration: 1,
-//       ease: "power2.inOut",
-//       onComplete: function () {
-//         gsap.to(svgElement, {
-//           opacity: 0,
-//           scale: 0.5,
-//           ease: "power1.inOut",
-//           onComplete: function () {
-//             gsap.set(svgElement, { visibility: "hidden" });
-//           },
-//         });
-//       },
-//     });
-//   }
-// }
-
-function animationLineVertical(
-  sectionClass,
-  triggerClass,
-  height,
-  duration = 0.1,
-  vh = 70
-) {
+function animationLineVertical() {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.fromTo(
-    `${sectionClass}`,
-    { height: "0%" },
-    {
-      height: `${height}`,
-      duration: duration,
-      scrollTrigger: {
-        trigger: `${triggerClass}`,
-        start: `top ${vh}%`,
-        end: `top ${vh}%+=500`,
-        scrub: 0.5,
-      },
-    }
-  );
+  // Select all elements that match the sectionClass
+  const sections = gsap.utils.toArray(".line-cap-hotel");
+
+  sections.forEach((section) => {
+    // Find the trigger element inside the section or use the section itself
+    const triggerElement = section.querySelector(".line-cap-hotel");
+
+    gsap.fromTo(
+      section,
+      { height: "0%" },
+      {
+        height: "100%",
+        duration: 0.1,
+        scrollTrigger: {
+          trigger: ".line-cap-hotel", // Fallback to section if triggerClass is not found
+          start: "top 60% ",
+          end: "+=50",
+          scrub: 0.5,
+        },
+      }
+    );
+  });
 }
 
 function swiperHotels() {
@@ -810,8 +747,8 @@ function animationLine() {
     gsap.utils.toArray(".animation-line").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 74%",
-        end: "bottom 70%",
+        start: "top 75%",
+        end: "bottom 75%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
         onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
       });

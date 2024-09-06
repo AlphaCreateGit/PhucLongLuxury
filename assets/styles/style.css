@@ -2157,6 +2157,10 @@ input[type="number"] {
   right: unset;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 0 113px;
+}
+.page-template .activities-sec__title h2 {
+  transform: translateX(-25px);
 }
 .page-star-cruise .activities-sec {
   padding-top: 182px;
@@ -2181,10 +2185,13 @@ input[type="number"] {
   top: -115px;
   background-color: var(--color-secondary);
   mask-image: url(../images/stroke_line_ver_full.svg);
-  transition: all 0.5s ease-in;
+  transition: all 0.3s ease;
   z-index: 3;
 }
-.page-star-cruise .activities-sec.active .line__vertical--top-right {
+.page-star-cruise
+  .activities-sec
+  .offer__container.active
+  .line__vertical--top-right {
   height: 115px;
 }
 .page-star-cruise .testimonial__container .line__vertical--left {
@@ -2259,7 +2266,7 @@ input[type="number"] {
 
 .gallery-sec__container {
   position: relative;
-  padding-bottom: 180px;
+  padding-bottom: 120px;
 }
 .hotel-detail .gallery-sec__container .lines__horizontal {
   position: absolute;
@@ -2385,7 +2392,7 @@ input[type="number"] {
 .gallery-sec__container .lines__horizontal {
   position: absolute;
   height: 4px;
-  width: calc(50% - 44px);
+  width: calc(50% - 40px);
   left: 50%;
   top: 0;
   transform: translateY(-100%);
@@ -2624,7 +2631,9 @@ input[type="number"] {
     width: calc(100% - 32px);
     height: 240px;
     bottom: -65px;
-    background-image: url("../images/booking_bg_mobile.png");
+    background-image: none;
+    mask-image: url("../images/booking_bg_mobile.svg");
+    background: linear-gradient(to bottom, #fff 98.5%, transparent 1%);
   }
   .banner-hero__booking form {
     flex-wrap: wrap;
@@ -2689,7 +2698,7 @@ input[type="number"] {
     position: absolute;
     height: 100%;
     right: 2px;
-    width: 50px;
+    width: 35px;
     z-index: 2;
     opacity: 0.6;
     background: linear-gradient(
