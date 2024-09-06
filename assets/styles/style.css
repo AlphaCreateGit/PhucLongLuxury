@@ -3173,7 +3173,7 @@ input[type="number"] {
   }
   .offer__container {
     padding: 0;
-    padding-bottom: 84px;
+    padding-bottom: 96px;
   }
   .offer-sec .box .box-img {
     height: 350px;
@@ -3291,7 +3291,7 @@ input[type="number"] {
     padding: 30px 16px;
   }
   .page-detail .title-sec.spacing-70 {
-    margin-top: 60px;
+    margin-top: 58px;
   }
   .page-detail .title-sec .line-hotels {
     height: 60px;
@@ -3559,5 +3559,11 @@ input[type="number"] {
   }
   .restaurant__content .swiper-pagination .swiper-pagination-progressbar-fill {
     background-color: var(--color-sub);
+  }
+  .page-detail .experience-content .hotels-sec__container {
+    padding-bottom: 40px;
+  }
+  .hotel-detail .gallery-sec .hotels-sec__top {
+    padding-left: 0;
   }
 }
