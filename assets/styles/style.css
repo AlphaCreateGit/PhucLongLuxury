@@ -836,8 +836,7 @@ input[type="number"] {
 .restaurant__container {
   background-color: var(--color-third);
   position: relative;
-  padding-top: 65px;
-  padding-bottom: 90px;
+  padding: 65px 40px 90px;
 }
 .restaurant__content {
   position: relative;
@@ -982,9 +981,7 @@ input[type="number"] {
   align-items: center;
   position: absolute;
   left: 40px;
-  /* padding: 0 113px; */
-  padding-left: 83px;
-  padding-right: 45px;
+  padding: 0 113px;
   background-color: var(--color-third);
 }
 .restaurant__title h2 {
@@ -2536,7 +2533,7 @@ input[type="number"] {
     justify-content: unset !important;
   }
   .header__container {
-    padding: 32px;
+    padding: 0 32px;
     height: var(--header-height-mobile);
   }
   .header__center {
@@ -2805,8 +2802,6 @@ input[type="number"] {
   .icon-wheel {
     width: 32px;
     height: 32px;
-    opacity: 0;
-    visibility: hidden;
   }
   .hotels-sec__container {
     padding-inline: 0;

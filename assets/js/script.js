@@ -144,8 +144,9 @@ function animateTitleSection() {
       const svgWidth = svgElement.offsetWidth;
 
       // Đặt vị trí ban đầu và ẩn SVG
+      const startPointSVG = window.innerWidth < 768 ? svgWidth : svgWidth + 50;
       gsap.set(svgElement, {
-        x: -(svgWidth + 50),
+        x: -startPointSVG,
         visibility: "hidden",
       });
       gsap.set(section.querySelectorAll(".char"), { opacity: 0 });
@@ -169,9 +170,10 @@ function animateTitleSection() {
           });
         },
       });
-
+      const endPointSVG =
+        window.innerWidth < 768 ? h2Width + 32 : h2Width + 113;
       tl.to(svgElement, {
-        x: h2Width + 113, // Sử dụng endPointSVG
+        x: endPointSVG, // Sử dụng endPointSVG
         rotation: 360,
         duration: 1,
         ease: "power2.inOut",
@@ -206,8 +208,9 @@ function animateTitleSectionRightLeft(endPointSVG = 113) {
       const svgWidth = svgElement.offsetWidth;
 
       // Set initial position and hide the SVG
+      const startPointSVG = window.innerWidth < 768 ? h2Width : h2Width + 113;
       gsap.set(svgElement, {
-        x: h2Width + endPointSVG,
+        x: startPointSVG,
         visibility: "hidden",
       });
       gsap.set(section.querySelectorAll(".char"), { opacity: 0 });
@@ -233,8 +236,9 @@ function animateTitleSectionRightLeft(endPointSVG = 113) {
       });
 
       // Define the SVG animation
+      const endPointSVG = window.innerWidth < 768 ? svgWidth : svgWidth + 50;
       tl.to(svgElement, {
-        x: -(svgWidth + 50),
+        x: -endPointSVG,
         rotation: -360,
         duration: 1,
         ease: "power2.inOut",
