@@ -2716,13 +2716,16 @@ input[type="number"] {
     background-position: center;
     height: calc(100vh - 56px);
     padding-top: 80px;
-    position: relative;
     width: 100%;
     transition: all 0.5s ease;
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
   }
   .header__menu--mobile.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
