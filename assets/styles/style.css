@@ -391,6 +391,7 @@ input[type="number"] {
   position: relative;
   background-color: var(--color-white);
   transition: all 0.5s ease-in-out;
+  z-index: 99;
 }
 .language__head {
   gap: 8px;
@@ -2714,8 +2715,8 @@ input[type="number"] {
   .header__menu--mobile {
     background-image: url("../images/bg_menu_mobile.png");
     background-position: center;
-    height: calc(100dvh - 56px);
-    padding-top: 80px;
+    height: calc(100svh);
+    padding-top: 136px;
     width: 100%;
     transition: all 0.5s ease;
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
@@ -2723,7 +2724,7 @@ input[type="number"] {
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    top: 56px;
+    top: 0;
     left: 0;
     right: 0;
   }
@@ -2742,7 +2743,7 @@ input[type="number"] {
     background-image: url("../images/bg_menu_mobile.png");
     background-position: center;
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-    padding-top: 80px;
+    padding-top: 136px;
     z-index: 2;
     transition: all 0.5s ease;
   }
