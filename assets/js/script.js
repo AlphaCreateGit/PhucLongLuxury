@@ -19,8 +19,34 @@ $(document).ready(function () {
   swiperOfferDetail();
   bookingForm();
   intro();
+  menuMobile();
 });
 
+function menuMobile() {
+  $(".header__hamburger").on("click", function () {
+    // Xóa class 'active' của sub-menu nếu có
+    $(".sub-menu.active").removeClass("active");
+
+    // Toggle class 'active' cho menu mobile
+    $(".header__menu--mobile").toggleClass("active");
+
+    // Thêm hoặc xóa class 'overflow' cho body dựa trên trạng thái của menu mobile
+    $("body").toggleClass(
+      "overflow",
+      $(".header__menu--mobile").hasClass("active")
+    );
+  });
+  $(".menu__mobile--inner .menu-item-has-children .ic-next").on(
+    "click",
+    function () {
+      $(this).siblings(".sub-menu").addClass("active");
+    }
+  );
+  $(".ic-back").on("click", function (e) {
+    e.stopPropagation();
+    $(this).closest(".sub-menu").removeClass("active");
+  });
+}
 function intro() {
   const $intro = $(".intro");
   const tl = gsap.timeline();
