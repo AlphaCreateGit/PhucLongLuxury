@@ -20,10 +20,52 @@ $(document).ready(function () {
   bookingForm();
   intro();
   menuMobile();
+  toggleDropdown();
 });
+function toggleDropdown() {
+  const $dropdowns = $(".dropdown-custom");
 
+  $dropdowns.each(function () {
+    const $dropdown = $(this);
+    const $btnDropdown = $dropdown.find(".dropdown-custom__btn");
+    const $dropdownMenu = $dropdown.find(".dropdown-custom__menu");
+    const $dropdownItems = $dropdown.find(".dropdown-custom__item");
+    const $textDropdown = $dropdown.find(".dropdown-custom__text");
+
+    $btnDropdown.on("click", function (e) {
+      e.stopPropagation();
+      closeAllDropdowns($dropdown);
+      $dropdownMenu.toggleClass("dropdown--active");
+    });
+
+    $(document).on("click", function () {
+      closeAllDropdowns();
+    });
+
+    $dropdownItems.on("click", function (e) {
+      e.stopPropagation();
+      const $item = $(this);
+      const tmp = $textDropdown.text();
+      $textDropdown.text($item.text());
+      if ($item.hasClass("language__item")) {
+        $item.text(tmp);
+      }
+      closeAllDropdowns();
+    });
+
+    function closeAllDropdowns(exception) {
+      $dropdowns.each(function () {
+        const $menu = $(this).find(".dropdown-custom__menu");
+        if (!exception || !$(this).is(exception)) {
+          $menu.removeClass("dropdown--active");
+        }
+      });
+    }
+  });
+}
 function menuMobile() {
   $(".header__hamburger").on("click", function () {
+    $(this).toggleClass("active");
     // Xóa class 'active' của sub-menu nếu có
     $(".sub-menu.active").removeClass("active");
 
