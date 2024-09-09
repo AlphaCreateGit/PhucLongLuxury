@@ -863,6 +863,7 @@ input[type="number"] {
   background-size: 100% 100%;
   z-index: 9;
   opacity: 0.2;
+  pointer-events: none;
 }
 .hotels-sec .hotels__img .img-hover {
   position: absolute;
@@ -984,6 +985,7 @@ input[type="number"] {
   background-size: 100% 100%;
   z-index: 9;
   opacity: 0.95;
+  pointer-events: none;
 }
 .cruise__container .crusie__image img {
   width: 100%;
@@ -1412,6 +1414,7 @@ input[type="number"] {
   background-size: 100% 100%;
   z-index: 9;
   opacity: 0.95;
+  pointer-events: none;
 }
 .offer-sec .box .box-img img {
   width: 100%;
@@ -1932,6 +1935,7 @@ input[type="number"] {
   background-size: 100% 100%;
   z-index: 9;
   opacity: 0.95;
+  pointer-events: none;
 }
 .page-detail .swiper-tab-detail .swiper-slide .hotel__card .hotel__img {
   position: absolute;
@@ -2815,13 +2819,21 @@ input[type="number"] {
     inset: 0;
     background-image: url("../images/bg_menu_mobile.png");
     background-position: center;
-    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     padding-top: 136px;
     z-index: 2;
-    transition: all 0.5s ease;
+    transition: all 0.8s ease;
   }
   .header__menu--mobile ul li.menu-item-has-children .sub-menu.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .header__menu--mobile ul li.menu-item-has-children .sub-menu li a {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .language__head .value-select {
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .header__menu--mobile ul li.menu-item-has-children .icon {
@@ -3776,6 +3788,7 @@ input[type="number"] {
     right: 16px;
     width: 2px;
     top: -67px;
+    height: 70px !important;
   }
   .page-star-cruise .activities-sec .lines__horizontal {
     right: 16px;
