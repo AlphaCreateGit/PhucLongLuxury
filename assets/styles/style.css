@@ -3384,7 +3384,7 @@ input[type="number"] {
   }
   .testimonial__container .line__horizontal {
     right: 16px;
-    width: calc(100% - 32px);
+    width: calc(100% - 30px);
     height: 2px;
   }
   .testimonial__container .line__vertical--left {
