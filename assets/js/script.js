@@ -21,7 +21,32 @@ $(document).ready(function () {
   intro();
   menuMobile();
   toggleDropdown();
+  bookingModal();
 });
+function bookingModal() {
+  var picker = new Lightpick({
+    field: document.getElementById("checkIn"),
+    secondField: document.getElementById("checkOut"),
+    singleDate: false,
+    minDate: moment().startOf("now"),
+    numberOfMonths: 2,
+    // startDate: moment().startOf("day").toDate(),
+    // endDate: moment().startOf("day").add(1, "days").toDate(),
+    onOpen: function () {
+      var input = picker._opts.field;
+      var rect = input.getBoundingClientRect();
+      var calendar = picker.el;
+      if (rect.top >= window.innerHeight / 2) {
+        calendar.style.top =
+          rect.top + window.scrollY - calendar.offsetHeight + "px";
+        calendar.style.left = rect.left + window.scrollX + "px";
+      } else {
+        calendar.style.top = rect.bottom + window.scrollY + "px";
+        calendar.style.left = rect.left + window.scrollX + "px";
+      }
+    },
+  });
+}
 function toggleDropdown() {
   const $dropdowns = $(".dropdown-custom");
 
