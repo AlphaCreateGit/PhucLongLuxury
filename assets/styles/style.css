@@ -3019,6 +3019,7 @@ input[type="number"] {
   .hotels-sec .lines__vertical {
     width: 2px;
     top: -2px;
+    height: calc(100% + 2px);
   }
   .newsletter__body .form {
     padding-left: 0;
@@ -3315,7 +3316,7 @@ input[type="number"] {
     top: -23px;
   }
   .restaurant__container.active .lines__vertical--left-top {
-    height: 90px;
+    height: 92px;
   }
   .restaurant__container {
     padding-top: 50px;
@@ -3329,8 +3330,8 @@ input[type="number"] {
   .restaurant__container .lines__vertical--right-bottom {
     width: 2px;
     right: 16px;
-    top: 67px;
-    height: calc(100% - 43px);
+    top: 65px;
+    height: calc(100% - 41px);
   }
   .restaurant__title h2 {
     transform: translateX(-16px);
@@ -3391,6 +3392,7 @@ input[type="number"] {
     width: 2px;
     left: 16px;
     top: -2px;
+    height: calc(100% + 2px);
   }
   .testimonial__title {
     padding: 0 32px;
