@@ -1027,6 +1027,8 @@ input[type="number"] {
   border: 1px solid var(--color-secondary);
   text-decoration: none;
   transition: var(--trans);
+  font-size: 16px;
+  line-height: 24px;
 }
 .cruise__container .crusie__btn a:hover {
   color: var(--color-white);
