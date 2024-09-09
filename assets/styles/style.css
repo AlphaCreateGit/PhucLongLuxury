@@ -862,7 +862,7 @@ input[type="number"] {
   background-image: url("../images/img_borde_cap.png");
   background-size: 100% 100%;
   z-index: 9;
-  opacity: 0.2;
+  opacity: 0.95;
   pointer-events: none;
 }
 .hotels-sec .hotels__img .img-hover {
@@ -1853,8 +1853,18 @@ input[type="number"] {
 .page-template .hotels-sec .hotels__img {
   width: 100%;
   aspect-ratio: 350 / 440px;
+  position: relative;
   /* height: 440px; */
 }
+.page-template .hotels-sec .hotels__img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/img_borde_cap.png");
+  background-size: 100% 100%;
+  opacity: 0.95;
+}
+
 .page-template .hotels-sec__container {
   padding-bottom: 120px;
 }
@@ -2759,6 +2769,9 @@ input[type="number"] {
 .offer-detail .swiper-img-offer:hover {
   cursor: pointer;
 }
+.floor-plane .cruise__container .crusie__image::before {
+  content: unset;
+}
 @media (max-width: 767.98px) {
   body {
     overflow-x: hidden;
@@ -2836,7 +2849,6 @@ input[type="number"] {
     font-size: 16px;
     line-height: 24px;
   }
-
   .header__menu--mobile ul li.menu-item-has-children .icon {
     position: absolute;
     right: 32px;
@@ -2926,7 +2938,7 @@ input[type="number"] {
     margin-top: 16px;
   }
   .title-sec.spacing-70 {
-    margin-top: 110px;
+    margin-top: 113px;
   }
   .cruise__container .cruise-stroke {
     width: 800px;
@@ -3458,7 +3470,7 @@ input[type="number"] {
   .offer-sec .swiper-pagination {
     width: 150px;
   }
-
+  .page-template .activities-sec__title,
   .offer-sec__title,
   .activities-sec__title {
     padding: 0 32px;
@@ -3466,6 +3478,7 @@ input[type="number"] {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .page-template .activities-sec__title h2,
   .offer-sec__title h2,
   .activities-sec__title h2 {
     transform: translateX(-16px);
@@ -3635,7 +3648,7 @@ input[type="number"] {
     transform: translateX(-16px);
   }
   .hotel-detail .title-sec.spacing-70 {
-    margin-top: 100px;
+    margin-top: 113px;
   }
   .page-detail .title-sec .title-sec__content .desc {
     margin-bottom: 40px;
@@ -3770,7 +3783,7 @@ input[type="number"] {
     transform: translateX(-16px);
   }
   .page-star-cruise .title-sec.spacing-70 {
-    margin-top: 100px;
+    margin-top: 113px;
   }
   .page-star-cruise .hotels-sec__container {
     padding-left: 0;
