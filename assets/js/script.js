@@ -817,8 +817,9 @@ function testimonial() {
     gsap.utils.toArray(".testimonial__list").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 70%",
-        end: "bottom 70%",
+        start: "top 80%",
+        end: "bottom 80%",
+        markers: true,
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
         // onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
       });

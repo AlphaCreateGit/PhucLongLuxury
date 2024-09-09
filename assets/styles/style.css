@@ -484,12 +484,19 @@ input[type="number"] {
   position: absolute;
   left: 0;
   bottom: -4px;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   width: 100%;
   height: 1px;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header__menu ul li.menu-item-has-children .sub-menu a::after {
+  width: 100%;
+}
+.header__menu ul li.menu-item-has-children .sub-menu a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .header__menu ul li a:hover::after {
   transform: scaleX(1);
@@ -1238,9 +1245,10 @@ input[type="number"] {
 }
 .testimonial__content .box .author a {
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 .testimonial__content .box .author a:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 .testimonila__item {
   transition: all 1s ease-in-out;
@@ -1267,6 +1275,9 @@ input[type="number"] {
   position: relative;
   mask-image: url("../images/line_capcap.svg");
   mask-size: cover;
+}
+.testimonila__item .box .icon:hover svg path {
+  color: var(--color-secondary);
 }
 
 .testimonila__item .box-gif img {
