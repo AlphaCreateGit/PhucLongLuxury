@@ -3258,7 +3258,7 @@ input[type="number"] {
   }
   .cruise__container .lines__horizontal {
     height: 2px;
-    width: calc(100% - 32px);
+    width: calc(100% - 30px);
     right: 16px;
     top: -1px;
   }
@@ -3316,7 +3316,7 @@ input[type="number"] {
     top: -23px;
   }
   .restaurant__container.active .lines__vertical--left-top {
-    height: 92px;
+    height: 91px;
   }
   .restaurant__container {
     padding-top: 50px;
