@@ -704,7 +704,7 @@ input[type="number"] {
 .hotels-sec__container .lines__horizontal {
   position: absolute;
   height: 4px;
-  width: calc(50% - 44px);
+  width: calc(50% - 40px);
   left: 50%;
   top: 0;
   transform: translateY(-100%);
@@ -953,9 +953,7 @@ input[type="number"] {
   top: 0;
   left: 40px;
   width: 4px;
-  height: 100%;
-  /* background-color: var(--color-secondary);
-  mask-image: url("../images/stroke_line_ver_full.svg"); */
+  height: calc(100% + 4px);
   z-index: -3;
 }
 .cruise__container .lines-horizontal {
@@ -1496,9 +1494,7 @@ input[type="number"] {
   right: 40px;
   top: 0;
   width: 4px;
-  height: 100%;
-  background-color: var(--color-secondary);
-  mask-image: url("../images/stroke_line_full.svg");
+  height: calc(100% + 4px);
 }
 .offer-sec .section__lines {
   height: 110px;
@@ -2275,9 +2271,7 @@ input[type="number"] {
   right: 40px;
   top: 0;
   width: 4px;
-  height: 100%;
-  background-color: var(--color-secondary);
-  mask-image: url("../images/stroke_line_full.svg");
+  height: calc(100% + 4px);
 }
 .activities-sec .lines__horizontal--bottom {
   position: absolute;
@@ -2362,7 +2356,7 @@ input[type="number"] {
   .activities-sec
   .offer__container.active
   .line__vertical--top-right {
-  height: 115px;
+  height: 119px;
 }
 .page-star-cruise .testimonial__container .line__vertical--left {
   left: unset;
@@ -2469,11 +2463,9 @@ input[type="number"] {
 .gallery-sec__container .lines__vertical {
   position: absolute;
   left: 40px;
-  top: 0;
+  top: -4px;
   width: 4px;
-  height: 100%;
-  background-color: var(--color-secondary);
-  mask-image: url(../images/stroke_line_full.svg);
+  height: calc(100% + 8px);
 }
 .gallery-sec__container .gallery-tab .gallery-list {
   display: grid;

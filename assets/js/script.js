@@ -14,7 +14,7 @@ $(document).ready(function () {
   scrollVerticalFull();
   scrollHorizontal();
   animationLine();
-  animtionFadeIn();
+  animationFadeIn();
   swiperActivites();
   swiperOfferDetail();
   bookingForm();
@@ -164,7 +164,7 @@ function bookingForm() {
     },
   });
 }
-function animtionFadeIn() {
+function animationFadeIn() {
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.utils.toArray(".data-fade-in").forEach((element, i) => {
@@ -878,8 +878,8 @@ function animationLine() {
     gsap.utils.toArray(".animation-line").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 75%",
-        end: "bottom 75%",
+        start: "top 70%",
+        end: "bottom 70%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
         onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
       });
