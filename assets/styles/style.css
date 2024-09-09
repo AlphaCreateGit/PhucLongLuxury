@@ -2768,6 +2768,9 @@ input[type="number"] {
 .page-star-cruise .cruise__container .crusie__image img {
   object-fit: contain;
 }
+.page-star-cruise .floor-plane .cruise__container .crusie__image {
+  height: 250px;
+}
 .offer-detail .offer-detail__content .box .button-list .button a {
   font-size: 16px;
   line-height: 24px;
@@ -3834,6 +3837,7 @@ input[type="number"] {
   }
   .page-star-cruise .activities-sec .lines__vertical {
     left: 16px;
+    height: calc(100% + 2px);
   }
   .page-star-cruise .cruise__container .floor-plane__title,
   .page-star-cruise .cruise-iti__title {
