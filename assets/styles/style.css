@@ -853,6 +853,18 @@ input[type="number"] {
   aspect-ratio: 254 / 320;
   margin-bottom: 24px;
   position: relative;
+  overflow: hidden;
+}
+.hotels-sec .hotels__img::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/img_borde_cap.png");
+  background-size: 100% 100%;
+  z-index: 9;
 }
 .hotels-sec .hotels__img .img-hover {
   position: absolute;
@@ -871,6 +883,7 @@ input[type="number"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  padding: 1px;
 }
 .hotels__box:hover .hotels__name,
 .hotels__box:hover .hotels__location {
@@ -963,6 +976,15 @@ input[type="number"] {
   height: 360px;
   width: 100%;
   margin-bottom: 40px;
+  position: relative;
+}
+.cruise__container .crusie__image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/img_borde_cap.png");
+  background-size: 100% 100%;
+  z-index: 9;
 }
 .cruise__container .crusie__image img {
   width: 100%;
@@ -1383,11 +1405,23 @@ input[type="number"] {
   margin-bottom: 24px;
   position: relative;
 }
+.offer-sec .box .box-img::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/img_borde_cap.png");
+  background-size: 100% 100%;
+  z-index: 9;
+}
 .offer-sec .box .box-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  padding: 1px;
 }
 .offer__body {
   position: relative;
@@ -1893,6 +1927,14 @@ input[type="number"] {
   margin-bottom: 24px;
   display: block;
 }
+.page-detail .swiper-tab-detail .swiper-slide .hotel__card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background-image: url("../images/img_borde_cap.png");
+  background-size: 100% 100%;
+  z-index: 9;
+}
 .page-detail .swiper-tab-detail .swiper-slide .hotel__card .hotel__img {
   position: absolute;
   inset: 0;
@@ -1907,6 +1949,7 @@ input[type="number"] {
   max-width: none;
   transition: all 0.7s ease-in-out;
   margin-left: -100px;
+  padding: 1px;
 }
 .page-detail
   .swiper-tab-detail
@@ -2857,6 +2900,8 @@ input[type="number"] {
   .banner-hero__booking form .select-destination,
   .banner-hero__booking form .date {
     width: 100%;
+    font-size: 16px;
+    line-height: 24px;
   }
   .banner-hero__booking form .date input {
     width: 100%;
@@ -2947,6 +2992,9 @@ input[type="number"] {
   }
   .newsletter__sec {
     padding: 0 32px;
+  }
+  .cruise__container .cruise-stroke img {
+    object-fit: contain;
   }
   .newsletter__body .newsletter-title {
     font-size: 24px;
@@ -3171,6 +3219,11 @@ input[type="number"] {
     left: 16px;
     width: 2px;
     top: -1px;
+  }
+  .cruise__container .cruise-stroke {
+    height: 176px;
+    top: 60px;
+    right: 0;
   }
   .cruise__container .cruise__title {
     padding: 0 32px;
@@ -3427,7 +3480,7 @@ input[type="number"] {
   }
   .gallery-sec__container .gallery-tab .gallery-list {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 48px;
   }
   .gallery-sec__container
     .gallery-tab

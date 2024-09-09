@@ -688,9 +688,11 @@ function swiperActivites() {
         type: "progressbar",
       },
       breakpoints: {
-        pagination: {
-          el: ".content-image .swiper-pagination",
-          type: "progressbar",
+        768: {
+          pagination: {
+            el: ".content-image .swiper-pagination",
+            type: "progressbar",
+          },
         },
       },
       thumbs: {
