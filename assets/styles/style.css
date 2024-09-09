@@ -3852,4 +3852,7 @@ input[type="number"] {
   .hotel-detail .gallery-sec .hotels-sec__top {
     padding-left: 0;
   }
+  .page-template .hotels-sec .hotels__img img {
+    padding: 0;
+  }
 }
