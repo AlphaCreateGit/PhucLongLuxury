@@ -1940,7 +1940,7 @@ input[type="number"] {
 .page-detail .swiper-tab-detail .swiper-slide .hotel__card::before {
   content: "";
   position: absolute;
-  inset: -1px;
+  inset: 0px;
   background-image: url("../images/img_borde_cap.png");
   background-size: 100% 100%;
   z-index: 9;
@@ -2755,6 +2755,9 @@ input[type="number"] {
 }
 .act-text {
   position: relative;
+}
+.page-star-cruise .events .cruise__container .crusie__image img {
+  object-fit: cover;
 }
 .page-star-cruise .cruise__container .crusie__image img {
   object-fit: contain;
@@ -3853,6 +3856,6 @@ input[type="number"] {
     padding-left: 0;
   }
   .page-template .hotels-sec .hotels__img img {
-    padding: 0;
+    padding: calc(1px / 2);
   }
 }
