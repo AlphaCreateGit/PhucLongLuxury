@@ -152,8 +152,8 @@ function animtionFadeIn() {
       {
         scrollTrigger: {
           trigger: element,
-          start: "top 70%",
-          end: "bottom 70%",
+          start: "top 55%",
+          end: "bottom 55%",
         },
         opacity: 1,
         y: 0,
@@ -687,6 +687,12 @@ function swiperActivites() {
         el: ".act-text .swiper-pagination",
         type: "progressbar",
       },
+      breakpoints: {
+        pagination: {
+          el: ".content-image .swiper-pagination",
+          type: "progressbar",
+        },
+      },
       thumbs: {
         swiper: swiperActImg,
       },
@@ -704,6 +710,9 @@ function swiperOfferDetail() {
     var swiperActImg = new Swiper(".swiper-offer-detail", {
       loop: true,
       speed: 1200,
+      autoplay: {
+        delay: 3000,
+      },
       watchSlidesProgress: true,
       watchSlidesProgress: true,
       // simulateTouch: false,
@@ -802,8 +811,8 @@ function cruise() {
     gsap.utils.toArray(".cruise-stroke").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 70%",
-        end: "bottom 70%",
+        start: "top 80%",
+        end: "bottom 80%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
         // onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
       });
@@ -817,9 +826,8 @@ function testimonial() {
     gsap.utils.toArray(".testimonial__list").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 80%",
-        end: "bottom 80%",
-        markers: true,
+        start: "top 85%",
+        end: "bottom 85%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
         // onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
       });
