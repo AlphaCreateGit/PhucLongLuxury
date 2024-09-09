@@ -307,6 +307,8 @@ input[type="number"] {
 .lightpick__toolbar {
   display: flex;
   gap: 5px;
+  padding-top: 14px;
+  padding-right: 14px;
 }
 .lightpick__next-action,
 .lightpick__previous-action {
@@ -316,7 +318,7 @@ input[type="number"] {
   font-size: 0;
   background-image: url("../images/ic_dropdown_white.svg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 11px 13px;
   background-color: var(--color-primary);
   margin: 0;
 }
@@ -731,8 +733,14 @@ input[type="number"] {
 .hotels-sec .lines__vertical {
   position: absolute;
   right: 40px;
-  top: 0;
+  top: -4px;
   width: 4px;
+  height: calc(100% + 8px);
+}
+.lines-vertical {
+  position: absolute;
+  top: 0;
+  width: 100%;
   height: 100%;
   background-color: var(--color-secondary);
   mask-image: url("../images/stroke_line_full.svg");
@@ -946,8 +954,8 @@ input[type="number"] {
   left: 40px;
   width: 4px;
   height: 100%;
-  background-color: var(--color-secondary);
-  mask-image: url("../images/stroke_line_ver_full.svg");
+  /* background-color: var(--color-secondary);
+  mask-image: url("../images/stroke_line_ver_full.svg"); */
   z-index: -3;
 }
 .cruise__container .lines-horizontal {
@@ -1219,7 +1227,7 @@ input[type="number"] {
   z-index: 3;
 }
 .testimonial__container.active .line__vertical--top-right {
-  height: 115px;
+  height: 119px;
 }
 
 .testimonial__container .line__horizontal {
@@ -1240,9 +1248,7 @@ input[type="number"] {
 .testimonial__container .line__vertical--left {
   position: absolute;
   width: 4px;
-  height: 100%;
-  background-color: var(--color-secondary);
-  mask-image: url("../images/stroke_line_ver_full.svg");
+  height: calc(100% + 4px);
 }
 .testimonial__title {
   display: flex;
@@ -1704,7 +1710,8 @@ input[type="number"] {
 .footer__container .on-top .icon svg {
   transform: translateY(-2px);
 }
-.footer__container .on-top .icon:hover {
+.footer__container .on-top .icon:hover,
+.footer__container .on-top:hover .icon {
   border: 1px solid var(--color-sub);
 }
 .footer__container .on-top .icon svg path {
@@ -2059,7 +2066,7 @@ input[type="number"] {
   z-index: 3;
 }
 .facilities__container.active .line__vertical--top-right {
-  height: 115px;
+  height: 119px;
 }
 
 .facilities__container .line__horizontal {
@@ -2080,9 +2087,9 @@ input[type="number"] {
 .facilities__container .line__vertical--left {
   position: absolute;
   width: 4px;
-  height: 100%;
-  background-color: var(--color-secondary);
-  mask-image: url("../images/stroke_line_ver_full.svg");
+  height: calc(100% + 4px);
+  /* background-color: var(--color-secondary);
+  mask-image: url("../images/stroke_line_ver_full.svg"); */
 }
 .facilities__title {
   display: flex;
@@ -3717,7 +3724,7 @@ input[type="number"] {
     top: -67px;
   }
   .facilities__container.active .line__vertical--top-right {
-    height: 69px;
+    height: 71px;
   }
   .facilities__title {
     padding: 0 32px;
