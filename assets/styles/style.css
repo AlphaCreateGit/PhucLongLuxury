@@ -3839,6 +3839,13 @@ input[type="number"] {
     left: 16px;
     height: calc(100% + 2px);
   }
+  .page-star-cruise .floor-plane .crusie__body {
+    padding-top: 0;
+  }
+  .page-star-cruise .floor-plane .crusie__body .crusie__image {
+    margin-bottom: 0;
+  }
+
   .page-star-cruise .cruise__container .floor-plane__title,
   .page-star-cruise .cruise-iti__title {
     padding: 0 32px;
