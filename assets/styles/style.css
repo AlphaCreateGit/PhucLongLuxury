@@ -2925,7 +2925,10 @@ input[type="number"] {
     margin-top: 16px;
   }
   .title-sec.spacing-70 {
-    margin-top: 100px;
+    margin-top: 110px;
+  }
+  .cruise__container .cruise-stroke {
+    width: 800px;
   }
   .title-sec .title-sec__content .desc,
   .page-template .title-sec .title-sec__content .desc {
