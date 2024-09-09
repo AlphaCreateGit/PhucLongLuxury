@@ -3015,6 +3015,7 @@ input[type="number"] {
   }
   .hotels-sec .lines__vertical {
     width: 2px;
+    top: -2px;
   }
   .newsletter__body .form {
     padding-left: 0;
@@ -3256,7 +3257,7 @@ input[type="number"] {
   .cruise__container .lines__vertical {
     left: 16px;
     width: 2px;
-    top: -1px;
+    top: -2px;
   }
   .cruise__container .cruise-stroke {
     height: 176px;
