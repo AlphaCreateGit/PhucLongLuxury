@@ -3093,6 +3093,10 @@ input[type="number"] {
     padding-left: 0;
     margin-bottom: 24px;
   }
+  .footer__container .box-office .address {
+    max-width: 295px;
+    padding-right: 0;
+  }
   .footer__container--top {
     padding-inline: 16px;
     margin-bottom: 110px;
@@ -3386,6 +3390,7 @@ input[type="number"] {
   .testimonial__container .line__vertical--left {
     width: 2px;
     left: 16px;
+    top: -2px;
   }
   .testimonial__title {
     padding: 0 32px;
