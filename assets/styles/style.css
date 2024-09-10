@@ -1748,6 +1748,7 @@ input[type="number"] {
   position: absolute;
   top: -75px;
   right: 25%;
+  display: block;
 }
 .footer__container .box-title {
   margin-bottom: 24px;
@@ -1804,8 +1805,8 @@ input[type="number"] {
   background-image: url("../images/bg_footer.png");
   background-repeat: no-repeat;
   padding-block: 30px;
-  animation: run 70s infinite linear;
-  -webkit-animation: run 70s infinite linear;
+  animation: run 100s infinite linear;
+  -webkit-animation: run 100s infinite linear;
 }
 
 .footer__container--bottom .box {
