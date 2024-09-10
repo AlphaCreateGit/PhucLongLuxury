@@ -1743,11 +1743,11 @@ input[type="number"] {
   position: relative;
 }
 .footer__container--bottom .gif {
-  width: 114px;
-  height: 85px;
   position: absolute;
   top: -75px;
   right: 25%;
+  width: 114px;
+  height: 85px;
   display: block;
 }
 .footer__container .box-title {
