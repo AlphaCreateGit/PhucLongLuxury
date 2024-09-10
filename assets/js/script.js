@@ -177,8 +177,8 @@ function animationFadeIn() {
       {
         scrollTrigger: {
           trigger: element,
-          start: "top 55%",
-          end: "bottom 55%",
+          start: "top 57%",
+          end: "bottom 57%",
         },
         opacity: 1,
         y: 0,
@@ -537,6 +537,9 @@ function swiperHotelsDetail() {
               centeredSlides: false,
               loop: true,
               spaceBetween: 40,
+              speed: 700,
+              slideActiveClass: "is-active",
+              slideDuplicateActiveClass: "is-active",
             },
           },
         });
@@ -838,8 +841,8 @@ function cruise() {
     gsap.utils.toArray(".cruise-stroke").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 80%",
-        end: "bottom 80%",
+        start: "top 82%",
+        end: "bottom 82%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
         // onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
       });
@@ -878,8 +881,8 @@ function animationLine() {
     gsap.utils.toArray(".animation-line").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 70%",
-        end: "bottom 70%",
+        start: "top 65%",
+        end: "bottom 65%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
         onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
       });

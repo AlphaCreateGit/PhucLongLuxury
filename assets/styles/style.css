@@ -882,13 +882,11 @@ input[type="number"] {
 .hotels-sec .hotels__img .img-hover {
   position: absolute;
   inset: 0;
-  z-index: -1;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   visibility: hidden;
 }
 .hotels-sec .hotels__img:hover .img-hover {
-  z-index: 0;
   opacity: 1;
   visibility: visible;
 }
@@ -932,9 +930,10 @@ input[type="number"] {
   position: absolute;
   z-index: -5;
   right: 40px;
-  top: 140px;
+  top: 110px;
   transform: translateX(-70%);
-  height: 300px;
+  width: 100%;
+  aspect-ratio: 1289 / 300;
   transition: all 1s ease-in-out;
 }
 .cruise__container .cruise-stroke.active {
@@ -983,8 +982,8 @@ input[type="number"] {
 }
 
 .cruise__container .crusie__image {
-  height: 360px;
   width: 100%;
+  aspect-ratio: 668 / 358;
   margin-bottom: 40px;
   position: relative;
 }
@@ -1080,6 +1079,7 @@ input[type="number"] {
   width: 670px;
   height: 375px;
   position: relative;
+  aspect-ratio: unset;
 }
 .swiper-restaurant .swiper-img img {
   width: 100%;
@@ -1090,6 +1090,7 @@ input[type="number"] {
   position: relative;
   width: 670px;
   overflow: hidden;
+  aspect-ratio: unset;
 }
 .restaurant__container .restaurant__image::before {
   content: "";
@@ -1449,7 +1450,6 @@ input[type="number"] {
 .offer-sec .box .box-img .img-hover {
   position: absolute;
   inset: 0;
-  z-index: -1;
   opacity: 0;
   visibility: hidden;
   transition: all 0.6s ease;
@@ -1989,15 +1989,15 @@ input[type="number"] {
   .img-hover {
   position: absolute;
   inset: 0;
-  z-index: -1;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.6s ease;
 }
 
 .page-detail .swiper-tab-detail .swiper-slide.is-active .hotel__img img {
-  transform: translateX(50px);
+  transform: translateX(100px);
 }
+
 .page-detail .swiper-tab-detail .swiper-slide .hotel__content .tag {
   margin-bottom: 12px;
 }
@@ -2007,7 +2007,6 @@ input[type="number"] {
   .hotel__card
   .hotel__img
   .img-hover {
-  z-index: 2;
   opacity: 1;
   visibility: visible;
 }
@@ -2169,6 +2168,7 @@ input[type="number"] {
 .activities-sec .act-img {
   position: relative;
   width: 670px;
+  aspect-ratio: unset;
 }
 .act-content .swiper-box {
   max-width: 270px;
@@ -2517,6 +2517,7 @@ input[type="number"] {
   align-items: flex-end;
   padding: 24px;
   mask-image: url("../images/bg_gallery_cap.svg");
+  mask-size: 100% 100%;
 }
 .gallery-sec__container
   .gallery-tab
@@ -2802,6 +2803,30 @@ input[type="number"] {
   background-image: url("../images/img_border_pattern.png");
   z-index: 19;
   background-size: 100% 100%;
+}
+@media (min-width: 1441px) {
+  .hotels-sec .swiper-button-prev,
+  .hotels-sec .swiper-button-next {
+    top: 190px;
+  }
+  .offer__container .swiper-button-prev,
+  .offer__container .swiper-button-next {
+    top: 270px;
+  }
+  .restaurant__container .restaurant__image {
+    width: 100%;
+    aspect-ratio: 668 / 373;
+  }
+  .swiper-restaurant .swiper-img {
+    width: 100%;
+    aspect-ratio: 668 / 373;
+    height: auto;
+  }
+  .activities-sec .act-img {
+    width: 100%;
+    aspect-ratio: 668 / 373;
+    height: auto;
+  }
 }
 @media (max-width: 767.98px) {
   body {
