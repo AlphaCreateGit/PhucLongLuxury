@@ -299,8 +299,8 @@ function animateTitleSection() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section, // Đặt trigger cho từng phần tử section riêng lẻ
-          start: "top 65%",
-          end: "bottom 65%",
+          start: "top 63%",
+          end: "bottom 63%",
           // markers: true,
           onEnter: function () {
             gsap.set(svgElement, { visibility: "visible" });
@@ -364,8 +364,8 @@ function animateTitleSectionRightLeft(endPointSVG = 113) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start: "top 64%",
-          end: "bottom 64%",
+          start: "top 63%",
+          end: "bottom 63%",
           onEnter: () => gsap.set(svgElement, { visibility: "visible" }),
         },
         onUpdate: () => {
