@@ -867,8 +867,8 @@ function testimonial() {
     gsap.utils.toArray(".testimonial__animation").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 75%",
-        end: "bottom 75%",
+        start: "top 85%",
+        end: "bottom 85%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
       });
     });
