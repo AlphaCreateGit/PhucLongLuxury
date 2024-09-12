@@ -2808,6 +2808,11 @@ input[type="number"] {
   z-index: 19;
   background-size: 100% 100%;
 }
+.footer-sec .bct a{
+  width: 138px;
+  height: 53px;
+  display: block;
+}
 @media (min-width: 1441px) {
   .hotels-sec .swiper-button-prev,
   .hotels-sec .swiper-button-next {
