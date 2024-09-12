@@ -3019,6 +3019,9 @@ input[type="number"] {
   .page-template .hotels-sec__container {
     padding: 0 16px 0 32px;
   }
+  .page-template .gallery-sec .hotels-sec__top::before{
+    right: -14px;
+  }
   .page-template .hotels-sec__container .hotel-list {
     padding-right: 16px;
   }
