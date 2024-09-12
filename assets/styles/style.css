@@ -800,6 +800,7 @@ input[type="number"] {
 }
 .hotels-sec__top .nav-tabs .nav-link {
   border: none;
+  line-height: 19px;
 }
 
 .swiper-button-prev::after,
@@ -1596,6 +1597,8 @@ input[type="number"] {
   border: 1px solid var(--color-secondary);
   text-decoration: none;
   transition: var(--trans);
+  font-size: 16px;
+  line-height: 24px;
 }
 .btn__submit button:hover {
   color: var(--color-white);
@@ -3034,10 +3037,13 @@ input[type="number"] {
     white-space: nowrap;
     gap: 24px;
     position: relative;
-    height: 22px;
+    height: 24px;
     align-items: flex-start !important;
   }
-
+.page-star-cruise .hotels-sec__top::before{
+  bottom: 4px;
+  height:  24px !important;
+}
 
   .hotels-sec__top .nav::-webkit-scrollbar {
     display: none;
@@ -3076,6 +3082,9 @@ input[type="number"] {
   }
   .newsletter__sec {
     padding: 0 32px;
+  }
+  .hotels-sec__content{
+    padding-right: 32px;
   }
   /* .cruise__container .cruise-stroke img {
     object-fit: contain;
@@ -3309,7 +3318,7 @@ input[type="number"] {
     content: "";
     position: absolute;
     height: 100%;
-    right: -14px;
+    right: 2px;
     width: 35px;
     z-index: 2;
     opacity: 0.6;
@@ -3324,14 +3333,14 @@ input[type="number"] {
   }
   .cruise__container .lines__horizontal {
     height: 2px;
-    width: calc(100% - 30px);
+    width: calc(100% - 32px);
     right: 16px;
     top: -1px;
   }
   .cruise__container .lines__vertical {
     left: 16px;
     width: 2px;
-    top: -2px;
+    top: -1px;
   }
   .cruise__container .cruise-stroke {
     height: 176px;
@@ -3396,7 +3405,7 @@ input[type="number"] {
   .restaurant__container .lines__vertical--right-bottom {
     width: 2px;
     right: 16px;
-    top: 65px;
+    top: 67px;
     height: calc(100% - 41px);
   }
   .restaurant__title h2 {
@@ -3458,7 +3467,7 @@ input[type="number"] {
     width: 2px;
     left: 16px;
     top: 1px;
-    height: calc(100% + 2px);
+    height: 100%;
   }
   .testimonial__title {
     padding: 0 32px;
@@ -3793,6 +3802,7 @@ input[type="number"] {
   .facilities__container .line__vertical--left {
     width: 2px;
     left: 16px;
+    height: calc(100% + 0px);
   }
   .facilities-sec .testimonial__body {
     padding-bottom: 80px;
@@ -3860,9 +3870,19 @@ input[type="number"] {
   .gallery-sec__container .lines__vertical {
     left: 16px;
     width: 2px;
+    top: -1px;
   }
   .gallery-sec__container .gallery-sec__title h2 {
     transform: translateX(-16px);
+  }
+  .button-group{
+    width: calc(100% - 64px);
+  }
+  .button-group .button{
+    width: 50% !important;
+  }
+  .button-group .button a{
+    width: 100% !important;
   }
   .page-star-cruise .title-sec.spacing-70 {
     margin-top: 113px;
