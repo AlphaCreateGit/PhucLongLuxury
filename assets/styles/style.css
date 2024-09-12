@@ -3033,20 +3033,7 @@ input[type="number"] {
     height: 22px;
     align-items: flex-start !important;
   }
-  /* .hotels-sec__top .nav::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    right: 2px;
-    width: 35px;
-    z-index: 2;
-    opacity: 0.6;
-    background: linear-gradient(
-      300deg,
-      #ded5be 32.91%,
-      rgba(222, 213, 190, 0.5) 89.89%
-    ); */
-  }
+
 
   .hotels-sec__top .nav::-webkit-scrollbar {
     display: none;
@@ -3954,4 +3941,3 @@ input[type="number"] {
   .page-template .hotels-sec .hotels__img img {
     padding: calc(1px / 2);
   }
-}
