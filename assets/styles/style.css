@@ -2971,9 +2971,8 @@ input[type="number"] {
     width: calc(100% - 32px);
     height: 240px;
     bottom: -65px;
-    mask-image: url("../images/booking_bg_mobile.svg");
-
-    background: linear-gradient(to bottom, #fff 98.5%, transparent 1%);
+    background-image: url("../images/img_booking_mobile.png");
+    background-size: 100% 100%;
   }
   .banner-hero__booking form {
     flex-wrap: wrap;
