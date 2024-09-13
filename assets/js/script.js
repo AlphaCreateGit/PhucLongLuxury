@@ -21,17 +21,27 @@ $(document).ready(function () {
   intro();
   menuMobile();
   toggleDropdown();
-  bookingModal();
+  // bookingModal();
+  newsletter();
 });
+function newsletter() {
+  $(".newsletter-sec .input-sizer .input").on("input", function () {
+    const $this = $(this);
+    $this.parent().find(".text").text($this.val());
+    if ($this.val() === "") {
+      $this.parent().find(".text").text($this.attr("placeholder"));
+    }
+  });
+}
 function bookingModal() {
-  var picker = new Lightpick({
+  var pickerModalBooking = new Lightpick({
     field: document.getElementById("checkIn"),
     secondField: document.getElementById("checkOut"),
     singleDate: false,
     minDate: moment().startOf("now"),
     numberOfMonths: 2,
-    // startDate: moment().startOf("day").toDate(),
-    // endDate: moment().startOf("day").add(1, "days").toDate(),
+    startDate: moment().startOf("day").toDate(),
+    endDate: moment().startOf("day").add(1, "days").toDate(),
     onOpen: function () {
       var input = picker._opts.field;
       var rect = input.getBoundingClientRect();
@@ -371,7 +381,6 @@ function animateTitleSectionRightLeft(endPointSVG = 113) {
         onUpdate: () => {
           const progress = gsap.getProperty(svgElement, "x");
           section.querySelectorAll(".char").forEach((char) => {
-            console.log(char.offsetLeft + char.offsetWidth);
             // Check if the SVG has moved past the character’s starting position
             if (progress <= char.offsetLeft) {
               gsap.to(char, { opacity: 1, duration: 0.1, overwrite: "auto" });

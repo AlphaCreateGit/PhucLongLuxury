@@ -1556,6 +1556,25 @@ input[type="number"] {
 .newsletter__body {
   padding-block: 45px;
 }
+.newsletter__body .content .input-sizer{
+  position: relative;
+  display: block;
+}
+.newsletter__body .content .input-sizer .text{
+  visibility: hidden;
+  display: inline-block;
+  white-space: pre;
+  min-width: 20px;
+}
+.newsletter__body .content .input-sizer input{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  min-width: 20px;
+}
 .newsletter__body .newsletter-title {
   font-size: 40px;
   font-weight: 400;
