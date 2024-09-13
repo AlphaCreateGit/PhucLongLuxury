@@ -3463,7 +3463,10 @@ input[type="number"] {
     width: 2px;
     right: 16px;
     top: 67px;
-    height: calc(100% - 41px);
+    height: calc(100% - 43px);
+  }
+  .cruise__container .lines__vertical {
+    height: calc(100% + 2px);
   }
   .restaurant__title h2 {
     transform: translateX(-16px);
@@ -3943,6 +3946,7 @@ input[type="number"] {
   }
   .page-star-cruise .title-sec.spacing-70 {
     margin-top: 113px;
+    margin-bottom: 32px;
   }
   .page-star-cruise .hotels-sec__container {
     padding-left: 0;
@@ -3957,14 +3961,18 @@ input[type="number"] {
   .page-star-cruise .activities-sec {
     padding-top: 90px;
   }
-  .page-star-cruise .activities-sec.active .line__vertical--top-right {
+
+  .page-star-cruise
+    .activities-sec
+    .offer__container.active
+    .line__vertical--top-right {
     height: 69px;
   }
   .page-star-cruise .activities-sec .line__vertical--top-right {
     right: 16px;
     width: 2px;
     top: -67px;
-    height: 70px !important;
+    height: 0px;
   }
   .page-star-cruise .activities-sec .lines__horizontal {
     right: 16px;

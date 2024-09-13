@@ -40,12 +40,10 @@ function bookingModal() {
     singleDate: false,
     minDate: moment().startOf("now"),
     numberOfMonths: 1,
-    // startDate: moment().startOf("day").toDate(),
-    // endDate: moment().startOf("day").add(1, "days").toDate(),
     onOpen: function () {
-      var input = picker._opts.field;
+      var input = pickerModalBooking._opts.field; // Sử dụng biến 'pickerModalBooking'
       var rect = input.getBoundingClientRect();
-      var calendar = picker.el;
+      var calendar = pickerModalBooking.el; // Sử dụng biến 'pickerModalBooking'
       if (rect.top >= window.innerHeight / 2) {
         calendar.style.top =
           rect.top + window.scrollY - calendar.offsetHeight + "px";
@@ -187,8 +185,8 @@ function animationFadeIn() {
       {
         scrollTrigger: {
           trigger: element,
-          start: "top 57%",
-          end: "bottom 57%",
+          start: "top 59%",
+          end: "bottom 59%",
         },
         opacity: 1,
         y: 0,
@@ -890,8 +888,8 @@ function animationLine() {
     gsap.utils.toArray(".animation-line").forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
-        start: "top 65%",
-        end: "bottom 65%",
+        start: "top 67%",
+        end: "bottom 67%",
         onEnter: () => el.classList.add("active"), // Add class when entering the viewport
         onLeaveBack: () => el.classList.remove("active"), // Remove class when scrolling back up
       });
