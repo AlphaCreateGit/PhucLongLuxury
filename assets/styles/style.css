@@ -3662,6 +3662,7 @@ input[type="number"] {
     right: 16px;
     width: 2px;
     top: -1px;
+    height: calc(100% + 2px);
   }
   .offer__container .swiper-button-prev,
   .offer__container .swiper-button-next {
@@ -3866,7 +3867,7 @@ input[type="number"] {
     top: -67px;
   }
   .facilities__container.active .line__vertical--top-right {
-    height: 71px;
+    height: 69px;
   }
   .facilities__title {
     padding: 0 32px;
@@ -4046,6 +4047,7 @@ input[type="number"] {
   }
   .hotel-detail .gallery-sec .hotels-sec__top {
     padding-left: 0;
+    padding-right: 0;
   }
   .page-template .hotels-sec .hotels__img img {
     padding: calc(1px / 2);
