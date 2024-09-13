@@ -701,24 +701,7 @@ input[type="number"] {
   padding: 0 40px;
   padding-bottom: 150px;
 }
-.filter {
-  position: relative;
-}
-.filter::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  right: -14px;
-  top: 0;
-  width: 35px;
-  z-index: 2;
-  opacity: 0.6;
-  background: linear-gradient(
-    300deg,
-    #ded5be 32.91%,
-    rgba(222, 213, 190, 0.5) 89.89%
-  );
-}
+
 .hotels-sec__container .lines__horizontal {
   position: absolute;
   height: 4px;
@@ -3062,6 +3045,24 @@ input[type="number"] {
   }
   .title-sec.spacing-70 {
     margin-top: 113px;
+  }
+  .filter {
+    position: relative;
+  }
+  .filter::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    right: -14px;
+    top: 0;
+    width: 35px;
+    z-index: 2;
+    opacity: 0.6;
+    background: linear-gradient(
+      300deg,
+      #ded5be 32.91%,
+      rgba(222, 213, 190, 0.5) 89.89%
+    );
   }
   .cruise__container .cruise-stroke {
     width: 800px;

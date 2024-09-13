@@ -1,6 +1,6 @@
 $(document).ready(function () {
   console.log("ready!");
-  // scrollHeader();
+  scrollHeader();
   animateTitleSection();
   animateTitleSectionRightLeft();
   animationLineVertical(".line-cap-hotel", ".line-hotels", "100%", 0.1, 72);
@@ -245,10 +245,10 @@ function scrollHorizontal() {
 }
 function scrollHeader() {
   gsap.registerPlugin(ScrollTrigger);
-  let height = $(".header__active").height() * -1;
+  let height = ($(".header").height() + 37) * -1;
   function initializeScrollTrigger() {
     navTop = gsap
-      .from(".header__active", {
+      .from(".header", {
         y: height,
         paused: true,
         duration: 0.5,
@@ -265,13 +265,13 @@ function scrollHeader() {
         // Shrink navTop
         self.direction === -1 ? navTop.play() : navTop.reverse();
         // self.refresh();
-        if (self.direction === -1) {
-          $(".header__default").removeClass("scrolled-down");
-          $(".header__container").removeClass("scrolled-down");
-        } else {
-          $(".header__default").addClass("scrolled-down");
-          $(".header__container").addClass("scrolled-down");
-        }
+        // if (self.direction === -1) {
+        //   $(".header__default").removeClass("scrolled-down");
+        //   $(".header__container").removeClass("scrolled-down");
+        // } else {
+        //   $(".header__default").addClass("scrolled-down");
+        //   $(".header__container").addClass("scrolled-down");
+        // }
       },
     });
   }
