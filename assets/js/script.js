@@ -21,7 +21,7 @@ $(document).ready(function () {
   intro();
   menuMobile();
   toggleDropdown();
-  // bookingModal();
+  bookingModal();
   newsletter();
 });
 function newsletter() {
@@ -39,9 +39,9 @@ function bookingModal() {
     secondField: document.getElementById("checkOut"),
     singleDate: false,
     minDate: moment().startOf("now"),
-    numberOfMonths: 2,
-    startDate: moment().startOf("day").toDate(),
-    endDate: moment().startOf("day").add(1, "days").toDate(),
+    numberOfMonths: 1,
+    // startDate: moment().startOf("day").toDate(),
+    // endDate: moment().startOf("day").add(1, "days").toDate(),
     onOpen: function () {
       var input = picker._opts.field;
       var rect = input.getBoundingClientRect();
