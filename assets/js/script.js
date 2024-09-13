@@ -21,7 +21,7 @@ $(document).ready(function () {
   intro();
   menuMobile();
   toggleDropdown();
-  // bookingModal();
+  bookingModal();
   newsletter();
 });
 function newsletter() {
@@ -37,26 +37,15 @@ function newsletter() {
   );
 }
 function bookingModal() {
-  var pickerModalBooking = new Lightpick({
-    field: document.getElementById("checkIn"),
-    secondField: document.getElementById("checkOut"),
-    singleDate: false,
-    minDate: moment().startOf("now"),
-    numberOfMonths: 1,
-    onOpen: function () {
-      var input = pickerModalBooking._opts.field; // Sử dụng biến 'pickerModalBooking'
-      var rect = input.getBoundingClientRect();
-      var calendar = pickerModalBooking.el; // Sử dụng biến 'pickerModalBooking'
-      if (rect.top >= window.innerHeight / 2) {
-        calendar.style.top =
-          rect.top + window.scrollY - calendar.offsetHeight + "px";
-        calendar.style.left = rect.left + window.scrollX + "px";
-      } else {
-        calendar.style.top = rect.bottom + window.scrollY + "px";
-        calendar.style.left = rect.left + window.scrollX + "px";
-      }
-    },
-  });
+  if ($(".modal").length) {
+    var picker2 = new Lightpick({
+      field: document.getElementById("checkIn"),
+      secondField: document.getElementById("checkOut"),
+      singleDate: false,
+      minDate: moment().startOf("day"),
+      numberOfMonths: 1,
+    });
+  }
 }
 function toggleDropdown() {
   const $dropdowns = $(".dropdown-custom");
@@ -153,28 +142,30 @@ function intro() {
 }
 
 function bookingForm() {
-  var picker = new Lightpick({
-    field: document.getElementById("startday"),
-    secondField: document.getElementById("endday"),
-    singleDate: false,
-    minDate: moment().startOf("now"),
-    numberOfMonths: 2,
-    // startDate: moment().startOf("day").toDate(),
-    // endDate: moment().startOf("day").add(1, "days").toDate(),
-    onOpen: function () {
-      var input = picker._opts.field;
-      var rect = input.getBoundingClientRect();
-      var calendar = picker.el;
-      if (rect.top >= window.innerHeight / 2) {
-        calendar.style.top =
-          rect.top + window.scrollY - calendar.offsetHeight + "px";
-        calendar.style.left = rect.left + window.scrollX + "px";
-      } else {
-        calendar.style.top = rect.bottom + window.scrollY + "px";
-        calendar.style.left = rect.left + window.scrollX + "px";
-      }
-    },
-  });
+  if ($(".banner-hero__booking").length) {
+    var picker = new Lightpick({
+      field: document.getElementById("startday"),
+      secondField: document.getElementById("endday"),
+      singleDate: false,
+      minDate: moment().startOf("now"),
+      numberOfMonths: 2,
+      // startDate: moment().startOf("day").toDate(),
+      // endDate: moment().startOf("day").add(1, "days").toDate(),
+      onOpen: function () {
+        var input = picker._opts.field;
+        var rect = input.getBoundingClientRect();
+        var calendar = picker.el;
+        if (rect.top >= window.innerHeight / 2) {
+          calendar.style.top =
+            rect.top + window.scrollY - calendar.offsetHeight + "px";
+          calendar.style.left = rect.left + window.scrollX + "px";
+        } else {
+          calendar.style.top = rect.bottom + window.scrollY + "px";
+          calendar.style.left = rect.left + window.scrollX + "px";
+        }
+      },
+    });
+  }
 }
 function animationFadeIn() {
   gsap.registerPlugin(ScrollTrigger);
