@@ -21,17 +21,20 @@ $(document).ready(function () {
   intro();
   menuMobile();
   toggleDropdown();
-  bookingModal();
+  // bookingModal();
   newsletter();
 });
 function newsletter() {
-  $(".newsletter-sec .input-sizer .input").on("input", function () {
-    const $this = $(this);
-    $this.parent().find(".text").text($this.val());
-    if ($this.val() === "") {
-      $this.parent().find(".text").text($this.attr("placeholder"));
+  $(".newsletter-sec .input-sizer .input").on(
+    "input change keyup blur",
+    function () {
+      const $this = $(this);
+      $this.parent().find(".text").text($this.val());
+      if ($this.val() === "") {
+        $this.parent().find(".text").text($this.attr("placeholder"));
+      }
     }
-  });
+  );
 }
 function bookingModal() {
   var pickerModalBooking = new Lightpick({
