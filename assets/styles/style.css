@@ -3267,14 +3267,12 @@ input[type="number"] {
     padding-left: 0;
     right: unset;
     left: 50%;
-    transform: translate(-50%, -27px);
+    transform: translate(-50%, -50%);
   }
   .page-home .title-sec__content {
-    margin-bottom: 32px;
+    margin-bottom: 40px;
   }
-  .hotels-sec__title h2 {
-    margin-top: 8px;
-  }
+
   .title-sec .line-hotels {
     height: 60px;
   }
