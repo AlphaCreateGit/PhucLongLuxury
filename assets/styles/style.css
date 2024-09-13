@@ -398,6 +398,12 @@ input[type="number"] {
 .language__head {
   gap: 8px;
 }
+.language__head img {
+  transition: all 0.5s ease;
+}
+.language__head.--active img {
+  transform: rotate(180deg);
+}
 .header__btn-language {
   position: relative;
 }
@@ -2987,9 +2993,20 @@ input[type="number"] {
     transform: rotate(-90deg);
   }
   .menu__mobile--lang .language__body {
-    top: 0;
+    bottom: unset;
     transform: translateY(-100%);
     top: -8px;
+  }
+  .menu__mobile--lang .dropdown-custom__item {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .menu__mobile--lang .language__head img {
+    transition: all 0.5s ease;
+    transform: rotate(90deg);
+  }
+  .menu__mobile--lang .language__head.--active img {
+    transform: rotate(270deg);
   }
 
   .sub-menu .menu__mobile--lang {
@@ -3109,6 +3126,9 @@ input[type="number"] {
   }
   .hotels-sec__top .nav li {
     display: inline-block;
+  }
+  .hotels-sec__top .nav li:last-child {
+    padding-right: 35px;
   }
   .hotels-sec__top .nav-tabs .nav-link {
     width: max-content;
