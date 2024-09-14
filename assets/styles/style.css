@@ -2742,7 +2742,7 @@ input[type="number"] {
   width: 438px;
   height: 572px;
   background-color: transparent;
-  transform: translateY(-12px);
+  transform: translateY(-24px);
 }
 .modal-content .icon-close {
   padding-bottom: 24px;
