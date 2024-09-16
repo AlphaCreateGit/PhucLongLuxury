@@ -2018,7 +2018,7 @@ input[type="number"] {
   object-fit: cover;
   max-width: none;
   transition: all 0.7s ease-in-out;
-  margin-left: -100px;
+  margin-left: -50px;
   padding: 1px;
 }
 .page-detail
@@ -2034,8 +2034,14 @@ input[type="number"] {
   transition: all 0.6s ease;
 }
 
-.page-detail .swiper-tab-detail .swiper-slide.is-active .hotel__img img {
-  transform: translateX(100px);
+.page-detail .swiper-tab-detail .swiper-slide.is-active .hotel__img img,
+.page-detail .swiper-tab-detail .swiper-slide.swiper-slide-next .hotel__img img,
+.page-detail
+  .swiper-tab-detail
+  .swiper-slide.swiper-slide-prev
+  .hotel__img
+  img {
+  transform: translateX(50px);
 }
 
 .page-detail .swiper-tab-detail .swiper-slide .hotel__content .tag {

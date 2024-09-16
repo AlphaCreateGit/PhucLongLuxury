@@ -1,5 +1,6 @@
 $(document).ready(function () {
   console.log("ready!");
+
   scrollHeader();
   animateTitleSection();
   animateTitleSectionRightLeft();
@@ -511,6 +512,8 @@ function swiperHotelsDetail() {
           slidesPerGroup: 1,
           centeredSlides: false,
           loop: true,
+          watchSlidesProgress: true,
+          watchSlidesVisibility: true,
           spaceBetween: 24,
           mousewheel: {
             forceToAxis: true,
