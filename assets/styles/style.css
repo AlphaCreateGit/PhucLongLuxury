@@ -352,7 +352,7 @@ input[type="number"] {
   position: absolute;
   top: 70px;
   pointer-events: none;
-  z-index: 100;
+  z-index: 98;
 }
 .header__hamburger .button-burger {
   width: 40px;
@@ -397,7 +397,7 @@ input[type="number"] {
   position: relative;
   background-color: var(--color-white);
   transition: all 0.5s ease-in-out;
-  z-index: 10;
+  z-index: 99;
 }
 .language__head {
   gap: 8px;
@@ -526,9 +526,13 @@ input[type="number"] {
   left: -40px;
   width: calc(100% + 80px);
   background-color: #f8f4e9;
-  top: 80px;
+  top: 73px;
   z-index: 79;
   padding: 32px;
+  background-image: url("../images/img_bg_capcap_white.png");
+  background-repeat: no-repeat;
+  background-size: 100% 37px;
+  background-position-y: -4px;
 }
 .header__menu ul li.menu-item-has-children .sub-menu {
   display: flex;
