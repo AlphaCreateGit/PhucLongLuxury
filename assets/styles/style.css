@@ -344,11 +344,15 @@ input[type="number"] {
   right: 0;
   z-index: 999;
 }
+.header .container-fluid {
+  position: relative;
+  z-index: 10;
+}
 .header__bg {
   position: absolute;
   top: 70px;
   pointer-events: none;
-  z-index: 50;
+  z-index: 100;
 }
 .header__hamburger .button-burger {
   width: 40px;
@@ -393,7 +397,7 @@ input[type="number"] {
   position: relative;
   background-color: var(--color-white);
   transition: all 0.5s ease-in-out;
-  z-index: 99;
+  z-index: 10;
 }
 .language__head {
   gap: 8px;
@@ -440,7 +444,7 @@ input[type="number"] {
 .header__default {
   transform: translateY(0);
   transition: all 0.5s ease-in-out;
-  position: relative;
+  /* position: relative; */
 }
 .header__default .btn-book {
   width: 100px;
@@ -523,7 +527,7 @@ input[type="number"] {
   width: calc(100% + 80px);
   background-color: #f8f4e9;
   top: 80px;
-  z-index: 99;
+  z-index: 79;
   padding: 32px;
 }
 .header__menu ul li.menu-item-has-children .sub-menu {
