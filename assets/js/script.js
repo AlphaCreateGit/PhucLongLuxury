@@ -63,6 +63,15 @@ function toggleDropdown() {
       closeAllDropdowns($dropdown);
       $dropdownMenu.toggleClass("dropdown--active");
       $(".language__head").toggleClass("--active");
+
+      const clickYPosition = e.clientY;
+      const viewportHeight = $(window).height();
+
+      if (clickYPosition > viewportHeight / 2) {
+        $dropdownMenu.removeClass("dropdown-up");
+      } else {
+        $dropdownMenu.addClass("dropdown-up");
+      }
     });
 
     $(document).on("click", function () {
@@ -167,6 +176,20 @@ function bookingForm() {
       },
     });
   }
+  // select hotels
+  $(".select-destination .dropdown-custom__menu").on("click", function (e) {
+    console.log("111");
+    const clickYPosition = e.clientY;
+    const viewportHeight = $(window).height();
+
+    if (clickYPosition > viewportHeight / 2) {
+      console.log("aa");
+      $(".dropdown-custom__menu").addClass("dropdown-up");
+    } else {
+      console.log("abb");
+      $(".dropdown-custom__menu").removeClass("dropdown-up");
+    }
+  });
 }
 function animationFadeIn() {
   gsap.registerPlugin(ScrollTrigger);

@@ -4067,3 +4067,31 @@ input[type="number"] {
     padding: calc(1px / 2);
   }
 }
+
+.select-destination .dropdown-custom__menu {
+  position: absolute;
+  left: -20px;
+  top: -30px;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  background-image: url("../images/img_booking_mobile.png");
+  background-size: 100% 100%;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.select-destination .dropdown-custom__menu.dropdown-up {
+  top: unset;
+  bottom: -20px;
+  transform: translateY(100%);
+}
+.select-destination .dropdown-custom__menu .dropdown-custom__item:hover {
+  cursor: pointer;
+}
+.select-destination .dropdown-custom__menu.dropdown--active {
+  opacity: 1;
+  visibility: visible;
+}
